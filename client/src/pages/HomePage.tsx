@@ -11,12 +11,10 @@ const HomePage = () => {
             Learn how to recognize and avoid phishing attacks through interactive training.
           </Text>
           <VStack spacing={4} mt={8}>
-            <Link to="/quiz" colorScheme="teal" size="lg">
+            <Link to="/quiz">
                  Start Training
             </Link>
-            <Link as={Link} to="/tutorial" colorScheme="blue" size="lg">
-              Tutorial
-            </Link>
+
           </VStack>
         </VStack>
       </Box>
