@@ -3,7 +3,6 @@ import HomePage from "./pages/HomePage";
 import TestPage from "./pages/TestPage";
 import TutorialPage from "./pages/TutorialPage";
 
-import './App.css'
 import NavBar from "./components/Navbar";
 import { ChakraProvider } from "@chakra-ui/react";
 import { system } from "@chakra-ui/react/preset";

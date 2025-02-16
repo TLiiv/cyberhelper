@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
+import { Link, Box, Flex, Text, Button, Stack, Tabs } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
 const NavBar: React.FC = () => {
@@ -48,16 +48,34 @@ const menuItems = [
       </Box>
 
       {/* Navigation Links */}
+       {/* <Tabs.Root variant="enclosed" maxW="md" fitted defaultValue={"tab-1"}>
+      <Tabs.List>
+        <Tabs.Trigger value="tab-1">Tab 1</Tabs.Trigger>
+        <Tabs.Trigger value="tab-2">Tab 2</Tabs.Trigger>
+        <Tabs.Trigger value="tab-3">Tab 3</Tabs.Trigger>
+      </Tabs.List>
+    </Tabs.Root> */}
       <Box
         display={{ base: isOpen ? "block" : "none", md: "block" }}
         flexBasis={{ base: "100%", md: "auto" }}
       >
         <Stack
-          spacing={4}
           align="center"
           direction={{ base: "column", md: "row" }}
-          pt={[4, 0]}
+          pt={[4, 2]}
         >
+          {/* "line", "subtle", "enclosed", "outline", "plain"
+          <Tabs.Root  fitted  maxW="xl">
+            <Tabs.List>
+           {menuItems.map(({ label, to }) => (
+            <RouterLink to={to}>
+            <Tabs.Trigger colorPalette={'teal'} key={to} value={label}>
+              <Text>{label}</Text>
+           </Tabs.Trigger>
+             </RouterLink>
+           ))}
+              </Tabs.List>
+             </Tabs.Root> */}
           {menuItems.map(({ label, to }) => (
             <RouterLink to={to}>
             <Link key={to}>
