@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link, Box, Flex, Text, Stack, Tabs } from "@chakra-ui/react";
+import { Link, Box, Flex, Text, Stack, Tabs, CloseButton } from "@chakra-ui/react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
+
 
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -17,12 +18,7 @@ const menuItems = [
   ];
    const activeTab = menuItems.find(item => item.to === location.pathname)?.label || "Esileht";
   
-  // SVG Icons 
-  const CloseIcon = () => (
-    <svg width="24" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-      <path fill="white" d="M9 7.586l4.95-4.95 1.414 1.414L10.414 9l4.95 4.95-1.414 1.414L9 10.414l-4.95 4.95-1.414-1.414L7.586 9l-4.95-4.95L4.05 2.636 9 7.586z" />
-    </svg>
-  );
+  // SVG Icons
   
   const MenuIcon = () => (
     <svg width="24" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +58,7 @@ const menuItems = [
 
       {/* Mobile menu toggle on the right */}
       <Box position="absolute" right={4} top="50%" transform="translateY(-50%)" display={{ base: "block", md: "none" }} onClick={toggleHandler} cursor="pointer">
-        {isOpen ? <CloseIcon /> : <MenuIcon />}
+        {isOpen ? <CloseButton /> : <MenuIcon />}
       </Box>
     </Box>
   );
