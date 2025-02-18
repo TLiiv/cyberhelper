@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Box, Heading, Button, VStack, Text,HStack } from "@chakra-ui/react";
+import { Box, Heading, Button, VStack, Text} from "@chakra-ui/react";
 
 const HomePage = () => {
     return (
