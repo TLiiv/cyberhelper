@@ -15,7 +15,7 @@ const emails: Email[] = [
     sender: "support@paypal.com",
     subject: "Urgent: Your account has been limited!",
     body: "We've detected unusual activity. Please verify your account immediately.",
-    isRead: false,
+    isRead: true,
   },
   {
     id: 2,
@@ -29,80 +29,161 @@ const emails: Email[] = [
     sender: "security@bank.com",
     subject: "Security Alert: Unauthorized login attempt",
     body: "We detected a login attempt from an unknown device.",
-    isRead: false,
+    isRead: true,
   },
 ];
 //Design https://designshack.net/wp-content/uploads/Email-App-Dashboard-UI-Kit-Figma-Template-1.webp ?
+// see tahab, et sidebar kataks kogu ala ja siis selle peale tuleb maili lugeja
+// const EmailDashboard: React.FC = () => {
+//   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
+
+//   return (
+//        <Flex height="100vh">
+//       {/* Sidebar */}
+//       <VStack
+//         width="250px"
+//         align="stretch"
+//         bg="gray.700"
+//         height="100vh"
+//       >
+//         <Heading size="lg" color="white" textAlign="center">Inbox</Heading>
+//         <Button colorPalette="gray" variant="solid">Inbox</Button>
+//         <Button colorPalette="gray" variant="solid">Sent</Button>
+//         <Button colorPalette="gray" variant="solid">Trash</Button>
+//       </VStack>
+
+//       {/* Main Content Area */}
+//             <Flex flex="1" flexDirection="column">
+                
+//         <Flex bg="gray.200" p={4} alignItems="center"  >
+//           <Heading size="md">PhishingMailbox</Heading>
+//           <Flex flex={1} justifyContent="center">
+//             <Input
+//               placeholder="Search emails..."
+//               width="60%"
+//               bg="white"
+//               color="black"
+//               borderRadius="md"
+//             />
+//           </Flex>
+//         </Flex>
+
+//       {/* Email List */}
+//         <Flex flex="1">
+//           <VStack width="300px" p={4} align="stretch" bg="gray.200">
+//             {emails.map((email) => (
+//               <Card.Root
+//                 key={email.id}
+//                 p={3}
+//                 borderRadius="xl"
+//                 bg={email.isRead ? "gray.300" : "gray.400"}
+//                 shadow="md"
+//                 cursor="pointer"
+//                 onClick={() => setSelectedEmail(email)}
+//               >
+//                 <Card.Title fontWeight="bold">{email.sender}</Card.Title>
+//                 <Card.Description>{email.subject}</Card.Description>
+//               </Card.Root>
+//             ))}
+//           </VStack>
+
+//           {/* Email Preview */}
+//           <Box flex="1" p={6} bg="gray.200">
+//             {selectedEmail ? (
+//               <>
+//                 <Heading size="md">{selectedEmail.subject}</Heading>
+//                 <Text fontSize="sm" color="gray.500">
+//                   From: {selectedEmail.sender}
+//                 </Text>
+//                 <Box mt={4} p={4} bg="gray.600" borderRadius="md">
+//                   <Text>{selectedEmail.body}</Text>
+//                 </Box>
+//               </>
+//             ) : (
+//               <Text>Select an email to preview</Text>
+//             )}
+//           </Box>
+//         </Flex>
+//       </Flex>
+//       </Flex>
+//   );
+// };
 const EmailDashboard: React.FC = () => {
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
 
-    return (
-       <Flex height="100vh">
-      {/* Sidebar */}
-      <VStack
-        width="250px"
-        align="stretch"
-        bg="gray.700"
-        height="100vh"
-        p={4}
-      >
-        <Heading size="lg" color="white" textAlign="center">Inbox</Heading>
-        <Button colorScheme="gray" variant="solid">Inbox</Button>
-        <Button colorScheme="gray" variant="solid">Sent</Button>
-        <Button colorScheme="gray" variant="solid">Trash</Button>
-      </VStack>
+  return (
+    <Flex height="100vh" width="100%" bg="gray.700" borderRadius="xl">  
+      {/* Sidebar (Full Screen Background) */}
+      <Flex width="100vw" height="100vh" position="relative" borderRadius="xl">
+        {/* Sidebar Navigation (Fixed on Left) */}
+        <VStack 
+          width="250px" 
+          align="stretch" 
+          height="100vh" 
+          position="absolute" 
+          left="0" 
+          bg="gray.700" 
+          zIndex="1"
+        >
+          <Heading size="lg" color="white" textAlign="center">Inbox</Heading>
+          <Button colorPalette="gray" variant="solid">Inbox</Button>
+          <Button colorPalette="gray" variant="solid">Sent</Button>
+          <Button colorPalette="gray" variant="solid">Trash</Button>
+        </VStack>
 
-      {/* Main Content Area */}
-            <Flex flex="1" flexDirection="column">
-                
-        <Flex bg="gray.200" p={4} alignItems="center"  >
-          <Heading size="md">PhishingMailbox</Heading>
-          <Flex flex={1} justifyContent="center">
-            <Input
-              placeholder="Search emails..."
-              width="60%"
-              bg="white"
-              color="black"
-              borderRadius="md"
-            />
+        {/* Main Content (Navbar + Emails) */}
+        <Flex width="85%" marginLeft="auto" flexDirection="column" borderRadius="xl" overflow="hidden">
+          {/* Navbar */}
+          <Flex bg="gray.200" p={4} alignItems="center" borderTopRadius="xl">
+            <Heading size="md">PhishingMailbox</Heading>
+            <Flex flex={1} justifyContent="center">
+              <Input
+                placeholder="Search emails..."
+                width="60%"
+                bg="white"
+                color="black"
+                borderRadius="md"
+              />
+            </Flex>
           </Flex>
-        </Flex>
 
-      {/* Email List */}
-        <Flex flex="1">
-          <VStack width="300px" p={4} align="stretch" bg="gray.200">
-            {emails.map((email) => (
-              <Card.Root
-                key={email.id}
-                p={3}
-                borderRadius="xl"
-                bg={email.isRead ? "gray.300" : "gray.400"}
-                shadow="md"
-                cursor="pointer"
-                onClick={() => setSelectedEmail(email)}
-              >
-                <Card.Title fontWeight="bold">{email.sender}</Card.Title>
-                <Card.Description>{email.subject}</Card.Description>
-              </Card.Root>
-            ))}
-          </VStack>
+          {/* Email List & Email Preview */}
+          <Flex flex="1">
+            {/* Email List */}
+            <VStack width="350px" p={4} align="stretch" bg="gray.200">
+              {emails.map((email) => (
+                <Card.Root
+                  key={email.id}
+                  p={3}
+                  borderRadius="xl"
+                  bg={email.isRead ? "gray.300" : "gray.400"}
+                  shadow="md"
+                  cursor="pointer"
+                  onClick={() => setSelectedEmail(email)}
+                >
+                  <Card.Title fontWeight="bold">{email.sender}</Card.Title>
+                  <Card.Description>{email.subject}</Card.Description>
+                </Card.Root>
+              ))}
+            </VStack>
 
-          {/* Email Preview */}
-          <Box flex="1" p={6} bg="gray.200">
-            {selectedEmail ? (
-              <>
-                <Heading size="md">{selectedEmail.subject}</Heading>
-                <Text fontSize="sm" color="gray.500">
-                  From: {selectedEmail.sender}
-                </Text>
-                <Box mt={4} p={4} bg="gray.600" borderRadius="md">
-                  <Text>{selectedEmail.body}</Text>
-                </Box>
-              </>
-            ) : (
-              <Text>Select an email to preview</Text>
-            )}
-          </Box>
+            {/* Email Preview */}
+            <Box flex="1" p={6} bg="gray.200">
+              {selectedEmail ? (
+                <>
+                  <Heading size="md">{selectedEmail.subject}</Heading>
+                  <Text fontSize="sm" color="gray.500">
+                    From: {selectedEmail.sender}
+                  </Text>
+                  <Box mt={4} p={4} bg="gray.600" borderRadius="md">
+                    <Text>{selectedEmail.body}</Text>
+                  </Box>
+                </>
+              ) : (
+                <Text>Select an email to preview</Text>
+              )}
+            </Box>
+          </Flex>
         </Flex>
       </Flex>
     </Flex>
@@ -110,3 +191,4 @@ const EmailDashboard: React.FC = () => {
 };
 
 export default EmailDashboard;
+
