@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box,Flex,VStack,Text,Button,Heading, StackSeparator } from "@chakra-ui/react";
+import { Box,Flex,VStack,Text,Button,Heading, Input } from "@chakra-ui/react";
 
 interface Email {
   id: number;
@@ -36,7 +36,23 @@ const emails: Email[] = [
 const EmailDashboard: React.FC = () => {
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
 
-  return (
+    return (
+       <Box height="100vh" display="flex" flexDirection="column">
+      {/* Navbar */}
+      <Flex bg="gray.800" p={4} color="white" alignItems="center">
+        <Heading size="2xl">PhisingMailbox</Heading>
+        <Flex flex={1} justifyContent="center">
+          <Input
+            placeholder="Search emails..."
+            width="60%"
+            bg="white"
+            color="black"
+            borderRadius="md"
+          />
+          {/* <IconButton aria-label="Search" icon={<FaSearch />} ml={2} /> */}
+          <Text aria-label="Search" ml={2} />
+        </Flex>
+      </Flex>
     <Flex height="100vh">
       {/* Sidebar */}
         <VStack
@@ -44,7 +60,7 @@ const EmailDashboard: React.FC = () => {
         align="stretch"
         bg="gray.800"
       >
-        <Heading size="md" textAlign="center">Inbox</Heading>
+        <Heading size="lg" textAlign="center">Inbox</Heading>
         <Button >Inbox</Button>
         <Button >Sent</Button>
         <Button >Trash</Button>
@@ -87,6 +103,7 @@ const EmailDashboard: React.FC = () => {
         )}
       </Box>
     </Flex>
+</Box>
   );
 };
 
