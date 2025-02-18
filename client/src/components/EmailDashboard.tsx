@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box,Flex,VStack,Text,Button,Heading, Input } from "@chakra-ui/react";
+import { Box,Flex,VStack,Text,Button,Heading, Input, Card } from "@chakra-ui/react";
 
 interface Email {
   id: number;
@@ -32,78 +32,80 @@ const emails: Email[] = [
     isRead: false,
   },
 ];
-
+//Design https://designshack.net/wp-content/uploads/Email-App-Dashboard-UI-Kit-Figma-Template-1.webp ?
 const EmailDashboard: React.FC = () => {
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
 
     return (
-       <Box height="100vh" display="flex" flexDirection="column">
-      {/* Navbar */}
-      <Flex bg="gray.800" p={4} color="white" alignItems="center">
-        <Heading size="2xl">PhisingMailbox</Heading>
-        <Flex flex={1} justifyContent="center">
-          <Input
-            placeholder="Search emails..."
-            width="60%"
-            bg="white"
-            color="black"
-            borderRadius="md"
-          />
-          {/* <IconButton aria-label="Search" icon={<FaSearch />} ml={2} /> */}
-          <Text aria-label="Search" ml={2} />
-        </Flex>
-      </Flex>
-    <Flex height="100vh">
+       <Flex height="100vh">
       {/* Sidebar */}
-        <VStack
+      <VStack
         width="250px"
         align="stretch"
-        bg="gray.800"
+        bg="gray.700"
+        height="100vh"
+        p={4}
       >
-        <Heading size="lg" textAlign="center">Inbox</Heading>
-        <Button >Inbox</Button>
-        <Button >Sent</Button>
-        <Button >Trash</Button>
+        <Heading size="lg" color="white" textAlign="center">Inbox</Heading>
+        <Button colorScheme="gray" variant="solid">Inbox</Button>
+        <Button colorScheme="gray" variant="solid">Sent</Button>
+        <Button colorScheme="gray" variant="solid">Trash</Button>
       </VStack>
+
+      {/* Main Content Area */}
+            <Flex flex="1" flexDirection="column">
+                
+        <Flex bg="gray.200" p={4} alignItems="center"  >
+          <Heading size="md">PhishingMailbox</Heading>
+          <Flex flex={1} justifyContent="center">
+            <Input
+              placeholder="Search emails..."
+              width="60%"
+              bg="white"
+              color="black"
+              borderRadius="md"
+            />
+          </Flex>
+        </Flex>
 
       {/* Email List */}
-      <VStack width="300px" p={4} align="stretch" bg="gray.300" >
-        <Heading size="sm">Emails</Heading>
-        {emails.map((email) => (
-          <Box
-            key={email.id}
-            p={3}
-            borderRadius="md"
-            bg={email.isRead ? "gray.300" : "gray.800"}
-            shadow="md"
-            cursor="pointer"
-            onClick={() => setSelectedEmail(email)}
-          >
-            <Text fontWeight="bold">{email.sender}</Text>
-            <Text>{email.subject}</Text>
+        <Flex flex="1">
+          <VStack width="300px" p={4} align="stretch" bg="gray.200">
+            {emails.map((email) => (
+              <Card.Root
+                key={email.id}
+                p={3}
+                borderRadius="xl"
+                bg={email.isRead ? "gray.300" : "gray.400"}
+                shadow="md"
+                cursor="pointer"
+                onClick={() => setSelectedEmail(email)}
+              >
+                <Card.Title fontWeight="bold">{email.sender}</Card.Title>
+                <Card.Description>{email.subject}</Card.Description>
+              </Card.Root>
+            ))}
+          </VStack>
+
+          {/* Email Preview */}
+          <Box flex="1" p={6} bg="gray.200">
+            {selectedEmail ? (
+              <>
+                <Heading size="md">{selectedEmail.subject}</Heading>
+                <Text fontSize="sm" color="gray.500">
+                  From: {selectedEmail.sender}
+                </Text>
+                <Box mt={4} p={4} bg="gray.600" borderRadius="md">
+                  <Text>{selectedEmail.body}</Text>
+                </Box>
+              </>
+            ) : (
+              <Text>Select an email to preview</Text>
+            )}
           </Box>
-        ))}
-      </VStack>
-
-
-      {/* Email Preview */}
-      <Box flex="1" p={6} bg="gray.300">
-        {selectedEmail ? (
-          <>
-            <Heading size="md">{selectedEmail.subject}</Heading>
-            <Text fontSize="sm" color="gray.500">
-              From: {selectedEmail.sender}
-            </Text>
-            <Box mt={4} p={4} bg="gray.800" borderRadius="md">
-              <Text>{selectedEmail.body}</Text>
-            </Box>
-          </>
-        ) : (
-          <Text>Select an email to preview</Text>
-        )}
-      </Box>
+        </Flex>
+      </Flex>
     </Flex>
-</Box>
   );
 };
 
