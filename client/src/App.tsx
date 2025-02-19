@@ -4,22 +4,25 @@ import TestPage from "./pages/TestPage";
 import TutorialPage from "./pages/TutorialPage";
 
 import NavBar from "./components/Navbar";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Theme } from "@chakra-ui/react";
 import { system } from "@chakra-ui/react/preset";
 
 
 function App() {
   return (
     <ChakraProvider value={system}>
-    <Router>
+      <Router>
+        <Theme appearance="dark">
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/tutorial" element={<TutorialPage />} />
-      </Routes>
+          </Routes>
+          </Theme>
     </Router>
     </ChakraProvider>
+    
   );
 }
 

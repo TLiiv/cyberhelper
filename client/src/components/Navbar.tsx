@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Box, Flex, Text, Stack, Tabs, CloseButton } from "@chakra-ui/react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Theme } from "@chakra-ui/react";
 
 
 const NavBar: React.FC = () => {
@@ -29,6 +30,7 @@ const menuItems = [
   
 
   return (
+    
      <Box maxW="1000px" mx="auto" px={4} position="relative">
       
       <Box position="absolute" left={4} top="50%" transform="translateY(-50%)" fontSize="xl" fontWeight="bold">
@@ -60,7 +62,8 @@ const menuItems = [
       <Box position="absolute" right={4} top="50%" transform="translateY(-50%)" display={{ base: "block", md: "none" }} onClick={toggleHandler} cursor="pointer">
         {isOpen ? <CloseButton /> : <MenuIcon />}
       </Box>
-    </Box>
+      </Box>
+
   );
 };
 
