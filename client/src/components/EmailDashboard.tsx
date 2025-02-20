@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Box,Flex,VStack,Text,Button,Heading, Input, Card } from "@chakra-ui/react";
+import { Box,Flex,VStack,Text,Button,Heading, Input, Card, IconButton } from "@chakra-ui/react";
+import { LuClipboardPen, LuMail, LuMailCheck, LuTrash2 } from "react-icons/lu";
 
 interface Email {
   id: number;
@@ -8,6 +9,7 @@ interface Email {
   body: string;
   isRead: boolean;
 }
+
 
 const emails: Email[] = [
   {
@@ -32,12 +34,16 @@ const emails: Email[] = [
     isRead: true,
   },
 ];
+
+
 //Design https://designshack.net/wp-content/uploads/Email-App-Dashboard-UI-Kit-Figma-Template-1.webp ?
 const EmailDashboard: React.FC = () => {
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
 
+  const user ="User name placeholder"
+
   return (
-    <Flex height="100vh" width="100%" bg="gray.700" borderRadius="4xl">
+    <Flex height="100vh" width="100%" bg="gray.300" borderRadius="4xl">
       {/* Sidebar (Full Screen Background) */}
       <Flex width="100vw" height="100vh" position="relative" borderRadius="4xl">
         {/* Sidebar Navigation (Fixed on Left) */}
@@ -48,40 +54,40 @@ const EmailDashboard: React.FC = () => {
           height="100vh" 
           position="absolute" 
           left="0" 
-          bg="gray.700" 
+          bg="gray.300" 
           zIndex="1"
         >
-          <Heading size="lg" color="white" textAlign="center">Inbox</Heading>
-          <Button colorPalette="gray" variant="solid">Inbox</Button>
-          <Button colorPalette="gray" variant="solid">Sent</Button>
-          <Button colorPalette="gray" variant="solid">Trash</Button>
+          <Heading size="lg" color="white" textAlign="center">Hello {user}</Heading>
+          <Button colorPalette="teal" variant="solid" size="xl" rounded="2xl">Send Email</Button>
+          <IconButton variant="solid" size="lg"> <LuMail/>Sisendkaust</IconButton>
+          <IconButton variant="solid" size="lg"><LuMailCheck/> Saadetud</IconButton>
+          <IconButton variant="solid" size="lg"><LuClipboardPen/> Mustand</IconButton>
+          <IconButton variant="solid" size="lg"><LuTrash2/>Prügikast</IconButton>
         </VStack>
 
         {/* Main Content (Navbar + Emails) */}
         <Flex width="80%" marginLeft="auto" flexDirection="column" borderRadius="4xl" overflow="hidden">
           {/* Navbar */}
-          <Flex bg="gray.200" p={4} alignItems="center" borderTopRadius="4xl">
-            <Heading size="md">PhishingMailbox</Heading>
-            <Flex flex={1} justifyContent="center">
-              <Input
+          <Flex bg="gray.100" p={4} alignItems="center" borderTopRadius="4xl">
+            <Input
                 placeholder="Search emails..."
-                width="60%"
+                width="25%"
                 bg="white"
                 color="black"
-                borderRadius="md"
+                borderRadius="xl"
+              
               />
-            </Flex>
           </Flex>
 
           {/* Email List*/}
           <Flex flex="1" >
-            <VStack width="350px" p={4} align="stretch" bg="gray.200" >
+            <VStack width="350px" p={4} align="stretch" bg="gray.100" >
               {emails.map((email) => (
                 <Card.Root
                   key={email.id}
                   p={3}
-                  borderRadius="xl"
-                  bg={email.isRead ? "gray.300" : "gray.400"}
+                  borderRadius="lg"
+                  bg={email.isRead ? "gray.100" : "gray.400"}
                   shadow="md"
                   cursor="pointer"
                   onClick={() => setSelectedEmail(email)}
@@ -92,7 +98,7 @@ const EmailDashboard: React.FC = () => {
               ))}
             </VStack>
             {/* Email Preview */}
-            <Box flex="1" p={6} bg="gray.200">
+            <Box flex="1" p={6} bg="gray.100">
               {selectedEmail ? (
                 <>
                   <Heading size="md">{selectedEmail.subject}</Heading>
