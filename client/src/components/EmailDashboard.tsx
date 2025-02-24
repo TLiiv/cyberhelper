@@ -24,7 +24,7 @@ const emails: Email[] = [
     sender: "no-reply@amazon.com",
     subject: "Your order has been shipped!",
     body: "Your recent order has been shipped and will arrive soon.",
-    isRead: true,
+    isRead: false,
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const emails: Email[] = [
 const EmailDashboard: React.FC = () => {
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
 
-  const user ="User name placeholder"
+  const user ="User"
 
   return (
     <Flex height="100vh" width="100%" bg="gray.300" borderRadius="4xl">
@@ -57,12 +57,15 @@ const EmailDashboard: React.FC = () => {
           bg="gray.300" 
           zIndex="1"
         >
-          <Heading size="lg" color="white" textAlign="center">Hello {user}</Heading>
-          <Button colorPalette="teal" variant="solid" size="xl" rounded="2xl">Send Email</Button>
-          <IconButton variant="solid" size="lg"> <LuMail/>Sisendkaust</IconButton>
-          <IconButton variant="solid" size="lg"><LuMailCheck/> Saadetud</IconButton>
-          <IconButton variant="solid" size="lg"><LuClipboardPen/> Mustand</IconButton>
-          <IconButton variant="solid" size="lg"><LuTrash2/>Prügikast</IconButton>
+          
+          <Flex flexDirection="column" gap={2} pl={10} pt={6}> 
+          <Heading  pb={4} size="2xl" color="white" textAlign="center"> Hello <Text as="span" color="teal.600">{user}</Text></Heading>
+          <Button   colorPalette="teal" variant="solid" size="xl" rounded="2xl">Uus Mail</Button>
+          <IconButton   variant="ghost" size="lg" _hover={{ bg: "none" }}> <LuMail/><Text>Sisendkaust</Text></IconButton>
+          <IconButton  disabled variant="ghost" size="lg" _hover={{ bg: "none" }}><LuMailCheck/> <Text>Saadetud</Text></IconButton>
+          <IconButton  disabled variant="ghost" size="lg" _hover={{ bg: "none" }}><LuClipboardPen/> <Text>Mustand</Text></IconButton>
+          <IconButton  disabled variant="ghost" size="lg" _hover={{ bg: "none" }}><LuTrash2 /><Text>Prügikast</Text></IconButton>
+          </Flex>
         </VStack>
 
         {/* Main Content (Navbar + Emails) */}
@@ -70,12 +73,12 @@ const EmailDashboard: React.FC = () => {
           {/* Navbar */}
           <Flex bg="gray.100" p={4} alignItems="center" borderTopRadius="4xl">
             <Input
-                placeholder="Search emails..."
+                placeholder="Otsi meile..."
                 width="25%"
                 bg="white"
                 color="black"
                 borderRadius="xl"
-              
+                disabled
               />
           </Flex>
 
@@ -84,10 +87,11 @@ const EmailDashboard: React.FC = () => {
             <VStack width="350px" p={4} align="stretch" bg="gray.100" >
               {emails.map((email) => (
                 <Card.Root
+                  _hover={{ bg: "gray.100" }}
                   key={email.id}
                   p={3}
                   borderRadius="lg"
-                  bg={email.isRead ? "gray.100" : "gray.400"}
+                  bg={email.isRead ? "gray.100" : "gray.200"}
                   shadow="md"
                   cursor="pointer"
                   onClick={() => setSelectedEmail(email)}
