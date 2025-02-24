@@ -59,6 +59,11 @@ const EmailDashboard: React.FC = () => {
         >
           
           <Flex flexDirection="column" gap={2} pl={10} pt={6}> 
+          <Heading pt={2} pb={4} size="2xl" color="teal.600" textAlign="center"> <Flex align="center" justify="center" gap={2}>
+              <LuMail style={{ fontSize: "1.6em" }}/>
+              <Text as="span" color="teal.600">CyberMail</Text>
+            </Flex>
+          </Heading>
           <Heading  pb={4} size="2xl" color="white" textAlign="center"> Hello <Text as="span" color="teal.600">{user}</Text></Heading>
           <Button   colorPalette="teal" variant="solid" size="xl" rounded="2xl">Uus Mail</Button>
           <IconButton   variant="ghost" size="lg" _hover={{ bg: "none" }}> <LuMail/><Text>Sisendkaust</Text></IconButton>
