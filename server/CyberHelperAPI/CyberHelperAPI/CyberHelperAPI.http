@@ -1,0 +1,6 @@
+@CyberHelperAPI_HostAddress = http://localhost:5266
+
+GET {{CyberHelperAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
