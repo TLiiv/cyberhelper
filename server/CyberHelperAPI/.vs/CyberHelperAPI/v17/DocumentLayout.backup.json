@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\models\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\models\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\models\\testresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\models\\testresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\models\\emailanwser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\models\\emailanwser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\models\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\models\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +30,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Program.cs",
+              "RelativeDocumentMoniker": "CyberHelperAPI\\Program.cs",
+              "ToolTip": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Program.cs",
+              "RelativeToolTip": "CyberHelperAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T16:35:47.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "CyberHelperAPI\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "CyberHelperAPI\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T16:31:40.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "EmailAnwser.cs",
               "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\EmailAnwser.cs",
               "RelativeDocumentMoniker": "CyberHelperAPI\\Models\\EmailAnwser.cs",
@@ -39,7 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "TestResults.cs",
               "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\TestResults.cs",
               "RelativeDocumentMoniker": "CyberHelperAPI\\Models\\TestResults.cs",
@@ -52,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Email.cs",
               "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\Email.cs",
               "RelativeDocumentMoniker": "CyberHelperAPI\\Models\\Email.cs",
-              "ToolTip": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\Email.cs*",
-              "RelativeToolTip": "CyberHelperAPI\\Models\\Email.cs*",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAABDAAAAAAAAAA==",
+              "ToolTip": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\Email.cs",
+              "RelativeToolTip": "CyberHelperAPI\\Models\\Email.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-27T19:18:07.659Z",
               "EditorCaption": ""
