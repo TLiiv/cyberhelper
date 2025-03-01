@@ -1,13 +1,17 @@
 using Microsoft.EntityFrameworkCore;
-using CyberHelperAPI.Models;
 using Microsoft.Extensions.Options;
-using CyberHelperAPI.Migrations;
+using CyberHelperAPI.Data.Migrations;
+using CyberHelperAPI.Data;
+using CyberHelperAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<IEmailsService, EmailsService>();
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite("Data Source=phishingTest.db")
 );

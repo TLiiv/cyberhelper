@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CyberHelperAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace CyberHelperAPI.Models
+namespace CyberHelperAPI.Data.Migrations
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,4 +1,6 @@
-﻿using CyberHelperAPI.Models;
+﻿using CyberHelperAPI.Data.Migrations;
+using CyberHelperAPI.Models;
+using CyberHelperAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,21 +8,25 @@ namespace CyberHelperAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmailsController : Controller
+    public class EmailsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IEmailsService _emailsService;
 
-        public EmailsController(ApplicationDbContext context)
+        public EmailsController(IEmailsService emailsService)
         {
-            _context = context;
+            _emailsService = emailsService;
         }
 
         // GET: api/emails
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Email>>> GetAllEmails()
+        public async Task<ActionResult<List<Email>>> GetAllEmails()
         {
-            var emails = await _context.Emails.ToListAsync();
-            return Ok(emails);
+            var data = await _emailsService.GetAllEmails();
+            if (data == null || !data.Any())
+            {
+                return NotFound("No emails found.");
+            }
+            return Ok(data);
         }
     }
 }
