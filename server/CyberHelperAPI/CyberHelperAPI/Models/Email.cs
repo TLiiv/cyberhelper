@@ -11,7 +11,7 @@ namespace CyberHelperAPI.Models
         public string Body { get; set; }
         public bool IsPhishing { get; set; }
         public string? HiddenLink { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow; 
+        public int Difficulty { get; set; }
     }
 }
     

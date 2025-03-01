@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CyberHelperAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3aa738506f50b9106459f030dda54c4c91e80fb5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a283fb1be18c74e1a79e2e6a99ac2aadd1575c52")]
 [assembly: System.Reflection.AssemblyProductAttribute("CyberHelperAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CyberHelperAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

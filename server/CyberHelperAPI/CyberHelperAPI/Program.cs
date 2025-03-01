@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using CyberHelperAPI.Models;
 using Microsoft.Extensions.Options;
+using CyberHelperAPI.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,5 +29,14 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+
+using (var scope = app.Services.CreateScope())
+
+using (var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>())
+{
+    context.Database.EnsureCreated();
+    SeedData.Generate(context);
+}
 
 app.Run();
