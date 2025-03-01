@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\controllers\\emailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\controllers\\emailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\services\\iemailsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,24 +15,12 @@
       "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\services\\emailsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\data\\migrations\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\data\\migrations\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\models\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\models\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\models\\testresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\models\\testresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|s:\\prog\\kool\\cyberhelper\\server\\cyberhelperapi\\cyberhelperapi\\models\\emailanwser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0404F741-AB65-4F00-901C-BE5A1B3DD49D}|CyberHelperAPI\\CyberHelperAPI.csproj|solutionrelative:cyberhelperapi\\models\\emailanwser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,8 +30,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmailsController.cs",
+              "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Controllers\\EmailsController.cs",
+              "RelativeDocumentMoniker": "CyberHelperAPI\\Controllers\\EmailsController.cs",
+              "ToolTip": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Controllers\\EmailsController.cs",
+              "RelativeToolTip": "CyberHelperAPI\\Controllers\\EmailsController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T10:19:47.539Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -52,7 +53,7 @@
               "RelativeDocumentMoniker": "CyberHelperAPI\\Services\\IEmailsService.cs",
               "ToolTip": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Services\\IEmailsService.cs",
               "RelativeToolTip": "CyberHelperAPI\\Services\\IEmailsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-01T10:00:27.992Z",
               "EditorCaption": ""
@@ -65,14 +66,14 @@
               "RelativeDocumentMoniker": "CyberHelperAPI\\Services\\EmailsService.cs",
               "ToolTip": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Services\\EmailsService.cs",
               "RelativeToolTip": "CyberHelperAPI\\Services\\EmailsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-01T09:50:33.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SeedData.cs",
               "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Data\\SeedData.cs",
               "RelativeDocumentMoniker": "CyberHelperAPI\\Data\\SeedData.cs",
@@ -80,12 +81,11 @@
               "RelativeToolTip": "CyberHelperAPI\\Data\\SeedData.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAgwG8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T08:07:18.689Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T08:07:18.689Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Program.cs",
               "RelativeDocumentMoniker": "CyberHelperAPI\\Program.cs",
@@ -95,55 +95,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T16:35:47.775Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Data\\Migrations\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "CyberHelperAPI\\Data\\Migrations\\ApplicationDbContext.cs",
-              "ToolTip": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Data\\Migrations\\ApplicationDbContext.cs",
-              "RelativeToolTip": "CyberHelperAPI\\Data\\Migrations\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T16:31:40.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EmailAnwser.cs",
-              "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\EmailAnwser.cs",
-              "RelativeDocumentMoniker": "CyberHelperAPI\\Models\\EmailAnwser.cs",
-              "ToolTip": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\EmailAnwser.cs",
-              "RelativeToolTip": "CyberHelperAPI\\Models\\EmailAnwser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:39:17.787Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TestResults.cs",
-              "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\TestResults.cs",
-              "RelativeDocumentMoniker": "CyberHelperAPI\\Models\\TestResults.cs",
-              "ToolTip": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\TestResults.cs",
-              "RelativeToolTip": "CyberHelperAPI\\Models\\TestResults.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:34:47.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Email.cs",
-              "DocumentMoniker": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\Email.cs",
-              "RelativeDocumentMoniker": "CyberHelperAPI\\Models\\Email.cs",
-              "ToolTip": "S:\\Prog\\Kool\\cyberhelper\\server\\CyberHelperAPI\\CyberHelperAPI\\Models\\Email.cs",
-              "RelativeToolTip": "CyberHelperAPI\\Models\\Email.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:18:07.659Z"
             }
           ]
         }

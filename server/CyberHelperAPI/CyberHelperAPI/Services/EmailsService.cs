@@ -14,5 +14,13 @@ namespace CyberHelperAPI.Services
         {
             return  await _context.Emails.ToListAsync();       
         }
+
+        public async Task<List<Email>> GetRandomEmails()
+        {
+           var emails = await _context.Emails.ToListAsync();
+           var randomEmails = emails.OrderBy(x => Guid.NewGuid()).Take(5).ToList();
+           
+           return randomEmails;
+        }
     }
 }

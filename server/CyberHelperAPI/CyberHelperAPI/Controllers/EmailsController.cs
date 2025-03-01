@@ -18,10 +18,20 @@ namespace CyberHelperAPI.Controllers
         }
 
         // GET: api/emails
-        [HttpGet]
+        [HttpGet("all")]
         public async Task<ActionResult<List<Email>>> GetAllEmails()
         {
             var data = await _emailsService.GetAllEmails();
+            if (data == null || !data.Any())
+            {
+                return NotFound("No emails found.");
+            }
+            return Ok(data);
+        }
+        [HttpGet("random")]
+        public async Task<ActionResult<List<Email>>> GetRandomEmails()
+        {
+            var data = await _emailsService.GetRandomEmails();
             if (data == null || !data.Any())
             {
                 return NotFound("No emails found.");

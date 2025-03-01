@@ -2,7 +2,27 @@
   {
     "ContainingType": "CyberHelperAPI.Controllers.EmailsController",
     "Method": "GetAllEmails",
-    "RelativePath": "api/Emails",
+    "RelativePath": "api/Emails/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[CyberHelperAPI.Models.Email, CyberHelperAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CyberHelperAPI.Controllers.EmailsController",
+    "Method": "GetRandomEmails",
+    "RelativePath": "api/Emails/random",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -5,7 +5,45 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Emails": {
+    "/api/Emails/all": {
+      "get": {
+        "tags": [
+          "Emails"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Email"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Email"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Email"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Emails/random": {
       "get": {
         "tags": [
           "Emails"
