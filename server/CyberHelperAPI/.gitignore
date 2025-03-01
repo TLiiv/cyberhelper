@@ -398,3 +398,10 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /KooliProjekt.UnitTests/BuildReports/Coverage
+
+# Ignore SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
