@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using CyberHelperAPI.Data.Migrations;
-using CyberHelperAPI.Data;
-using CyberHelperAPI.Services;
+using server.Data.Migrations;
+using server.Data;
+using server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

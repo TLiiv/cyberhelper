@@ -1,6 +1,6 @@
-﻿using CyberHelperAPI.Models;
+﻿using server.Models;
 
-namespace CyberHelperAPI.Services
+namespace server.Services
 {
     public interface IEmailsService
     {

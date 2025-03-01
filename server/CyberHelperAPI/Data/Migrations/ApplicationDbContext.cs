@@ -1,7 +1,7 @@
-﻿using CyberHelperAPI.Models;
+﻿using server.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CyberHelperAPI.Data.Migrations
+namespace server.Data.Migrations
 {
     public class ApplicationDbContext : DbContext
     {

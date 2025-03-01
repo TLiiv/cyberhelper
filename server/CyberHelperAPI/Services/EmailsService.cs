@@ -1,8 +1,8 @@
-﻿using CyberHelperAPI.Data.Migrations;
-using CyberHelperAPI.Models;
+﻿using server.Data.Migrations;
+using server.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CyberHelperAPI.Services
+namespace server.Services
 {
     public class EmailsService : IEmailsService
     {

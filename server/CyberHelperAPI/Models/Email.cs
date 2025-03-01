@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CyberHelperAPI.Models
+namespace server.Models
 {
     public class Email
     {

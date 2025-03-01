@@ -1,10 +1,10 @@
-﻿using CyberHelperAPI.Data.Migrations;
-using CyberHelperAPI.Models;
-using CyberHelperAPI.Services;
+﻿using server.Data.Migrations;
+using server.Models;
+using server.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace CyberHelperAPI.Controllers
+namespace server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

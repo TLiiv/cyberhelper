@@ -1,4 +1,4 @@
-﻿namespace CyberHelperAPI.Models
+﻿namespace server.Models
 {
     public class TestResult
     {

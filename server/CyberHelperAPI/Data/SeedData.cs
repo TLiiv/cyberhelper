@@ -1,7 +1,7 @@
-﻿using CyberHelperAPI.Data.Migrations;
-using CyberHelperAPI.Models;
+﻿using server.Data.Migrations;
+using server.Models;
 
-namespace CyberHelperAPI.Data
+namespace server.Data
 {
     public static class SeedData
     {
