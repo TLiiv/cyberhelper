@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { Box, Button, VStack, Text, Heading, Container, Card } from "@chakra-ui/react";
+import { Box, Button, VStack, Text, Heading, Container, Card, Flex } from "@chakra-ui/react";
+import axios from "axios";
+
 
 interface Email {
   id: number;
@@ -7,40 +9,50 @@ interface Email {
   subject: string;
   body: string;
   isPhishing: boolean;
+  isRead: boolean;
 }
 
-const fakeEmails: Email[] = [
-  {
-    id: 1,
-    sender: "support@paypal.com",
-    subject: "Urgent: Your account has been limited!",
-    body: "We've detected unusual activity. Please verify your account immediately by clicking the link below.",
-    isPhishing: true,
-  },
-  {
-    id: 2,
-    sender: "no-reply@amazon.com",
-    subject: "Your order has been shipped!",
-    body: "Your recent order has been shipped and will arrive soon. Track your package here.",
-    isPhishing: false,
-  },
-  {
-    id: 3,
-    sender: "security@bankofamerica.com",
-    subject: "Security Alert: Unauthorized login attempt",
-    body: "We detected a login attempt from an unknown device. If this wasn’t you, reset your password immediately.",
-    isPhishing: true,
-  }
-];
+
+// const fakeEmails: Email[] = [
+//   {
+//     id: 1,
+//     sender: "support@paypal.com",
+//     subject: "Urgent: Your account has been limited!",
+//     body: "We've detected unusual activity. Please verify your account immediately by clicking the link below.",
+//     isPhishing: true,
+//     isRead: true,
+//   },
+//   {
+//     id: 2,
+//     sender: "no-reply@amazon.com",
+//     subject: "Your order has been shipped!",
+//     body: "Your recent order has been shipped and will arrive soon. Track your package here.",
+//     isPhishing: false,
+//     isRead: true,
+//   },
+//   {
+//     id: 3,
+//     sender: "security@bankofamerica.com",
+//     subject: "Security Alert: Unauthorized login attempt",
+//     body: "We detected a login attempt from an unknown device. If this wasn’t you, reset your password immediately.",
+//     isPhishing: true,
+//     isRead: false,
+//   }
+// ];
 
 const EmailInbox = () => {
   const [emails, setEmails] = useState<Email[]>([]);
   const [currentEmail, setCurrentEmail] = useState<Email | null>(null);
+  const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
 
   useEffect(() => {
-    // Simulate API call with fake data
-    setEmails(fakeEmails);
-    setCurrentEmail(fakeEmails[0]);
+    axios.get<Email[]>("https://localhost:7225/api/Emails/random")
+      .then((response) => {
+        setEmails(response.data)
+      })
+      .catch((error) => {
+        console.error("Error fetching emails:", error);
+      });
   }, []);
 
   const handleUserResponse = (response: boolean) => {
@@ -58,26 +70,43 @@ const EmailInbox = () => {
   };
 
   return (
-    <Container maxW="container.md" py={8}>
-      <Heading textAlign="center" mb={6}>Phishing Awareness Training</Heading>
-      {currentEmail ? (
-        <Card.Root>
-          <Card.Body>
-            <Text fontSize="sm" color="gray.500">From: {currentEmail.sender}</Text>
-            <Text fontSize="lg" fontWeight="bold">{currentEmail.subject}</Text>
-            <Box my={4} p={3} bg="gray.100" borderRadius="md">
-              <Text>{currentEmail.body}</Text>
-            </Box>
-            <VStack mt={4}>
-              <Button colorScheme="green" onClick={() => handleUserResponse(false)}>Legit</Button>
-              <Button colorScheme="red" onClick={() => handleUserResponse(true)}>Phishing</Button>
+    <>
+    <Flex flex="1" >
+            <VStack width="350px" p={4} align="stretch" bg="gray.100" >
+              {emails.map((email) => (
+                <Card.Root
+                  _hover={{ bg: "gray.100" }}
+                  key={email.id}
+                  p={3}
+                  borderRadius="lg"
+                  bg={email.isRead ? "gray.100" : "gray.200"}
+                  shadow="md"
+                  cursor="pointer"
+                  onClick={() => setSelectedEmail(email)}
+                >
+                  <Card.Title fontWeight="bold">{email.sender}</Card.Title>
+                  <Card.Description>{email.subject}</Card.Description>
+                </Card.Root>
+              ))}
             </VStack>
-          </Card.Body>
-        </Card.Root>
-      ) : (
-        <Text textAlign="center" fontSize="xl">No more emails to review!</Text>
-      )}
-    </Container>
+            {/* Email Preview */}
+            <Box flex="1" p={6} bg="gray.100">
+              {selectedEmail ? (
+                <>
+                  <Heading size="md">{selectedEmail.subject}</Heading>
+                  <Text fontSize="sm" color="gray.500">
+                    From: {selectedEmail.sender}
+                  </Text>
+                  <Box mt={4} p={4} bg="gray.600" borderRadius="lg">
+                    <Text>{selectedEmail.body}</Text>
+                  </Box>
+                </>
+              ) : (
+                <Text>Select an email to preview</Text>
+              )}
+            </Box>
+      </Flex>
+    </>
   );
 };
 
