@@ -1,7 +1,14 @@
 import { useState } from "react";
-import { Box,Flex,VStack,Text,Button,Heading, Input, Card, IconButton } from "@chakra-ui/react";
+import { Box,Flex,VStack,Text,Button,Heading, Input, Card, IconButton, HStack } from "@chakra-ui/react";
 import { LuClipboardPen, LuMail, LuMailCheck, LuTrash2 } from "react-icons/lu";
 import EmailInbox from "./EmailInbox";
+import {
+  PaginationItems,
+  PaginationNextTrigger,
+  PaginationPageText,
+  PaginationPrevTrigger,
+  PaginationRoot,
+} from "@/components/ui/pagination"
 
 
 
@@ -53,10 +60,11 @@ const EmailDashboard: React.FC = () => {
                 borderRadius="xl"
                 disabled
               />
-          </Flex>
-         <EmailInbox />
+          </Flex>         
+          <EmailInbox />
         </Flex>
       </Flex>
+      
     </Flex>
   );
 };
