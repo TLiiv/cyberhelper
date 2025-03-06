@@ -4,6 +4,7 @@ import { Link as RouterLink, useLocation } from "react-router-dom";
 import { Theme } from "@chakra-ui/react";
 
 
+
 const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 

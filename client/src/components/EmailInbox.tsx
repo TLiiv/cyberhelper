@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { Box, Button, VStack, Text, Heading, Container, Card, Flex, HStack, Group } from "@chakra-ui/react";
+import { Box, Button, VStack, Text, Heading, Container, Card, Flex, HStack, Group, VisuallyHidden } from "@chakra-ui/react";
 import axios from "axios";
 import {
   PaginationItems,
@@ -24,11 +24,13 @@ interface Email {
 const PAGE_SIZE = 6;
 
 
-const EmailInbox = () => {
+const EmailInbox: React.FC = () => {
   const [emails, setEmails] = useState<Email[]>([]);
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [answered,setAnswered] = useState(false);
+  const [secondEmail, setSecondEmail] = useState<Email | null>(null);
 
 
   useEffect(() => {
@@ -61,6 +63,10 @@ const EmailInbox = () => {
     [emails]
   );
 
+  const answeredHandler = ()=>{
+    setAnswered(true);
+  }
+
   //Pagination
   const totalEmails = sortedEmails.length; //for count
   const paginatedEmails = sortedEmails.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
@@ -68,12 +74,14 @@ const EmailInbox = () => {
   return (
     <>
       <Flex flex="1" >
-        <VStack width="350px" p={4} align="stretch" bg="gray.100" justify="space-between">
+        <VStack width="350px" p={4} align="stretch" bg="gray.100" >
           {loading ? (
             <Text>Loading emails...</Text>
           ) : (
               
             paginatedEmails.map((email) => (
+              //https://chakra-ui.com/docs/components/visually-hidden
+              <VisuallyHidden key={email.id}>
               <Card.Root
                 height="100px"
                 _hover={{ bg: "gray.100" }}
@@ -90,6 +98,7 @@ const EmailInbox = () => {
                 </Card.Title>
                 <Card.Description>{email.subject}</Card.Description>
               </Card.Root>
+              </VisuallyHidden>
                 ))
             )}
           {/* Pagination */}
@@ -99,6 +108,7 @@ const EmailInbox = () => {
             defaultPage={1}
             page={currentPage}
             onPageChange={(e) => setCurrentPage(e.page)}
+            
           >
             <HStack gap="4" mt={4}>
               <PaginationPrevTrigger />
@@ -119,6 +129,9 @@ const EmailInbox = () => {
               <Box mt={4} p={4} bg="gray.100" borderRadius="lg">
                 <Text>{selectedEmail.body}</Text>
                 <Text>{selectedEmail.hiddenLink}</Text>
+              </Box>
+              <Box>
+                <Button onClick={answeredHandler}/>
               </Box>
             </>
           ) : (

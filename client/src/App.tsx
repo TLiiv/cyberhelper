@@ -6,6 +6,7 @@ import TutorialPage from "./pages/TutorialPage";
 import NavBar from "./components/Navbar";
 import { ChakraProvider, Theme } from "@chakra-ui/react";
 import { system } from "@chakra-ui/react/preset";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/test" element={<TestPage />} />
         <Route path="/tutorial" element={<TutorialPage />} />
           </Routes>
+          <Footer />
           </Theme>
     </Router>
     </ChakraProvider>
