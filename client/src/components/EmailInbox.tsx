@@ -29,8 +29,8 @@ const EmailInbox: React.FC = () => {
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [answered,setAnswered] = useState(false);
-  const [secondEmail, setSecondEmail] = useState<Email | null>(null);
+  const [visibleCount,setVisibleCount] = useState(1);
+
 
 
   useEffect(() => {
@@ -63,25 +63,37 @@ const EmailInbox: React.FC = () => {
     [emails]
   );
 
-  const answeredHandler = ()=>{
-    setAnswered(true);
+  const visibilityHandler = ()=>{
+    if (visibleCount < paginatedEmails.length) {
+      setVisibleCount((prev) => prev + 1);
+    }
+
   }
+  
+
 
   //Pagination
-  const totalEmails = sortedEmails.length; //for count
-  const paginatedEmails = sortedEmails.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+  // const totalEmails = sortedEmails.length; //for count
+  // const paginatedEmails = sortedEmails.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
+  const totalEmails = sortedEmails.length;
+  const startIdx = (currentPage - 1) * PAGE_SIZE;
+  const endIdx = startIdx + PAGE_SIZE;
+  const paginatedEmails = sortedEmails.slice(startIdx, endIdx);
+  
+  const visibleEmails = paginatedEmails.slice(0, visibleCount).reverse();
+  
+  
+
+  
   return (
     <>
-      <Flex flex="1" >
-        <VStack width="350px" p={4} align="stretch" bg="gray.100" >
+        <Flex flex="1">
+        <VStack width="350px" p={4} align="stretch" bg="gray.100">
           {loading ? (
             <Text>Loading emails...</Text>
           ) : (
-              
-            paginatedEmails.map((email) => (
-              //https://chakra-ui.com/docs/components/visually-hidden
-              <VisuallyHidden key={email.id}>
+            visibleEmails.map((email) => (
               <Card.Root
                 height="100px"
                 _hover={{ bg: "gray.100" }}
@@ -91,24 +103,26 @@ const EmailInbox: React.FC = () => {
                 bg={"gray.100"}
                 shadow="lg"
                 cursor="pointer"
-                onClick={() => { setSelectedEmail(email); markAsRead(email.id); }}
+                onClick={() => {
+                  setSelectedEmail(email);
+                  markAsRead(email.id);
+                }}
               >
                 <Card.Title fontWeight={email.isRead ? "medium" : "bold"}>
-                  {email.sender} {email.difficulty} {totalEmails}
+                  {email.sender} {email.difficulty}
                 </Card.Title>
                 <Card.Description>{email.subject}</Card.Description>
               </Card.Root>
-              </VisuallyHidden>
-                ))
-            )}
+            ))
+          )}
+
           {/* Pagination */}
           <PaginationRoot
             count={totalEmails}
             pageSize={PAGE_SIZE}
             defaultPage={1}
             page={currentPage}
-            onPageChange={(e) => setCurrentPage(e.page)}
-            
+            onPageChange={(e) => setCurrentPage(e.page)}         
           >
             <HStack gap="4" mt={4}>
               <PaginationPrevTrigger />
@@ -131,7 +145,11 @@ const EmailInbox: React.FC = () => {
                 <Text>{selectedEmail.hiddenLink}</Text>
               </Box>
               <Box>
-                <Button onClick={answeredHandler}/>
+            {visibleCount < paginatedEmails.length && (
+            <Button mt={2} onClick={visibilityHandler} size="sm" colorScheme="blue">
+              Show More
+            </Button>
+          )}
               </Box>
             </>
           ) : (
