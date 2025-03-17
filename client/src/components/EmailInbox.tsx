@@ -1,13 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
-import { Box, Button, VStack, Text, Heading, Container, Card, Flex, HStack, Group, VisuallyHidden } from "@chakra-ui/react";
+import { Box, Button, VStack, Text, Heading, Card, Flex } from "@chakra-ui/react";
 import axios from "axios";
-import {
-  PaginationItems,
-  PaginationNextTrigger,
-  PaginationPageText,
-  PaginationPrevTrigger,
-  PaginationRoot,
-} from "@/components/ui/pagination"
 
 interface Email {
   id: number;
@@ -21,15 +14,13 @@ interface Email {
   isRead: boolean;
 }
 
-const PAGE_SIZE = 6;
-
-
 const EmailInbox: React.FC = () => {
   const [emails, setEmails] = useState<Email[]>([]);
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
   const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [visibleCount,setVisibleCount] = useState(1);
+
+  const [visibleCount, setVisibleCount] = useState(1);
+
 
 
 
@@ -63,73 +54,65 @@ const EmailInbox: React.FC = () => {
     [emails]
   );
 
-  const visibilityHandler = ()=>{
-    if (visibleCount < paginatedEmails.length) {
+  const visibilityHandler = () => {
+    if (visibleCount < sortedEmails.length) {
       setVisibleCount((prev) => prev + 1);
+      setSelectedEmail(sortedEmails[visibleCount]);
     }
-
   }
-  
+  const visibleEmails = sortedEmails.slice(0, visibleCount).reverse();
 
 
-  //Pagination
-  // const totalEmails = sortedEmails.length; //for count
-  // const paginatedEmails = sortedEmails.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
-  const totalEmails = sortedEmails.length;
-  const startIdx = (currentPage - 1) * PAGE_SIZE;
-  const endIdx = startIdx + PAGE_SIZE;
-  const paginatedEmails = sortedEmails.slice(startIdx, endIdx);
-  
-  const visibleEmails = paginatedEmails.slice(0, visibleCount).reverse();
-  
-  
 
-  
   return (
     <>
-        <Flex flex="1">
-        <VStack width="350px" p={4} align="stretch" bg="gray.100">
-          {loading ? (
-            <Text>Loading emails...</Text>
-          ) : (
-            visibleEmails.map((email) => (
-              <Card.Root
-                height="100px"
-                _hover={{ bg: "gray.100" }}
-                key={email.id}
-                p={3}
-                borderRadius="2xl"
-                bg={"gray.100"}
-                shadow="lg"
-                cursor="pointer"
-                onClick={() => {
-                  setSelectedEmail(email);
-                  markAsRead(email.id);
-                }}
-              >
-                <Card.Title fontWeight={email.isRead ? "medium" : "bold"}>
-                  {email.sender} {email.difficulty}
-                </Card.Title>
-                <Card.Description>{email.subject}</Card.Description>
-              </Card.Root>
-            ))
-          )}
-
-          {/* Pagination */}
-          <PaginationRoot
-            count={totalEmails}
-            pageSize={PAGE_SIZE}
-            defaultPage={1}
-            page={currentPage}
-            onPageChange={(e) => setCurrentPage(e.page)}         
+      <Flex flex="1">
+        <VStack
+          width="400px"
+          align="stretch"
+          bg="gray.100"
+          height="90vh"
+        >
+          <VStack
+            width="350"
+            p={4}
+            align="stretch"
+            bg="gray.100"
+            height="80vh"
+            overflowY="auto"
           >
-            <HStack gap="4" mt={4}>
-              <PaginationPrevTrigger />
-              <PaginationPageText />
-              <PaginationNextTrigger />
-            </HStack>
-          </PaginationRoot>
+            {loading ? (
+              <Text>Loading emails...</Text>
+            ) : (
+              visibleEmails.map((email) => (
+                <Card.Root
+                  key={email.id}
+                  p={3}
+                  borderRadius="2xl"
+                  bg="gray.100"
+                  shadow="sm"
+                  cursor="pointer"
+                  borderWidth="0px"
+                  height="100px"
+                  minHeight="100px"
+                  maxHeight="100px"
+                  width="320px" 
+                  minWidth="320px" 
+                  overflow="hidden"
+                  onClick={() => {
+                    setSelectedEmail(email);
+                    markAsRead(email.id);
+                  }}
+                >
+                  <Card.Title fontWeight={email.isRead ? "medium" : "bold"}>
+                    {email.sender} {email.difficulty}
+                  </Card.Title>
+                  <Card.Description>{email.subject}</Card.Description>
+                </Card.Root>
+              ))
+            )}
+          </VStack>
         </VStack>
 
         {/* Email Preview */}
@@ -145,11 +128,10 @@ const EmailInbox: React.FC = () => {
                 <Text>{selectedEmail.hiddenLink}</Text>
               </Box>
               <Box>
-            {visibleCount < paginatedEmails.length && (
-            <Button mt={2} onClick={visibilityHandler} size="sm" colorScheme="blue">
-              Show More
-            </Button>
-          )}
+
+                <Button mt={2} onClick={visibilityHandler} size="sm" colorScheme="blue">
+                  Next Email
+                </Button>
               </Box>
             </>
           ) : (
@@ -164,3 +146,4 @@ const EmailInbox: React.FC = () => {
 };
 
 export default EmailInbox;
+

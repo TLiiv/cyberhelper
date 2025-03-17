@@ -31,6 +31,7 @@ const EmailDashboard: React.FC = () => {
           left="0" 
           bg="gray.300" 
           zIndex="1"
+         
         >
           
           <Flex flexDirection="column" gap={2} pl={10} pt={6}> 
@@ -51,8 +52,9 @@ const EmailDashboard: React.FC = () => {
         {/* Main Content (Navbar + Emails) */}
         <Flex width="80%" marginLeft="auto" flexDirection="column" borderRadius="4xl" overflow="hidden">
           {/* Navbar */}
-          <Flex bg="gray.100" p={4} alignItems="center" borderTopRadius="4xl">
+          <Flex bg="gray.100" p={4}  alignItems="center" borderTopRadius="4xl">
             <Input
+                
                 placeholder="Otsi meile..."
                 width="25%"
                 bg="white"
