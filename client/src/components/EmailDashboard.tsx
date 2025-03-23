@@ -2,13 +2,7 @@ import { useState } from "react";
 import { Box,Flex,VStack,Text,Button,Heading, Input, Card, IconButton, HStack } from "@chakra-ui/react";
 import { LuClipboardPen, LuMail, LuMailCheck, LuTrash2 } from "react-icons/lu";
 import EmailInbox from "./EmailInbox";
-import {
-  PaginationItems,
-  PaginationNextTrigger,
-  PaginationPageText,
-  PaginationPrevTrigger,
-  PaginationRoot,
-} from "@/components/ui/pagination"
+
 
 
 
@@ -32,8 +26,7 @@ const EmailDashboard: React.FC = () => {
           bg="gray.300" 
           zIndex="1"
          
-        >
-          
+        >  
           <Flex flexDirection="column" gap={2} pl={10} pt={6}> 
           <Heading pt={2} pb={4} size="2xl" color="teal.600" textAlign="center"> <Flex align="center" justify="center" gap={2}>
               <LuMail style={{ fontSize: "1.6em" }}/>

@@ -91,7 +91,7 @@ const EmailInbox: React.FC = () => {
                   p={3}
                   borderRadius="2xl"
                   bg="gray.100"
-                  shadow="sm"
+                  shadow="lg"
                   cursor="pointer"
                   borderWidth="0px"
                   height="100px"

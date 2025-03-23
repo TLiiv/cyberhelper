@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link, Box, Flex, Text, Stack, Tabs, CloseButton } from "@chakra-ui/react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
-import { Theme } from "@chakra-ui/react";
-
 
 
 const NavBar: React.FC = () => {
@@ -26,9 +24,7 @@ const menuItems = [
     <svg width="24" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
       <path fill="white" d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
     </svg>
-  );
-  
-  
+  );  
 
   return (
     
@@ -43,12 +39,12 @@ const menuItems = [
         <Flex>
           <Box display={{ base: isOpen ? "block" : "none", md: "block" }}>
             <Stack align="center" direction={{ base: "column", md: "row" }} pt={[4, 2]}>
-              <Tabs.Root variant="outline" fitted maxW="xl" borderBottom="none" defaultValue={activeTab}>
+              <Tabs.Root size="lg" variant="outline" fitted maxW="xl" borderBottom="none" defaultValue={activeTab}>
                 <Tabs.List>
                   {menuItems.map(({ label, to }) => (
                     <RouterLink to={to} key={to}>
-                      <Tabs.Trigger colorPalette="teal" value={label} >
-                        <Text textStyle="xl">{label}</Text>
+                      <Tabs.Trigger value={label} >
+                        <Text textStyle="xl" color={label === activeTab ? "teal.500" : "gray.200"}>{label}</Text>
                       </Tabs.Trigger>
                     </RouterLink>
                   ))}
