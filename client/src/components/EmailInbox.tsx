@@ -68,7 +68,7 @@ const EmailInbox: React.FC = () => {
     if (!selectedEmail) return;
     const correct = selectedEmail.isPhishing === isPhishingGuess;
     setGuessedEmails((prev) => new Set(prev).add(selectedEmail.id));
-    setGuessFeedback(correct ? "✅ Õige vastus!" : "❌ Vale vastus!");
+    setGuessFeedback(correct ? "✔️ Õige vastus!" : "❌ Vale vastus!");
     visibilityHandler();
   };
 
@@ -124,14 +124,19 @@ const EmailInbox: React.FC = () => {
         </VStack>
 
         {/* Email Preview */}
-        <Box flex="1" p={6} bg="gray.100" shadow="lg">
+        <Box flex="1" p={6} bg="gray.100">
           {selectedEmail ? (
             <>
-              <Heading size="md">{selectedEmail.subject}</Heading>
-              <Text fontSize="sm" color="gray.500">
+              <Heading size="xl" fontWeight="semibold">
+                {selectedEmail.subject}
+              </Heading>
+              <Text fontSize="sm" fontWeight="semibold" color="gray.800">
                 From: {selectedEmail.sender}
               </Text>
-              <Box mt={4} p={4} bg="gray.100" borderRadius="lg">
+              <Text fontSize="sm" color="gray.500">
+                To: user@cybermail.ee
+              </Text>
+              <Box mt={6} p={4} bg="gray.100" borderRadius="lg">
                 <Text>{selectedEmail.body}</Text>
                 <Text>{selectedEmail.hiddenLink}</Text>
               </Box>
