@@ -10,7 +10,6 @@ interface Email {
   isPhishing: boolean;
   difficulty: number;
   hiddenLink: string
-
   isRead: boolean;
 }
 
@@ -20,6 +19,7 @@ const EmailInbox: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const [visibleCount, setVisibleCount] = useState(1);
+  const [guessedEmails, setGuessedEmails] = useState<Set<number>>(new Set());
 
 
 
@@ -54,15 +54,28 @@ const EmailInbox: React.FC = () => {
     [emails]
   );
 
+  // const visibilityHandler = () => {
+  //   if (visibleCount < sortedEmails.length) {
+  //     setVisibleCount((prev) => prev + 1);
+  //     setSelectedEmail(sortedEmails[visibleCount]);
+  //   }
+  // }
+  
   const visibilityHandler = () => {
     if (visibleCount < sortedEmails.length) {
       setVisibleCount((prev) => prev + 1);
-      setSelectedEmail(sortedEmails[visibleCount]);
     }
-  }
+  };
+  
+     const handleGuess = (isPhishingGuess: boolean) => {
+       if (!selectedEmail) return;
+       setGuessedEmails((prev) => new Set(prev).add(selectedEmail.id));
+    visibilityHandler();
+  };
   const visibleEmails = sortedEmails.slice(0, visibleCount).reverse();
-
-
+const isCurrentEmailGuessed = selectedEmail
+    ? guessedEmails.has(selectedEmail.id)
+    : false;
 
 
   return (
@@ -129,13 +142,26 @@ const EmailInbox: React.FC = () => {
               </Box>
               <Box>
 
-                <Button mt={2} onClick={visibilityHandler} size="sm" colorScheme="blue">
-                  Next Email
-                </Button>
+                <Flex mt={4} gap={4}>
+              <Button
+                colorPalette="teal"
+                onClick={() => handleGuess(false)}
+                disabled={isCurrentEmailGuessed}
+              >
+                Andmepüük
+              </Button>
+               <Button
+                colorPalette="teal"
+                onClick={() => handleGuess(false)}
+                disabled={isCurrentEmailGuessed}
+              >
+                Legitiimne
+              </Button>
+            </Flex>
               </Box>
             </>
           ) : (
-            <Text>Select an email to preview</Text>
+            <Text>Vali menüüst vaatamiseks email!</Text>
           )}
         </Box>
       </Flex>

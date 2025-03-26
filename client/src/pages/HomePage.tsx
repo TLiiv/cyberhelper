@@ -52,19 +52,19 @@ const HomePage: React.FC = () => {
       </Box>
 
       {/* Intro sektsioon */}
-       <Box maxW="1200px" mx="auto">
+       <Box maxW="1300px" mx="auto">
         <HStack align="start">
           <VStack align="stretch" flex="1">
          
 
-      <Box maxW="900px" mx="auto" mt={2} p={8} pl={10} >
+      <Box maxW="900px" mx="auto" mt={2} ml={2} p={10}  >
           <Text fontSize="xl" >
-            Andmepüük ( ingl <Text fontStyle="italic" display="inline">phishing</Text> ) on petuskeem, kus ründajad üritavad meelitada inimesi jagama tundlikut
+            Andmepüük ehk kalastamisrünne ( ingl <Text fontStyle="italic" display="inline">phishing</Text> ) on petuskeem, kus ründajad üritavad meelitada inimesi jagama tundlikut
             informatsiooni, nagu paroolid, krediitkaardiandmed ja muud isiklikud andmed. Petturid maskeerivad
             end usaldusväärseteks allikateks, kasutades selleks e-kirju, võltsitud veebilehti või reaalajas toimuvaid tekstilisi sõnumeid.
           </Text>
         </Box >
-              <Box maxW="900px" mx="auto" mt={10} p={6} borderRadius="4xl" textAlign="center" borderWidth="1px" borderColor="teal.500">
+              <Box maxW="900px" mx="auto" mt={10} p={4}  borderRadius="4xl" textAlign="center" borderWidth="1px" borderColor="teal.500">
             <Text fontSize="xl" fontWeight="semibold">Kas sina suudad eristada ehtsa e-kirja petu e-kirjast?</Text>
             <Text fontSize="xl" fontWeight="semibold">Kliki  <RouterLink to={"/test"}><Text display="inline" color="teal.500">SIIA</Text></RouterLink> ja testi oma teadmisi!</Text>
             </Box >

@@ -13,9 +13,9 @@ const EmailDashboard: React.FC = () => {
 
   return (
     <Flex height="90vh" width="100%" bg="gray.300" borderRadius="4xl">
-      {/* Sidebar (Full Screen Background) */}
+      {/* Sidebar */}
       <Flex width="100vw" height="90vh" position="relative" borderRadius="4xl">
-        {/* Sidebar Navigation (Fixed on Left) */}
+        {/* Sidebar Navigation */}
         <VStack 
           borderRadius="4xl"
           width="250px" 

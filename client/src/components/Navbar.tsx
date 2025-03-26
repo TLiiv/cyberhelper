@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link, Box, Flex, Text, Stack, Tabs, CloseButton } from "@chakra-ui/react";
+import { Box, Flex, Text, Stack, Tabs, CloseButton } from "@chakra-ui/react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
+import { LuShieldCheck } from "react-icons/lu";
 
 
 const NavBar: React.FC = () => {
@@ -28,10 +29,15 @@ const menuItems = [
 
   return (
     
-     <Box maxW="1000px" mx="auto" px={4} position="relative">
+     <Box maxW="1100px" mx="auto" px={4} position="relative">
       
       <Box position="absolute" left={4} top="50%" transform="translateY(-50%)" fontSize="xl" fontWeight="bold">
-        <Link href="/">Logo</Link>
+        <RouterLink to="/">
+           <Text display="inline-flex" fontSize="3xl" color="teal.500" alignItems="center" gap={2}>
+        <LuShieldCheck color="white" />
+        Cyber <Text display="inline" color="gray.100">Helper</Text>
+      </Text>
+        </RouterLink>
       </Box>
 
       {/* Navbar container */}
