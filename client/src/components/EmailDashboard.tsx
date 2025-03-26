@@ -12,15 +12,15 @@ const EmailDashboard: React.FC = () => {
   const user ="User"
 
   return (
-    <Flex height="90vh" width="100%" bg="gray.300" borderRadius="4xl">
+    <Flex height="85vh" width="100%" bg="gray.300" borderRadius="4xl">
       {/* Sidebar */}
-      <Flex width="100vw" height="90vh" position="relative" borderRadius="4xl">
+      <Flex width="100vw" height="100%" position="relative" borderRadius="4xl">
         {/* Sidebar Navigation */}
         <VStack 
           borderRadius="4xl"
           width="250px" 
           align="stretch" 
-          height="90vh" 
+          height="100%" 
           position="absolute" 
           left="0" 
           bg="gray.300" 

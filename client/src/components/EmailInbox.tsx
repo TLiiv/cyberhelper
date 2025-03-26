@@ -24,7 +24,6 @@ const EmailInbox: React.FC = () => {
 
 
 
-
   useEffect(() => {
     setLoading(true);
     axios
@@ -54,13 +53,6 @@ const EmailInbox: React.FC = () => {
     () => emails.slice().sort((a, b) => a.difficulty - b.difficulty),
     [emails]
   );
-
-  // const visibilityHandler = () => {
-  //   if (visibleCount < sortedEmails.length) {
-  //     setVisibleCount((prev) => prev + 1);
-  //     setSelectedEmail(sortedEmails[visibleCount]);
-  //   }
-  // }
   
   const visibilityHandler = () => {
     if (visibleCount < sortedEmails.length) {
@@ -75,6 +67,7 @@ const EmailInbox: React.FC = () => {
        setGuessFeedback(correct ? "✅ Õige vastus!" : "❌ Vale vastus!");
     visibilityHandler();
   };
+  
   const visibleEmails = sortedEmails.slice(0, visibleCount).reverse();
   const isCurrentEmailGuessed = selectedEmail
     ? guessedEmails.has(selectedEmail.id)
@@ -88,14 +81,14 @@ const EmailInbox: React.FC = () => {
           width="400px"
           align="stretch"
           bg="gray.100"
-          height="90vh"
+          height="100%"
         >
           <VStack
             width="350"
             p={4}
             align="stretch"
             bg="gray.100"
-            height="80vh"
+            height="80%"
             overflowY="auto"
           >
             {loading ? (
@@ -174,7 +167,6 @@ const EmailInbox: React.FC = () => {
           )}
         </Box>
       </Flex>
-
     </>
   );
 
