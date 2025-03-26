@@ -20,6 +20,7 @@ const EmailInbox: React.FC = () => {
 
   const [visibleCount, setVisibleCount] = useState(1);
   const [guessedEmails, setGuessedEmails] = useState<Set<number>>(new Set());
+  const [guessFeedback, setGuessFeedback] = useState<string>("");
 
 
 
@@ -69,11 +70,13 @@ const EmailInbox: React.FC = () => {
   
      const handleGuess = (isPhishingGuess: boolean) => {
        if (!selectedEmail) return;
+       const correct = selectedEmail.isPhishing === isPhishingGuess;
        setGuessedEmails((prev) => new Set(prev).add(selectedEmail.id));
+       setGuessFeedback(correct ? "✅ Õige vastus!" : "❌ Vale vastus!");
     visibilityHandler();
   };
   const visibleEmails = sortedEmails.slice(0, visibleCount).reverse();
-const isCurrentEmailGuessed = selectedEmail
+  const isCurrentEmailGuessed = selectedEmail
     ? guessedEmails.has(selectedEmail.id)
     : false;
 
@@ -116,6 +119,7 @@ const isCurrentEmailGuessed = selectedEmail
                   onClick={() => {
                     setSelectedEmail(email);
                     markAsRead(email.id);
+                    setGuessFeedback("");
                   }}
                 >
                   <Card.Title fontWeight={email.isRead ? "medium" : "bold"}>
@@ -145,7 +149,7 @@ const isCurrentEmailGuessed = selectedEmail
                 <Flex mt={4} gap={4}>
               <Button
                 colorPalette="teal"
-                onClick={() => handleGuess(false)}
+                onClick={() => handleGuess(true)}
                 disabled={isCurrentEmailGuessed}
               >
                 Andmepüük
@@ -159,6 +163,11 @@ const isCurrentEmailGuessed = selectedEmail
               </Button>
             </Flex>
               </Box>
+              {guessFeedback && (
+                <Text mt={4} fontSize="lg" fontWeight="bold">
+                  {guessFeedback}
+                </Text>
+              )}
             </>
           ) : (
             <Text>Vali menüüst vaatamiseks email!</Text>
@@ -172,4 +181,3 @@ const isCurrentEmailGuessed = selectedEmail
 };
 
 export default EmailInbox;
-
