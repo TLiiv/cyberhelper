@@ -1,5 +1,13 @@
 import { useState, useEffect, useMemo } from "react";
-import { Box, Button, VStack, Text, Heading, Card, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  VStack,
+  Text,
+  Heading,
+  Card,
+  Flex,
+} from "@chakra-ui/react";
 import axios from "axios";
 
 interface Email {
@@ -9,7 +17,7 @@ interface Email {
   body: string;
   isPhishing: boolean;
   difficulty: number;
-  hiddenLink: string
+  hiddenLink: string;
   isRead: boolean;
 }
 
@@ -21,8 +29,6 @@ const EmailInbox: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState(1);
   const [guessedEmails, setGuessedEmails] = useState<Set<number>>(new Set());
   const [guessFeedback, setGuessFeedback] = useState<string>("");
-
-
 
   useEffect(() => {
     setLoading(true);
@@ -39,8 +45,6 @@ const EmailInbox: React.FC = () => {
       });
   }, []);
 
-
-
   const markAsRead = (emailId: number) => {
     setEmails((prevEmails) =>
       prevEmails.map((email) =>
@@ -53,36 +57,30 @@ const EmailInbox: React.FC = () => {
     () => emails.slice().sort((a, b) => a.difficulty - b.difficulty),
     [emails]
   );
-  
+
   const visibilityHandler = () => {
     if (visibleCount < sortedEmails.length) {
       setVisibleCount((prev) => prev + 1);
     }
   };
-  
-     const handleGuess = (isPhishingGuess: boolean) => {
-       if (!selectedEmail) return;
-       const correct = selectedEmail.isPhishing === isPhishingGuess;
-       setGuessedEmails((prev) => new Set(prev).add(selectedEmail.id));
-       setGuessFeedback(correct ? "✅ Õige vastus!" : "❌ Vale vastus!");
+
+  const handleGuess = (isPhishingGuess: boolean) => {
+    if (!selectedEmail) return;
+    const correct = selectedEmail.isPhishing === isPhishingGuess;
+    setGuessedEmails((prev) => new Set(prev).add(selectedEmail.id));
+    setGuessFeedback(correct ? "✅ Õige vastus!" : "❌ Vale vastus!");
     visibilityHandler();
   };
-  
+
   const visibleEmails = sortedEmails.slice(0, visibleCount).reverse();
   const isCurrentEmailGuessed = selectedEmail
     ? guessedEmails.has(selectedEmail.id)
     : false;
 
-
   return (
     <>
       <Flex flex="1">
-        <VStack
-          width="400px"
-          align="stretch"
-          bg="gray.100"
-          height="100%"
-        >
+        <VStack width="400px" align="stretch" bg="gray.100" height="100%">
           <VStack
             width="350"
             p={4}
@@ -106,8 +104,8 @@ const EmailInbox: React.FC = () => {
                   height="100px"
                   minHeight="100px"
                   maxHeight="100px"
-                  width="320px" 
-                  minWidth="320px" 
+                  width="320px"
+                  minWidth="320px"
                   overflow="hidden"
                   onClick={() => {
                     setSelectedEmail(email);
@@ -126,7 +124,7 @@ const EmailInbox: React.FC = () => {
         </VStack>
 
         {/* Email Preview */}
-        <Box flex="1" p={6} bg="gray.100">
+        <Box flex="1" p={6} bg="gray.100" shadow="lg">
           {selectedEmail ? (
             <>
               <Heading size="md">{selectedEmail.subject}</Heading>
@@ -137,30 +135,33 @@ const EmailInbox: React.FC = () => {
                 <Text>{selectedEmail.body}</Text>
                 <Text>{selectedEmail.hiddenLink}</Text>
               </Box>
-              <Box>
 
-                <Flex mt={4} gap={4}>
-              <Button
-                colorPalette="teal"
-                onClick={() => handleGuess(true)}
-                disabled={isCurrentEmailGuessed}
-              >
-                Andmepüük
-              </Button>
-               <Button
-                colorPalette="teal"
-                onClick={() => handleGuess(false)}
-                disabled={isCurrentEmailGuessed}
-              >
-                Legitiimne
-              </Button>
-            </Flex>
+              <Box position="absolute" bottom="10%" left="65%">
+                <Flex mt={4} direction="column" gap={4}>
+                  <Flex gap={4}>
+                    <Button
+                      colorPalette="teal"
+                      onClick={() => handleGuess(true)}
+                      disabled={isCurrentEmailGuessed}
+                    >
+                      Andmepüük
+                    </Button>
+                    <Button
+                      colorPalette="teal"
+                      onClick={() => handleGuess(false)}
+                      disabled={isCurrentEmailGuessed}
+                    >
+                      Legitiimne
+                    </Button>
+                  </Flex>
+
+                  {guessFeedback && (
+                    <Text fontSize="md" fontWeight="bold" textAlign="center">
+                      {guessFeedback}
+                    </Text>
+                  )}
+                </Flex>
               </Box>
-              {guessFeedback && (
-                <Text mt={4} fontSize="lg" fontWeight="bold">
-                  {guessFeedback}
-                </Text>
-              )}
             </>
           ) : (
             <Text>Vali menüüst vaatamiseks email!</Text>
@@ -169,7 +170,6 @@ const EmailInbox: React.FC = () => {
       </Flex>
     </>
   );
-
 };
 
 export default EmailInbox;
