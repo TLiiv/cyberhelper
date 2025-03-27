@@ -17,7 +17,11 @@ interface Email {
   body: string;
   isPhishing: boolean;
   difficulty: number;
+  displayLink: string;
   hiddenLink: string;
+  contactNumber: string;
+  footer: string;
+  signature: string;
   isRead: boolean;
 }
 
@@ -138,7 +142,37 @@ const EmailInbox: React.FC = () => {
               </Text>
               <Box mt={6} p={4} bg="gray.100" borderRadius="lg">
                 <Text>{selectedEmail.body}</Text>
-                <Text>{selectedEmail.hiddenLink}</Text>
+
+                {selectedEmail.displayLink && (
+                  <Text fontStyle="italic">
+                    <a href={selectedEmail.hiddenLink}>
+                      {selectedEmail.displayLink}
+                    </a>
+                  </Text>
+                )}
+
+                {selectedEmail.footer && (
+                  <Text mt={4} fontSize="sm" color="gray.600">
+                    {selectedEmail.footer}
+                  </Text>
+                )}
+
+                {selectedEmail.contactNumber && (
+                  <Text mt={2} fontSize="sm" color="gray.600">
+                    Contact: {selectedEmail.contactNumber}
+                  </Text>
+                )}
+
+                {selectedEmail.signature && (
+                  <Text
+                    mt={2}
+                    fontSize="sm"
+                    fontStyle="italic"
+                    color="gray.600"
+                  >
+                    {selectedEmail.signature}
+                  </Text>
+                )}
               </Box>
 
               <Box position="absolute" bottom="10%" left="65%">

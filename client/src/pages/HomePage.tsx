@@ -2,21 +2,18 @@ import { Link as RouterLink } from "react-router-dom";
 import {
   Box,
   Heading,
-  Button,
   VStack,
   HStack,
   Text,
   Highlight,
   Link,
-  Blockquote,
-  Mark,
   List,
 } from "@chakra-ui/react";
 import { LuCircle } from "react-icons/lu";
 
 const facts = [
   "Iga päev saadetakse inimeste petmiseks hinnanguliselt 3.4 miljardit andmepüügimeili.",
-  "36% kõigist andmeleketest on seotud andmepüügirünnakutega.",
+  "36% kõikidest andmeleketest on seotud andmepüügirünnakutega.",
   "Alates 2019. aastast on andmepüügirünnakute arv kasvanud rohkem kui 150% aastas.",
   "Suunatud kalastusrünnakutel (ingl spear-phishing) on 53.2% klikkimise määr, mis tähendab, et rohkem kui pooled sihitud isikud langevad ohvriks.",
   "E-post on ülekaalukalt kõige populaarsem meetod andmepüügirünnakute läbiviimiseks. Hinnanguliselt algab 91% kõigist küberrünnakutest andmepüügimeiliga.",
@@ -74,7 +71,7 @@ const HomePage: React.FC = () => {
               <Text fontSize="xl">
                 Andmepüük ehk kalastamisrünne ( ingl{" "}
                 <Box as="span" fontStyle="italic" display="inline">
-                  phishing
+                  <i>phishing</i>
                 </Box>{" "}
                 ) on petuskeem, kus ründajad üritavad meelitada inimesi jagama
                 tundlikut informatsiooni, nagu paroolid, krediitkaardiandmed ja
