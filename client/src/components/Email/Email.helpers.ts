@@ -24,4 +24,10 @@ export const populateEmailBody = (body: string, email: Email): string => {
     .replace(/{{signature}}/g, email.signature);
 };
 
-export const sanitizeHtml = (html: string): string => DOMPurify.sanitize(html);
+export const sanitizeHtml = (html: string): string => {
+  return DOMPurify.sanitize(html, {
+    FORCE_BODY: true,
+    ALLOWED_ATTR: ["style", "class", "type", "href", "rel", "target"],
+    ALLOWED_TAGS: ["link","a", "button","br","p","h1","b","div"]
+  });
+};
