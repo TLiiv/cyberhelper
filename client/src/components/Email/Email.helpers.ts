@@ -10,26 +10,29 @@ export interface Email {
   displayLink: string;
   hiddenLink: string;
   contactNumber: string;
-  footer: string;
+  iconUrl: string;
   signature: string;
     isRead: boolean;
     imgUrl: string;
+    websiteLink: string;
 }
 
 export const populateEmailBody = (body: string, email: Email): string => {
   return body
     .replace(/{{hiddenLink}}/g, email.hiddenLink)
-    .replace(/{{displayLink}}/g, email.displayLink)
+      .replace(/{{displayLink}}/g, email.displayLink)
+      .replace(/{{websiteLink}}/g, email.websiteLink)
     .replace(/{{contactNumber}}/g, email.contactNumber)
-    .replace(/{{footer}}/g, email.footer)
+    .replace(/{{iconUrl}}/g, email.iconUrl)
     .replace(/{{signature}}/g, email.signature)
-    .replace(/{{imgUrl}}/g, email.imgUrl);
+        .replace(/{{imgUrl}}/g, email.imgUrl);
+    
 };
 
 export const sanitizeHtml = (html: string): string => {
   return DOMPurify.sanitize(html, {
     FORCE_BODY: true,
-    ALLOWED_ATTR: ["style", "class", "type", "href", "rel", "target","src"],
+    ALLOWED_ATTR: ["style", "class", "type", "href", "rel", "target","src","onclick"],
     ALLOWED_TAGS: ["link","a", "button","br","p","h1","b","div","img"]
   });
 };

@@ -40,10 +40,11 @@ namespace server.Data
                     DisplayLink = null,
                     HiddenLink = null,
                     Difficulty = 10,
-                    Footer = null,
+                    IconUrl = null,
                     ContactNumber = null,
                     Signature = null,
                     ImgUrl = null,
+                     WebsiteLink =null
                 },
                 new Email
                 {
@@ -69,10 +70,11 @@ namespace server.Data
                     DisplayLink = null,
                     HiddenLink = "http://phishing-lottery-claim.com",
                     Difficulty = 9,
-                    Footer = null,
+                    IconUrl = null,
                     ContactNumber = null,
                     Signature = null,
                     ImgUrl = null,
+                     WebsiteLink =null
                 },
                 new Email
                 {
@@ -108,10 +110,11 @@ namespace server.Data
                     DisplayLink = null,
                     HiddenLink = null,
                     Difficulty = 8,
-                    Footer = null,
+                    IconUrl = null,
                     ContactNumber = null,
                     Signature = null,
                     ImgUrl = null,
+                     WebsiteLink =null
                 },
                 new Email
                 {
@@ -149,9 +152,8 @@ namespace server.Data
                             </p>
                             <br />
 
-                            <p>
-                              Meil on hea meel teatada, et osaledes meie Top Tööandja uuringus, saad
-                              mitte ainult anda oma hinnangu parimatele tööandjatele, vaid ka osaleda
+                            <p>Meil on hea meel teatada, et osaledes meie Top Tööandja uuringus. </p><br/>
+                        <p>Saad mitte ainult anda oma hinnangu parimatele tööandjatele, vaid ka osaleda
                               suurel loosimisel!
                             </p>
                             <br />
@@ -208,11 +210,125 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = null,
                     HiddenLink = "http://surveydata.com.ru/21398+sa9d89d17a87019d109s8d90as8d",
-                    Difficulty = 1,
-                    Footer = null,
+                    Difficulty = 6,
+                    IconUrl = null,
                     ContactNumber = null,
                     Signature = "CVKeskus",
+                    WebsiteLink =null,
                     ImgUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png",
+                },
+                new Email
+{
+                    Id = Guid.NewGuid(),
+                    Sender = "noreply@dharma.ee",
+                    Subject = "Aita uusi emasid – Kingi 25, 50 või 100 EUR!",
+                    Body = @"
+                    <html>
+                       <body
+                          style='
+                            font-family: Arial, sans-serif;
+                            line-height: 1.6;
+                            text-align: center;
+                            margin: 0;
+                            padding: 0;
+                            overflow: hidden;
+                          '
+                        >
+                
+                          <div
+                            style='
+                              width: 100%;
+                              max-width: 600px;
+                              padding: 20px;
+                              margin: 0 auto;
+                              max-height: 65vh;
+                              box-sizing: border-box;
+                            '
+                          >
+                            <p><img src='{{iconUrl}}'/><b>Heategevusfond Dharma aitab emmesid ja lapsi! 🎁</b></p>
+                            <p>Meie fond on aidanud mitmeid peresid, kuid nüüd vajame sinu abi, et teha veel rohkem head. <br />Aita meil muuta rohkem elusid!</p>
+                            <br />
+                            <p>
+                               <b>Aita meil teha kingikomplekte uute emmede jaoks.</b><br/> Viime läbi uuesti eelnevalt edukat projekti kus kingime uutele emadele vastsündinute kasvatamiseks kinkekomplekti.
+                            </p>
+                            <br />
+                            <p>Kingi 25, 50 või 100 EUR ja teeme koos uute emmede elu lihtsamaks, pakkudes neile vajalikke esemeid ja tuge! 💖</p>
+                            <br />         
+                
+                            <p><b>Kui soovid just selle projekti raames annetuse teha kasutage ühte nendest valikutest:</b></p> <br/><br/>
+                
+                            <div style='display: flex; justify-content: center; gap: 10px;'>
+                              <button
+                                style='
+                                  background-color: #4CAF50;
+                                  color: white;
+                                  padding: 10px 24px;
+                                  font-size: 16px;
+                                  cursor: pointer;
+                                  border-radius: 8px;
+                                  border: none;
+                                '
+                                onclick='window.location.href=""{{hiddenLink}}?amount=25""'
+                              >
+                                25 EUR
+                              </button>
+                
+                              <button
+                                style='
+                                  background-color: #008CBA;
+                                  color: white;
+                                   padding: 10px 24px;
+                                  font-size: 16px;
+                                  cursor: pointer;
+                                  border-radius: 8px;
+                                  border: none;
+                                '
+                                onclick='window.location.href=""{{hiddenLink}}?amount=50""'
+                              >
+                                50 EUR
+                              </button>
+                
+                              <button
+                                style='
+                                  background-color: #f44336;
+                                  color: white;
+                                   padding: 10px 24px;
+                                  font-size: 16px;
+                                  cursor: pointer;
+                                  border-radius: 8px;
+                                  border: none;
+                                '
+                                onclick='window.location.href=""{{hiddenLink}}?amount=100""'
+                              >
+                                100 EUR
+                              </button>
+                            </div>
+                
+                            <br />
+                            <p style='margin-top: 20px;'>
+                              Dharma Heategevusfond, loodud 2001. aastal, on pühendunud heategevusele, et pakkuda igale lapsele just tema vajadustele vastavat abi. Kuid me ei saa seda teha ilma sinuta. Toeta meid täna!
+                            </p>
+                            <br />
+                
+                            <p><b>Ole osa muutusest. Aita meil kingitusi jagada!</b></p>
+                            <br />
+              
+                            <p>Külastage meie veebilehte ja tutvu ka meie teiste tegevustega: <br/><a href='{{websiteLink}}'><b>Dharma Heategevusfond</b></a></p><br/>
+                           <p>Parimate soovidega, <br /><b>Urmas Sõõrumaa</b></p><br />
+                            <p style='color:gray;'>{{signature}}</p>                                
+                            <br />
+                            </div>
+                        </body>
+                    </html>",
+                    IsPhishing = true, 
+                    DisplayLink = null,
+                    HiddenLink = "http://fake-dharma-foundation.com/donate",
+                    Difficulty = 1,
+                    IconUrl = "https://dharma.ee/wp-content/uploads/2021/07/dharma.png",
+                    ContactNumber = null,
+                    Signature = "Sihtasutus Dharma<br />Türi 10d<br />11313 Tallinn",
+                    ImgUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png",
+                    WebsiteLink ="https://dharma.ee/lood/"
                 },
 
                 new Email
@@ -225,10 +341,11 @@ namespace server.Data
                     DisplayLink = "www.swedbank.ee/login",
                     HiddenLink = "http://secure-swedbank-login.com",
                     Difficulty = 4,
-                    Footer = "Swedbank ei küsi kunagi paroole e-posti teel.",
+                    IconUrl = "Swedbank ei küsi kunagi paroole e-posti teel.",
                     ContactNumber = "+372-660-1234",
                     Signature = "Swedbank Turvameeskond",
                     ImgUrl = null,
+                     WebsiteLink =null
                 },
                new Email
                 {
@@ -254,10 +371,11 @@ namespace server.Data
                     DisplayLink = "www.estonialottery.ee",
                     HiddenLink = "http://estonialottery-claim.com",
                     Difficulty = 5,
-                    Footer = "Tingimused rakenduvad.",
+                    IconUrl = "Tingimused rakenduvad.",
                     ContactNumber = "+372-555-7890",
                     Signature = "Eesti Loterii",
                     ImgUrl = null,
+                     WebsiteLink =null
                 },
       
 
@@ -272,10 +390,11 @@ namespace server.Data
                     DisplayLink = "www.techcompany.com",
                     HiddenLink = "www.techcompany.com",
                     Difficulty = 1,
-                    Footer = "Võtke meiega ühendust töövõimaluste osas.",
+                    IconUrl = "Võtke meiega ühendust töövõimaluste osas.",
                     ContactNumber = "+372-777-8888",
                     Signature = "TechCompany HR",
                     ImgUrl = null,
+                     WebsiteLink =null
                 }
               
                 };
