@@ -26,12 +26,33 @@ namespace server.Data
                     ContactNumber = "+234-123-4567",
                     Signature = "Prince Adebayo"
                 },
-                new Email
+               new Email
                 {
                     Id = Guid.NewGuid(),
                     Sender = "info@estonialottery.ee",
                     Subject = "Õnnitleme! Olete võitnud 50 000€",
-                    Body = "Palju õnne! Teie e-posti aadress valiti juhuslikult meie loosimises...",
+                    Body = @"<html>
+                        <head>
+                            <style>
+                                body { font-family: Arial, sans-serif; line-height: 1.6; }
+                                .btn { display: inline-block; padding: 12px 24px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; }
+                                .footer { font-size: 12px; color: #555; }
+                            </style>
+                        </head>
+                        <body>
+                            <h2>Palju õnne!</h2>
+                            <p>Teie e-posti aadress valiti juhuslikult meie loosimises ning olete võitnud <strong>50 000€</strong>!</p>
+                            <p>Võidu kättesaamiseks klõpsake alloleval lingil ja täitke vorm:</p>
+                
+                            <a href='{{hiddenLink}}' class='btn'>{{displayLink}}</a>
+                
+                            <p>Kui teil on küsimusi, võtke ühendust numbril {{contactNumber}}.</p>
+                
+                            <p class='footer'>{{footer}}</p>
+                
+                            <p>Parimate soovidega,<br />{{signature}}</p>
+                        </body>
+                    </html>",
                     IsPhishing = true,
                     DisplayLink = "www.estonialottery.ee",
                     HiddenLink = "http://estonialottery-claim.com",

@@ -1,14 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
-import {
-  Box,
-  Button,
-  VStack,
-  Text,
-  Heading,
-  Card,
-  Flex,
-} from "@chakra-ui/react";
+import { Box, VStack, Text, Card, Flex } from "@chakra-ui/react";
 import axios from "axios";
+import EmailPreview from "./EmailPreview";
 
 interface Email {
   id: number;
@@ -130,78 +123,12 @@ const EmailInbox: React.FC = () => {
         {/* Email Preview */}
         <Box flex="1" p={6} bg="gray.100">
           {selectedEmail ? (
-            <>
-              <Heading size="xl" fontWeight="semibold">
-                {selectedEmail.subject}
-              </Heading>
-              <Text fontSize="sm" fontWeight="semibold" color="gray.800">
-                From: {selectedEmail.sender}
-              </Text>
-              <Text fontSize="sm" color="gray.500">
-                To: user@cybermail.ee
-              </Text>
-              <Box mt={6} p={4} bg="gray.100" borderRadius="lg">
-                <Text>{selectedEmail.body}</Text>
-
-                {selectedEmail.displayLink && (
-                  <Text fontStyle="italic">
-                    <a href={selectedEmail.hiddenLink}>
-                      {selectedEmail.displayLink}
-                    </a>
-                  </Text>
-                )}
-
-                {selectedEmail.footer && (
-                  <Text mt={4} fontSize="sm" color="gray.600">
-                    {selectedEmail.footer}
-                  </Text>
-                )}
-
-                {selectedEmail.contactNumber && (
-                  <Text mt={2} fontSize="sm" color="gray.600">
-                    Contact: {selectedEmail.contactNumber}
-                  </Text>
-                )}
-
-                {selectedEmail.signature && (
-                  <Text
-                    mt={2}
-                    fontSize="sm"
-                    fontStyle="italic"
-                    color="gray.600"
-                  >
-                    {selectedEmail.signature}
-                  </Text>
-                )}
-              </Box>
-
-              <Box position="absolute" bottom="10%" left="65%">
-                <Flex mt={4} direction="column" gap={4}>
-                  <Flex gap={4}>
-                    <Button
-                      colorPalette="teal"
-                      onClick={() => handleGuess(true)}
-                      disabled={isCurrentEmailGuessed}
-                    >
-                      Andmepüük
-                    </Button>
-                    <Button
-                      colorPalette="teal"
-                      onClick={() => handleGuess(false)}
-                      disabled={isCurrentEmailGuessed}
-                    >
-                      Legitiimne
-                    </Button>
-                  </Flex>
-
-                  {guessFeedback && (
-                    <Text fontSize="md" fontWeight="bold" textAlign="center">
-                      {guessFeedback}
-                    </Text>
-                  )}
-                </Flex>
-              </Box>
-            </>
+            <EmailPreview
+              selectedEmail={selectedEmail}
+              onGuess={handleGuess}
+              isGuessed={isCurrentEmailGuessed}
+              guessFeedback={guessFeedback}
+            />
           ) : (
             <Text>Vali menüüst vaatamiseks email!</Text>
           )}
