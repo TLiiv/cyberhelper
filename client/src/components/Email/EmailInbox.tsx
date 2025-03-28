@@ -107,17 +107,19 @@ const EmailInbox: React.FC = () => {
         </VStack>
 
         {/* Email Preview */}
-        <Box flex="1" p={6} bg="gray.100">
-          {selectedEmail ? (
-            <EmailPreview
-              selectedEmail={selectedEmail}
-              onGuess={handleGuess}
-              isGuessed={isCurrentEmailGuessed}
-              guessFeedback={guessFeedback}
-            />
-          ) : (
-            <Text>Vali menüüst vaatamiseks email!</Text>
-          )}
+        <Box flex="1" bg="gray.100" p={6}>
+          <Box overflow="auto" height="80%">
+            {selectedEmail ? (
+              <EmailPreview
+                selectedEmail={selectedEmail}
+                onGuess={handleGuess}
+                isGuessed={isCurrentEmailGuessed}
+                guessFeedback={guessFeedback}
+              />
+            ) : (
+              <Text>Vali menüüst vaatamiseks email!</Text>
+            )}
+          </Box>
         </Box>
       </Flex>
     </>

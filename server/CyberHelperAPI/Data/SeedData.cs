@@ -40,7 +40,7 @@ namespace server.Data
                     HiddenLink = null,
                     Difficulty = 10,
                     Footer = null,
-                    ContactNumber = "+234-123-4567",
+                    ContactNumber = null,
                     Signature = null
                 },
                 new Email
