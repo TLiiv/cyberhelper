@@ -12,7 +12,8 @@ export interface Email {
   contactNumber: string;
   footer: string;
   signature: string;
-  isRead: boolean;
+    isRead: boolean;
+    imgUrl: string;
 }
 
 export const populateEmailBody = (body: string, email: Email): string => {
@@ -21,13 +22,14 @@ export const populateEmailBody = (body: string, email: Email): string => {
     .replace(/{{displayLink}}/g, email.displayLink)
     .replace(/{{contactNumber}}/g, email.contactNumber)
     .replace(/{{footer}}/g, email.footer)
-    .replace(/{{signature}}/g, email.signature);
+    .replace(/{{signature}}/g, email.signature)
+    .replace(/{{imgUrl}}/g, email.imgUrl);
 };
 
 export const sanitizeHtml = (html: string): string => {
   return DOMPurify.sanitize(html, {
     FORCE_BODY: true,
-    ALLOWED_ATTR: ["style", "class", "type", "href", "rel", "target"],
-    ALLOWED_TAGS: ["link","a", "button","br","p","h1","b","div"]
+    ALLOWED_ATTR: ["style", "class", "type", "href", "rel", "target","src"],
+    ALLOWED_TAGS: ["link","a", "button","br","p","h1","b","div","img"]
   });
 };

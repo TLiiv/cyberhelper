@@ -107,7 +107,14 @@ const EmailInbox: React.FC = () => {
         </VStack>
 
         {/* Email Preview */}
-        <Box flex="1" bg="gray.100" p={6}>
+        <Box
+          flex="1"
+          bg="gray.100"
+          p={6}
+          borderLeft="1px solid"
+          borderColor="gray.200"
+          height="100%"
+        >
           <Box overflow="auto" height="80%">
             {selectedEmail ? (
               <EmailPreview

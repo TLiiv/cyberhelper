@@ -16,6 +16,7 @@ namespace server.Models
         public string? Footer { get; set; }
         public string? ContactNumber { get; set; }
         public string? Signature { get; set; }
+        public string? ImgUrl { get; set; }
     }
 }
     

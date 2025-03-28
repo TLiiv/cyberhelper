@@ -9,7 +9,7 @@ const EmailPreview: React.FC<{
 }> = ({ selectedEmail, onGuess, isGuessed, guessFeedback }) => {
   const emailBody = populateEmailBody(selectedEmail.body, selectedEmail);
   const sanitizedEmailBody = sanitizeHtml(emailBody);
-  console.log(sanitizedEmailBody);
+  console.log(emailBody);
 
   return (
     <>
@@ -24,32 +24,9 @@ const EmailPreview: React.FC<{
       </Text>
       <Box mt={6} p={4} bg="gray.100" borderRadius="lg">
         <div dangerouslySetInnerHTML={{ __html: sanitizedEmailBody }} />
-        {selectedEmail.displayLink && (
-          <Text fontStyle="italic">
-            <a href={selectedEmail.hiddenLink}>{selectedEmail.displayLink}</a>
-          </Text>
-        )}
-
-        {selectedEmail.footer && (
-          <Text mt={4} fontSize="sm" color="gray.600">
-            {selectedEmail.footer}
-          </Text>
-        )}
-
-        {selectedEmail.contactNumber && (
-          <Text mt={2} fontSize="sm" color="gray.600">
-            Contact: {selectedEmail.contactNumber}
-          </Text>
-        )}
-
-        {selectedEmail.signature && (
-          <Text mt={2} fontSize="sm" color="gray.600">
-            {selectedEmail.signature}
-          </Text>
-        )}
       </Box>
 
-      <Box position="absolute" bottom="10%" left="65%">
+      <Box position="absolute" bottom="1%" left="50%">
         <Flex mt={4} direction="column" gap={4}>
           <Flex gap={4}>
             <Button
