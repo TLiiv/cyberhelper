@@ -2,21 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { Box, VStack, Text, Card, Flex } from "@chakra-ui/react";
 import axios from "axios";
 import EmailPreview from "./EmailPreview";
-
-interface Email {
-  id: number;
-  sender: string;
-  subject: string;
-  body: string;
-  isPhishing: boolean;
-  difficulty: number;
-  displayLink: string;
-  hiddenLink: string;
-  contactNumber: string;
-  footer: string;
-  signature: string;
-  isRead: boolean;
-}
+import { Email } from "./Email.helpers";
 
 const EmailInbox: React.FC = () => {
   const [emails, setEmails] = useState<Email[]>([]);

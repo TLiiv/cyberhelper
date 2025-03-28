@@ -1,19 +1,5 @@
 import { Box, Button, Text, Heading, Flex } from "@chakra-ui/react";
-
-interface Email {
-  id: number;
-  sender: string;
-  subject: string;
-  body: string;
-  isPhishing: boolean;
-  difficulty: number;
-  displayLink: string;
-  hiddenLink: string;
-  contactNumber: string;
-  footer: string;
-  signature: string;
-  isRead: boolean;
-}
+import { Email, populateEmailBody, sanitizeHtml } from "./Email.helpers";
 
 const EmailPreview: React.FC<{
   selectedEmail: Email;
@@ -33,8 +19,7 @@ const EmailPreview: React.FC<{
         To: user@cybermail.ee
       </Text>
       <Box mt={6} p={4} bg="gray.100" borderRadius="lg">
-        <Text>{selectedEmail.body}</Text>
-
+        <div dangerouslySetInnerHTML={{ __html: selectedEmail.body }} />
         {selectedEmail.displayLink && (
           <Text fontStyle="italic">
             <a href={selectedEmail.hiddenLink}>{selectedEmail.displayLink}</a>
