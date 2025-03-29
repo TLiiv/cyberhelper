@@ -32,7 +32,7 @@ export const populateEmailBody = (body: string, email: Email): string => {
 export const sanitizeHtml = (html: string): string => {
   return DOMPurify.sanitize(html, {
     FORCE_BODY: true,
-    ALLOWED_ATTR: ["style", "class", "type", "href", "rel", "target","src","onclick"],
-    ALLOWED_TAGS: ["link","a", "button","br","p","h1","b","div","img"]
+    ALLOWED_ATTR: ["style", "class", "type", "href", "rel", "target", "src", "onclick","onmouseover","onmouseout"],
+    ALLOWED_TAGS: ["a", "button", "br", "p", "h1", "b", "div", "img"]
   });
 };

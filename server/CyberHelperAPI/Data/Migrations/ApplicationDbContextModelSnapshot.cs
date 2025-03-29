@@ -48,6 +48,9 @@ namespace server.Migrations
                     b.Property<bool>("IsPhishing")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("NotWorkingHiddenLink")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Sender")
                         .IsRequired()
                         .HasColumnType("TEXT");

@@ -60,7 +60,7 @@ namespace server.Data
                                 <p style='padding: 10px; font-size: 22px; font-weight: bold;'>Hea võitja,</p> <br />
                                 <p>Meil on hea meel teatada, et teid on valitud meie hiljutises loosimises suure auhinna võitjaks!<br/><br/>Olete võitnud põneva auhinna, mille väärtus on tuhandetes euros.</p>
                                 <p>Auhinna kätte saamiseks klõpsake alloleval lingil ja täitke vajalikud sammud:</p><br />
-                                <a href='{{hiddenLink}}' style='display: inline-block; padding: 12px 24px; background-color: #FF9800; color: white; text-decoration: none; border-radius: 5px; text-align: center;'>Saage oma auhind nüüd</a><br /><br />
+                                <a href='{{hiddenLink}}' style='display: inline-block; padding: 12px 24px; background-color: #FF9800; color: white; text-decoration: none; border-radius: 5px; text-align: center;' onclick='event.preventDefault();'>Saage oma auhind nüüd</a><br /><br />
                                 <p style='font-weight: semibold; font-size: 12px; color: gray; padding-top: 10px;'>Oluline: Olge ettevaatlik petuskeemide suhtes. Ärge jagage tundlikku isiklikku teavet ega makske mingeid tasusid oma auhinna saamiseks. Kui te ei osalenud loosimises, siis palun unustage see e-kiri.</p><br />
                                 <p>Tänan teid osalemise eest ja õnnitlen veel kord!</p><br />
                                 <p style='font-size: 12px; color: #555;'>Kui teil on küsimusi, võtke meiega ühendust. See on süsteemi genereeritud e-kiri, seetõttu palun ärge vastake sellele sõnumile.</p>
@@ -186,7 +186,8 @@ namespace server.Data
                                   width: 200px;
                                   text-align: center;
                                 '
-                              >
+                                onclick='event.preventDefault();'
+                                >
                                 Alusta küsitlust
                               </a>
                             </div>
@@ -210,7 +211,7 @@ namespace server.Data
                     </html>",
                     IsPhishing = true,
                     DisplayLink = null,
-                    HiddenLink = "http://surveydata.com.ru/21398+sa9d89d17a87019d109s8d90as8d",
+                    HiddenLink= "http://surveydata.com.ru/21398+sa9d89d17a87019d109s8d90as8d",
                     Difficulty = 6,
                     IconUrl = null,
                     ContactNumber = null,
@@ -314,22 +315,108 @@ namespace server.Data
                             <p><b>Ole osa muutusest. Aita meil kingitusi jagada!</b></p>
                             <br />
               
-                            <p>Külastage meie veebilehte ja tutvu ka meie teiste tegevustega: <br/><a href='{{websiteLink}}'><b>Dharma Heategevusfond</b></a></p><br/>
+                            <p>Külastage meie veebilehte ja tutvu ka meie teiste tegevustega: <br/><a href='{{websiteLink}}' target='_blank'><b>Dharma Heategevusfond</b></a></p><br/>
                            <p>Parimate soovidega, <br /><b>Urmas Sõõrumaa</b></p><br />
                             <p style='color:gray;'>{{signature}}</p>                                
                             <br />
                             </div>
                         </body>
                     </html>",
-                    IsPhishing = true, 
+                    IsPhishing = true,
                     DisplayLink = null,
-                    HiddenLink = $"http://localhost:5173/dharmo/donation",
-                    Difficulty = 1,
+                    HiddenLink = $"http://localhost:5173/dharmo.ee/donation",
+                    Difficulty = 3,
                     IconUrl = "https://dharma.ee/wp-content/uploads/2021/07/dharma.png",
                     ContactNumber = null,
                     Signature = "Sihtasutus Dharma<br />Türi 10d<br />11313 Tallinn",
-                    ImgUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png",
+                    ImgUrl = null,
                     WebsiteLink ="https://dharma.ee/lood/"
+                },
+             new Email
+                {
+                    Id = Guid.NewGuid(),
+                    Sender = "security@facebook.com",
+                    Subject = "Turvahoiatus: Ebatavaline sisselogimisaktiivsus teie kontol",
+                    Body = @"
+                    <html>
+                      <body
+                        style='
+                          font-family: Arial, sans-serif;
+                          line-height: 1.6;
+                          text-align: center;
+                          margin: 0;
+                          padding: 0;
+                          overflow: hidden;
+                        '
+                      >
+                        <div
+                          style='
+                            width: 100%;
+                            max-width: 600px;
+                            padding: 20px;
+                            margin: 0 auto;
+                            box-sizing: border-box;
+                          '
+                        >
+                          <p>
+                            <img 
+                              src='{{iconUrl}}' 
+                              alt='Facebooki logo' 
+                              style='width: 32px; height: auto;'
+                            />
+                          </p>
+                    
+                          <p style='font-size: 18px; font-weight: bold;'>Ebatavaline sisselogimisaktiivsus</p><br/>
+                          <p> Keegi logis just sinu Facebooki kontole sisse. Kui see polnud sina, saame aidata sul paar lihtsat toimingut teha, et oma konto taas turvaliseks muuta.</p><br/>
+                    
+                          <p>
+                            Märkasime sisselogimisüritust uue seadme või asukoha poolt:<br/>
+                            <b>Seade:</b> Windows PC <br/>
+                            <b>Asukoht:</b> Tallinn, Eesti <br/>
+                            <b>Aeg:</b> Neljapäev, 4. aprill 2025 kell 14:05
+                          </p><br/>
+                    
+                          <p>
+                            Kui see oli teie poolt, siis pole rohkem midagi teha. Kui mitte, palun kaitske oma konto viivitamatult.
+                          </p>
+                            <div style='margin-top: 30px;'>
+                               <a
+                                 href='mailto:support@facebook.com'
+                                 style='
+                                   display: inline-block;
+                                   padding: 12px 24px;
+                                   background-color: #1877f2;
+                                   color: white;
+                                   text-decoration: none;
+                                   border-radius: 8px;
+                                   font-size: 16px;
+                                 '
+                                 onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
+                               >
+                                 Kaitske oma kontot
+                               </a>
+                              </div>
+                    
+                          <p style='margin-top: 40px; color: gray;margin-bottom 40px;'>
+                            See hoiatus saadeti teie konto kaitsmiseks. Lisainfo turvavõimaluste kohta külastage oma 
+                            <a href='{{websiteLink}}' target='_blank' style='color: #1877f2;'>Turvaseadeid</a>.
+                          </p>
+                    
+                          <p style='color: gray;margin-top: 20px'>
+                            Facebook © 2025
+                          </p>
+                        </div>
+                      </body>
+                    </html>",
+                    IsPhishing = true,
+                    DisplayLink = "https://facebook.com/security",
+                    HiddenLink = "http://localhost:5173/facebok/security-alert",
+                    Difficulty = 1,
+                    IconUrl = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+                    ContactNumber = null,
+                    Signature = "Facebooki turvatiim",
+                    ImgUrl = null,
+                    WebsiteLink = "https://www.facebook.com/settings"
                 },
 
                 new Email
@@ -397,7 +484,7 @@ namespace server.Data
                     ImgUrl = null,
                      WebsiteLink =null
                 }
-              
+
                 };
                 context.AddRange(emails);
                 context.SaveChanges();

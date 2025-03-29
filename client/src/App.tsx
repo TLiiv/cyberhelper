@@ -1,5 +1,5 @@
 import { BrowserRouter as Router } from "react-router-dom";
-import { ChakraProvider, Theme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { system } from "@chakra-ui/react/preset";
 import AppRoutes from "./pages/AppRoutes";
 

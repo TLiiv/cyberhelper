@@ -10,7 +10,7 @@ import { Theme } from "@chakra-ui/react";
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();
-  const scamPage = location.pathname === "/dharmo/donation";
+  const scamPage = location.pathname === "/dharmo.ee/donation";
 
   return (
     <>
@@ -20,7 +20,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/test" element={<TestPage />} />
           <Route path="/tutorial" element={<TutorialPage />} />
-          <Route path="/dharmo/donation" element={<ScamDonationPage />} />
+          <Route path="/dharmo.ee/donation" element={<ScamDonationPage />} />
         </Routes>
         {!scamPage && <Footer />}
       </Theme>
