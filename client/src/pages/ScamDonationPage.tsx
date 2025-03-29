@@ -17,6 +17,11 @@ const ScamDonationPage: React.FC<ScamDonationPageProps> = () => {
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [amount, setAmount] = useState<string>("");
 
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+
   const [searchParams] = useSearchParams();
 
   const handleSubmit = (e: FormEvent) => {
@@ -38,6 +43,9 @@ const ScamDonationPage: React.FC<ScamDonationPageProps> = () => {
       { label: "Paypal", value: "Paypal" },
     ],
   });
+
+  const isFormValid =
+    firstName !== "" && lastName !== "" && email !== "" && phone !== "";
 
   return (
     <Box
@@ -61,27 +69,44 @@ const ScamDonationPage: React.FC<ScamDonationPageProps> = () => {
           <Text mb={2} fontSize="md" fontWeight="semibold">
             Eesnimi
           </Text>
-          <Input placeholder="Sisesta oma eesnimi" />
+          <Input
+            placeholder="Sisesta oma eesnimi"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
         </Box>
         <Box mt={4} width="50%">
           <Text mb={2} fontSize="md" fontWeight="semibold">
             Perekonnanimi
           </Text>
-          <Input placeholder="Sisesta oma perekonnanimi" />
+          <Input
+            placeholder="Sisesta oma perekonnanimi"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
         </Box>
 
         <Box mt={4} width="50%">
           <Text mb={2} fontSize="md" fontWeight="semibold">
             Email Address
           </Text>
-          <Input type="email" placeholder="Sisesta oma email" />
+          <Input
+            type="email"
+            placeholder="Sisesta oma email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </Box>
 
         <Box mt={4} width="50%">
           <Text mb={2} fontSize="md" fontWeight="semibold">
             Telefoni number
           </Text>
-          <Input placeholder="Sisesta oma telefoni number" />
+          <Input
+            placeholder="Sisesta oma telefoni number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
         </Box>
       </Box>
       <Box display="flex" justifyContent="center" width="50%" mx="auto" mt={4}>
@@ -122,15 +147,14 @@ const ScamDonationPage: React.FC<ScamDonationPageProps> = () => {
       </Box>
 
       <Box mt={6}>
-        <Button width="30%" onSubmit={handleSubmit} disabled as={Link}>
+        <Button width="30%" onClick={handleSubmit} disabled={!isFormValid}>
           Anneta {amount} Eurot
         </Button>
       </Box>
 
       {submitted && (
-        <Text mt={6} color="green.500">
-          Your donation is being processed! Please check your email for
-          confirmation.
+        <Text mt={6} color="red.500">
+          Teie annetust teostatakse! Palun vaadake oma emaili kinnitamiseks.
         </Text>
       )}
     </Box>
