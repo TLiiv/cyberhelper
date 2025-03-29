@@ -3,6 +3,7 @@ using server.Models;
 using server.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
 namespace server.Controllers
 {
@@ -26,6 +27,7 @@ namespace server.Controllers
             {
                 return NotFound("No emails found.");
             }
+            
             return Ok(data);
         }
         [HttpGet("random")]
@@ -36,6 +38,7 @@ namespace server.Controllers
             {
                 return NotFound("No emails found.");
             }
+
             return Ok(data);
         }
     }

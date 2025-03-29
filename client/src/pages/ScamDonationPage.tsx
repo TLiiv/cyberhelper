@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import {
   Button,
   Input,
@@ -9,29 +9,28 @@ import {
   Portal,
   createListCollection,
 } from "@chakra-ui/react";
+import { Link, useSearchParams } from "react-router-dom";
 
-// Define types for state variables
 interface ScamDonationPageProps {}
 
 const ScamDonationPage: React.FC<ScamDonationPageProps> = () => {
-  const [email, setEmail] = useState<string>("");
-  const [phone, setPhone] = useState<string>("");
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [amount, setAmount] = useState<string>("");
 
-  // Handle the form submission
+  const [searchParams] = useSearchParams();
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
   };
 
-  // Handle input changes for email and phone fields
-  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
+  useEffect(() => {
+    const amountParam = searchParams.get("amount");
+    if (amountParam) {
+      setAmount(amountParam);
+    }
+  }, [searchParams]);
 
-  const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setPhone(e.target.value);
-  };
   const makseviisid = createListCollection({
     items: [
       { label: "Pangaülekanne", value: "Pangaülekanne" },
@@ -48,46 +47,49 @@ const ScamDonationPage: React.FC<ScamDonationPageProps> = () => {
       maxWidth="600px"
       margin="auto"
       alignItems="center"
+      height="100vh"
     >
       <Box display="flex" flexDirection="column" alignItems="center">
         <Text mb={2} fontSize="xl" fontWeight="bold">
-          Aitäh, et annetad Dharma Heategevusfondi !
+          Aitäh, et annetad Dharma Heategevusfondi {amount} Eurot!
         </Text>
-        <Text fontSize="md" mt={4} width="50%">
+        <Text fontSize="lg" fontWeight="semibold" mt={4} width="50%">
           Annetuse kinnitamiseks täida palun järgmised väljad:
         </Text>
 
         <Box mt={4} width="50%">
-          <Text mb={2} fontSize="md">
+          <Text mb={2} fontSize="md" fontWeight="semibold">
             Eesnimi
           </Text>
           <Input placeholder="Sisesta oma eesnimi" />
         </Box>
         <Box mt={4} width="50%">
-          <Text mb={2} fontSize="md">
+          <Text mb={2} fontSize="md" fontWeight="semibold">
             Perekonnanimi
           </Text>
           <Input placeholder="Sisesta oma perekonnanimi" />
         </Box>
 
         <Box mt={4} width="50%">
-          <Text mb={2} fontSize="md">
+          <Text mb={2} fontSize="md" fontWeight="semibold">
             Email Address
           </Text>
           <Input type="email" placeholder="Sisesta oma email" />
         </Box>
 
         <Box mt={4} width="50%">
-          <Text mb={2} fontSize="md">
+          <Text mb={2} fontSize="md" fontWeight="semibold">
             Telefoni number
           </Text>
           <Input placeholder="Sisesta oma telefoni number" />
         </Box>
       </Box>
-      <Box display="flex" justifyContent="center" width="50%" mx="auto">
+      <Box display="flex" justifyContent="center" width="50%" mx="auto" mt={4}>
         <Select.Root collection={makseviisid} size="md" width="100%">
           <Select.HiddenSelect />
-          <Select.Label>Vali makseviis</Select.Label>
+          <Select.Label fontWeight="semibold" fontSize="md">
+            Vali makseviis
+          </Select.Label>
           <Select.Control>
             <Select.Trigger>
               <Select.ValueText placeholder="Vali makseviis" />
@@ -120,8 +122,8 @@ const ScamDonationPage: React.FC<ScamDonationPageProps> = () => {
       </Box>
 
       <Box mt={6}>
-        <Button width="30%" onSubmit={handleSubmit} disabled>
-          Anneta
+        <Button width="30%" onSubmit={handleSubmit} disabled as={Link}>
+          Anneta {amount} Eurot
         </Button>
       </Box>
 

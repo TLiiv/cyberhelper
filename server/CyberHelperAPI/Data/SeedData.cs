@@ -1,4 +1,5 @@
-﻿using server.Data.Migrations;
+﻿using Microsoft.Extensions.Hosting;
+using server.Data.Migrations;
 using server.Models;
 using static System.Net.WebRequestMethods;
 
@@ -249,7 +250,7 @@ namespace server.Data
                             <p>Meie fond on aidanud mitmeid peresid, kuid nüüd vajame sinu abi, et teha veel rohkem head. <br />Aita meil muuta rohkem elusid!</p>
                             <br />
                             <p>
-                               <b>Aita meil teha kingikomplekte uute emmede jaoks.</b><br/> Viime läbi uuesti eelnevalt edukat projekti kus kingime uutele emadele vastsündinute kasvatamiseks kinkekomplekti.
+                               <b>Aita meil teha kingikomplekte uute emmede jaoks.</b><br/> Viime läbi uuesti eelnevalt edukat projekti, kus kingime uutele emadele vastsündinute kasvatamiseks kinkekomplekti.
                             </p>
                             <br />
                             <p>Kingi 25, 50 või 100 EUR ja teeme koos uute emmede elu lihtsamaks, pakkudes neile vajalikke esemeid ja tuge! 💖</p>
@@ -268,7 +269,7 @@ namespace server.Data
                                   border-radius: 8px;
                                   border: none;
                                 '
-                                onclick='window.location.href=""{{hiddenLink}}?amount=25""'
+                                onclick='window.open(""{{hiddenLink}}?amount=25"", ""_blank"")'
                               >
                                 25 EUR
                               </button>
@@ -283,7 +284,7 @@ namespace server.Data
                                   border-radius: 8px;
                                   border: none;
                                 '
-                                onclick='window.location.href=""{{hiddenLink}}?amount=50""'
+                                onclick='window.open(""{{hiddenLink}}?amount=50"", ""_blank"")'
                               >
                                 50 EUR
                               </button>
@@ -298,7 +299,7 @@ namespace server.Data
                                   border-radius: 8px;
                                   border: none;
                                 '
-                                onclick='window.location.href=""{{hiddenLink}}?amount=100""'
+                                onclick='window.open(""{{hiddenLink}}?amount=100"", ""_blank"")'
                               >
                                 100 EUR
                               </button>
@@ -322,7 +323,7 @@ namespace server.Data
                     </html>",
                     IsPhishing = true, 
                     DisplayLink = null,
-                    HiddenLink = "http://fake-dharma-foundation.com/donate",
+                    HiddenLink = $"http://localhost:5173/dharmo/donation",
                     Difficulty = 1,
                     IconUrl = "https://dharma.ee/wp-content/uploads/2021/07/dharma.png",
                     ContactNumber = null,
@@ -389,7 +390,7 @@ namespace server.Data
                     IsPhishing = false,
                     DisplayLink = "www.techcompany.com",
                     HiddenLink = "www.techcompany.com",
-                    Difficulty = 1,
+                    Difficulty = 2,
                     IconUrl = "Võtke meiega ühendust töövõimaluste osas.",
                     ContactNumber = "+372-777-8888",
                     Signature = "TechCompany HR",
