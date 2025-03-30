@@ -367,12 +367,12 @@ namespace server.Data
                           </p>
                     
                           <p style='font-size: 18px; font-weight: bold;'>Ebatavaline sisselogimisaktiivsus</p><br/>
-                          <p> Keegi logis just sinu Facebooki kontole sisse. Kui see polnud sina, saame aidata sul paar lihtsat toimingut teha, et oma konto taas turvaliseks muuta.</p><br/>
+                          <p>Keegi logis just sinu Facebooki kontole sisse. Et veenduda, et see ei olnud sina, <b>logi kohe oma konto kaitsmiseks sisse!</b></p><br/>
                     
                           <p>
-                            Märkasime sisselogimisüritust uue seadme või asukoha poolt:<br/>
+                            Märkasime sisselogimisüritust uue seadme või asukoha poolt:<br/><br/>
                             <b>Seade:</b> Windows PC <br/>
-                            <b>Asukoht:</b> Tallinn, Eesti <br/>
+                            <b>Asukoht:</b> Moskva, Venemaa <br/>
                             <b>Aeg:</b> Neljapäev, 4. aprill 2025 kell 14:05
                           </p><br/>
                     
@@ -381,7 +381,7 @@ namespace server.Data
                           </p>
                             <div style='margin-top: 30px;'>
                                <a
-                                 href='mailto:support@facebook.com'
+                                 href='mailto:https://www.facebook.com/n/?login_alerts%2Fstart%2F&fbid=10162839574593724&s=e&context=Q7DVBAHu4mQtDrldGI6E5e2DENDvayAkPmZcIGSUlpe7es6SsxYZBSgBd_ouTcGM5UfiDXrJ6vdHmdczGq5gFv8pzxXFW-bJ755bP5c5xqbKBOXVfAFPK3PzcDMCi7-E&aref=1742472306163049&medium=email&mid=630c4a940=2.1742472306.AbxLpRy1twsUJaoRIIon_sg=Q6bPBAHKnwHR1kQJ75fyy1WUfa_KsOQkawoffZ7Z8YFbZNIZUQ&rms=v2&irms='
                                  style='
                                    display: inline-block;
                                    padding: 12px 24px;
@@ -410,7 +410,7 @@ namespace server.Data
                     </html>",
                     IsPhishing = true,
                     DisplayLink = "https://facebook.com/security",
-                    HiddenLink = "http://localhost:5173/facebok/security-alert",
+                    HiddenLink = "http://localhost:5173/facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa",
                     Difficulty = 1,
                     IconUrl = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
                     ContactNumber = null,
