@@ -11,6 +11,7 @@ import {
   Heading,
   InputGroup,
 } from "@chakra-ui/react";
+import FakeIdCardPopup from "@/components/ScamEmail/FakeIdCardPopup";
 
 const ScamPolitseiIdLogin = () => {
   const [selectedMethod, setSelectedMethod] = useState("id-kaart");
@@ -140,19 +141,7 @@ const ScamPolitseiIdLogin = () => {
                   sisselogimiseks vajate kaardilugejat ja kehtivat ID-kaarti.
                   Sisestage ID-kaart kaardilugejasse ja vajutage "Jätka".
                 </Text>
-                <Button
-                  bg="#008936"
-                  _hover={{ bg: "#00702c" }}
-                  width="14%"
-                  fontWeight="normal"
-                  textStyle="xl"
-                  rounded="lg"
-                  mt={4}
-                  pt={6}
-                  pb={6}
-                >
-                  Jätka
-                </Button>
+                <FakeIdCardPopup />
               </VStack>
             )}
 
