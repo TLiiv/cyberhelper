@@ -21,8 +21,14 @@ const ScamFacebookLoginPage: React.FC = () => {
   };
 
   return (
-    <Flex align="center" justify="center" minH="100vh" bg="gray.100" p={4}>
-      <Flex align="center" justify="space-between" maxW="1000px" w="100%">
+    <Flex align="flex-start" justify="center" minH="100vh" bg="gray.100" p={4}>
+      <Flex
+        align="center"
+        justify="space-between"
+        maxW="1000px"
+        w="100%"
+        mt={28}
+      >
         <Box flex="1" mt={-12}>
           <Image
             src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"
