@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Flex,
-  Input,
-  Heading,
-  Text,
-  Image,
-  Link,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Input, Text, Image, Link } from "@chakra-ui/react";
 
 const ScamFacebookLoginPage: React.FC = () => {
   const [username, setUsername] = useState<string>("");

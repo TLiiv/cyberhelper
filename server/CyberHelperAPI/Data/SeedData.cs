@@ -316,7 +316,7 @@ namespace server.Data
                             <br />
               
                             <p>Külastage meie veebilehte ja tutvu ka meie teiste tegevustega: <br/><a href='{{websiteLink}}' target='_blank'><b>Dharma Heategevusfond</b></a></p><br/>
-                           <p>Parimate soovidega, <br /><b>Urmas Sõõrumaa</b></p><br />
+                           <p>Parimate soovidega, <br /><b>Dharma juhatus</b></p><br />
                             <p style='color:gray;'>{{signature}}</p>                                
                             <br />
                             </div>
@@ -377,7 +377,7 @@ namespace server.Data
                           </p><br/>
                     
                           <p>
-                            Kui see oli teie poolt, siis pole rohkem midagi teha. Kui mitte, palun kaitske oma konto viivitamatult.
+                            Palun kaitske oma konto viivitamatult.
                           </p>
                             <div style='margin-top: 30px;'>
                                <a

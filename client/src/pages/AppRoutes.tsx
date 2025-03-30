@@ -8,12 +8,14 @@ import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Theme } from "@chakra-ui/react";
 import ScamFacebookLoginPage from "./ScamFacebookLoginPage";
+import ScamPolitseiIdLogin from "./ScamPolitseiIdLogin";
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();
   const scamPages = [
     "/dharmo.ee/donation",
     "/facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa",
+    "/politsei",
   ];
 
   const isScamPage = scamPages.includes(location.pathname);
@@ -31,6 +33,7 @@ const AppRoutes: React.FC = () => {
             path="/facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa"
             element={<ScamFacebookLoginPage />}
           />
+          <Route path="/politsei" element={<ScamPolitseiIdLogin />} />
         </Routes>
         {!isScamPage && <Footer />}
       </Theme>
