@@ -9,6 +9,7 @@ import {
   VStack,
   HStack,
   Heading,
+  InputGroup,
 } from "@chakra-ui/react";
 
 const ScamPolitseiIdLogin = () => {
@@ -117,7 +118,13 @@ const ScamPolitseiIdLogin = () => {
           </HStack>
         </Flex>
 
-        <Flex bg="white" p={6} justify="flex-end" borderRadius="lg">
+        <Flex
+          bg="white"
+          p={6}
+          justify="flex-end"
+          borderRadius="lg"
+          width="100%"
+        >
           <Flex width="85%" mb={4}>
             {selectedMethod === "id-kaart" && (
               <VStack align="start">
@@ -157,21 +164,74 @@ const ScamPolitseiIdLogin = () => {
                   sisselogimiseks vajate kehtivat Mobiil-ID lepingut. Sisestage
                   oma isikukood ja telefoninumber ning vajutage "Jätka".
                 </Text>
-                <Input placeholder="Isikukood" />
-                <Input placeholder="Telefoninumber" />
-                <Button
-                  bg="#008936"
-                  _hover={{ bg: "#00702c" }}
-                  width="14%"
-                  fontWeight="normal"
-                  textStyle="xl"
-                  rounded="lg"
-                  mt={4}
-                  pt={6}
-                  pb={6}
-                >
-                  Jätka
-                </Button>
+                <Flex mt={8} direction="column" align="flex-end">
+                  <HStack mb={3}>
+                    <Text fontSize="lg" fontWeight="semibold" color="gray.600">
+                      Isikukood
+                    </Text>
+                    <InputGroup
+                      startAddon={
+                        <Text color="gray.500" fontSize="lg" pl={2} pr={2}>
+                          EE
+                        </Text>
+                      }
+                      border="2px solid"
+                      borderColor="gray.600"
+                      rounded="lg"
+                      color="gray.800"
+                      width="325px"
+                    >
+                      <Input
+                        size="xl"
+                        border="none"
+                        fontSize="xl"
+                        fontWeight="bold"
+                      />
+                    </InputGroup>
+                  </HStack>
+
+                  <HStack>
+                    <Text fontSize="lg" fontWeight="semibold" color="gray.600">
+                      Telefoninumber
+                    </Text>
+                    <InputGroup
+                      startAddon={
+                        <Text color="gray.500" fontSize="lg" pl={2} pr={2}>
+                          +372
+                        </Text>
+                      }
+                      border="2px solid"
+                      borderColor="gray.600"
+                      rounded="lg"
+                      color="gray.800"
+                      width="325px"
+                    >
+                      <Input
+                        size="xl"
+                        border="none"
+                        fontSize="xl"
+                        fontWeight="bold"
+                      />
+                    </InputGroup>
+                  </HStack>
+
+                  <Flex justify="start" width="100%">
+                    <Button
+                      bg="#008936"
+                      _hover={{ bg: "#00702c" }}
+                      width="25%"
+                      fontWeight="normal"
+                      textStyle="xl"
+                      rounded="lg"
+                      mt={4}
+                      pt={6}
+                      pb={6}
+                      ml="30%"
+                    >
+                      Jätka
+                    </Button>
+                  </Flex>
+                </Flex>
               </VStack>
             )}
 
@@ -181,24 +241,55 @@ const ScamPolitseiIdLogin = () => {
                   Smart-ID
                 </Heading>
                 <Text fontSize="lg" fontWeight="normal" mt={4}>
-                  Teenusesse PPA ID-kaardi ja passi taotlemise iseteenindus
+                  Teenusesse
+                  <b> PPA ID-kaardi ja passi taotlemise iseteenindus </b>
                   sisselogimiseks vajate kehtivat Smart-ID kontot. Sisestage oma
-                  isikukood ning vajutage "Jätka".
+                  isikukood ning vajutage "Jätka". Seejärel saadetakse Teie
+                  Smart-ID rakendusse kontrollkood.
                 </Text>
-                <Input placeholder="Isikukood" />
-                <Button
-                  bg="#008936"
-                  _hover={{ bg: "#00702c" }}
-                  width="14%"
-                  fontWeight="normal"
-                  textStyle="xl"
-                  rounded="lg"
-                  mt={4}
-                  pt={6}
-                  pb={6}
-                >
-                  Jätka
-                </Button>
+                <Flex mt={8} direction="column" align="center">
+                  <HStack mb={3} ml="20%">
+                    <Text fontSize="lg" fontWeight="semibold" color="gray.600">
+                      Isikukood
+                    </Text>
+                    <InputGroup
+                      startAddon={
+                        <Text color="gray.500" fontSize="lg" pl={2} pr={2}>
+                          EE
+                        </Text>
+                      }
+                      border="2px solid"
+                      borderColor="gray.600"
+                      rounded="lg"
+                      color="gray.800"
+                      width="325px"
+                    >
+                      <Input
+                        size="xl"
+                        border="none"
+                        fontSize="xl"
+                        fontWeight="bold"
+                      />
+                    </InputGroup>
+                  </HStack>
+
+                  <Flex justify="start" width="100%">
+                    <Button
+                      bg="#008936"
+                      _hover={{ bg: "#00702c" }}
+                      width="25%"
+                      fontWeight="normal"
+                      textStyle="xl"
+                      rounded="lg"
+                      mt={4}
+                      pt={6}
+                      pb={6}
+                      ml="30%"
+                    >
+                      Jätka
+                    </Button>
+                  </Flex>
+                </Flex>
               </VStack>
             )}
           </Flex>
