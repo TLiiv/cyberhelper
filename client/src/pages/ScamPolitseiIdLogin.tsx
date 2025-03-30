@@ -73,6 +73,7 @@ const ScamPolitseiIdLogin = () => {
               textStyle="xl"
               rounded="lg"
               size="lg"
+              p={6}
               bg={selectedMethod === "id-kaart" ? "#005f87" : "white"}
               color={selectedMethod === "id-kaart" ? "white" : "#003168"}
               onClick={() => setSelectedMethod("id-kaart")}
@@ -89,6 +90,7 @@ const ScamPolitseiIdLogin = () => {
               textStyle="xl"
               rounded="lg"
               size="lg"
+              p={6}
               bg={selectedMethod === "mobiil-id" ? "#005f87" : "white"}
               color={selectedMethod === "mobiil-id" ? "white" : "#003168"}
               onClick={() => setSelectedMethod("mobiil-id")}
@@ -105,6 +107,7 @@ const ScamPolitseiIdLogin = () => {
               textStyle="xl"
               rounded="lg"
               size="lg"
+              p={6}
               bg={selectedMethod === "smart-id" ? "#005f87" : "white"}
               color={selectedMethod === "smart-id" ? "white" : "#003168"}
               onClick={() => setSelectedMethod("smart-id")}
