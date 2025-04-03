@@ -115,7 +115,7 @@ const EmailInbox: React.FC = () => {
           borderColor="gray.200"
           height="100%"
         >
-          <Box overflow="auto" height="80%">
+          <Box overflow="auto" maxHeight="calc(100vh - 100px)" height="80%">
             {selectedEmail ? (
               <EmailPreview
                 selectedEmail={selectedEmail}

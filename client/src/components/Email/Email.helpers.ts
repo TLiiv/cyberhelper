@@ -14,10 +14,22 @@ export interface Email {
   signature: string;
     isRead: boolean;
     imgUrl: string;
-    websiteLink: string;
+  websiteLink: string;
 }
 
 export const populateEmailBody = (body: string, email: Email): string => {
+  
+  const pastDate = new Date();
+  pastDate.setHours(pastDate.getHours() - 23);
+
+
+  const formattedPastDate = pastDate.toLocaleDateString("et-EE", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  
   return body
     .replace(/{{hiddenLink}}/g, email.hiddenLink)
       .replace(/{{displayLink}}/g, email.displayLink)
@@ -25,7 +37,8 @@ export const populateEmailBody = (body: string, email: Email): string => {
     .replace(/{{contactNumber}}/g, email.contactNumber)
     .replace(/{{iconUrl}}/g, email.iconUrl)
     .replace(/{{signature}}/g, email.signature)
-        .replace(/{{imgUrl}}/g, email.imgUrl);
+    .replace(/{{imgUrl}}/g, email.imgUrl)
+  .replace(/{{currentDate}}/g, formattedPastDate);
     
 };
 

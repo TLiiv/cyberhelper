@@ -372,8 +372,8 @@ namespace server.Data
                           <p>
                             Märkasime sisselogimisüritust uue seadme või asukoha poolt:<br/><br/>
                             <b>Seade:</b> Windows PC <br/>
-                            <b>Asukoht:</b> Moskva, Venemaa <br/>
-                            <b>Aeg:</b> Neljapäev, 4. aprill 2025 kell 14:05
+                            <b>Asukoht:</b> Peking, Hiina <br/>
+                            <b>Aeg:</b> {{currentDate}}
                           </p><br/>
                     
                           <p>
@@ -418,6 +418,230 @@ namespace server.Data
                     ImgUrl = null,
                     WebsiteLink = "https://www.facebook.com/settings"
                 },
+             new Email
+                {
+                    Id = Guid.NewGuid(),
+                    Sender = "teated@politsei.ee",
+                    Subject = "Süüteo teade",
+                    Body = @"
+                    <html>
+                      <body
+                        style='
+                          font-family: Arial, sans-serif;
+                          line-height: 1.6;
+                          text-align: center;
+                          margin: 0;
+                          padding: 0;
+                           overflow: auto;
+                        '
+                      >
+                        <div
+                          style='
+                            width: 100%;
+                            max-width: 600px;
+                            padding: 20px;
+                            margin: 0 auto;
+                            box-sizing: border-box;
+                          '
+                        >
+                          <p style='padding:20px 0;font-weight:bold;font-size: 1.125rem;'>
+                            Kutse seletuskirja andmiseks – menetlus number 1-25-447
+                          </p>
+                  
+                          
+                          <p>Teie andmed on seotud menetluses oleva juhtumiga ning palume teil esitada seletuskiri 72 tunni jooksul.</p><br/>
+                  
+                          <p style='text-align: left;'>
+                            <b>Menetluse number:</b> 1-25-447 <br/>
+                            <b>Kuupäev:</b> {{currentDate}} <br/>
+                            <b>Asukoht:</b> Eesti, Tallinn <br/>
+                            <b>Juhtumi liik:</b> Andmepettus
+                          </p><br/>
+                
+                          <p>
+                            Vajame teie kinnitust juhtunu kohta, teie isiku poolt sooritatud kahtlase tegevuse osas.
+                          </p><br/>
+                
+                          <p style='font-size: 16px; font-weight: bold;'>Kuidas vastata?</p>
+                          <p>
+                            Palume teil logida sisse riiklikku menetlussüsteemi, et esitada seletuskiri. Vastamata jätmine võib tuua kaasa täiendava menetluse.
+                          </p><br/>
+                
+                          <div style='margin-top: 30px;'>
+                            <a
+                              href='{{displayLink}}'
+                              style='
+                                display: inline-block;
+                                padding: 12px 24px;
+                                background-color: #003168;
+                                color: white;
+                                text-decoration: none;
+                                border-radius: 8px;
+                                font-size: 16px;
+                              '
+                              onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
+                            >
+                              Seletuskirja esitamiseks logi sisse
+                            </a>
+                          </div>
+                
+                          
+                
+                          <p style='color: gray;margin-top: 20px'>
+                           Lugupidamisega <br/>
+                           Politsei- ja Piirivalveamet<br/>
+                            <a
+                              href='{{hiddenLink}}'
+                              onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
+                            >
+                             www.politsei.ee
+                            </a>
+                          </p> <br/>
+                          <p style='border-bottom:2px solid lightgray; padding-bottom:20px;'>
+                              <em>Tegemist on automaatteavitusega, palume sellele mitte vastata</em>
+                            </p>
+                          </p>
+                        </div>
+                        <div
+                          style='
+                            width: 100%;
+                            max-width: 600px;
+                            padding: 20px;
+                            margin: 0 auto;
+                            box-sizing: border-box;
+                          '
+                        >
+                          <p style='padding:20px 0;font-weight:bold;font-size: 1.125rem;'>
+                            Приглашение для предоставления объяснительной записки – номер дела 1-25-447
+                          </p>
+                        
+                          <p>Ваши данные связаны с делом, и мы просим вас предоставить объяснительную записку в течение 72 часов.</p><br/>
+                        
+                          <p style='text-align: left;'>
+                            <b>Номер дела:</b> 1-25-447 <br/>
+                            <b>Дата:</b> {{currentDate}} <br/>
+                            <b>Местоположение:</b> Эстония, Таллинн <br/>
+                            <b>Тип дела:</b> Мошенничество с данными
+                          </p><br/>
+                        
+                          <p>
+                            Нам нужно ваше подтверждение по поводу происшедшего, относительно подозрительных действий, совершённых вами.
+                          </p><br/>
+                        
+                          <p style='font-size: 16px; font-weight: bold;'>Как ответить?</p>
+                          <p>
+                            Просим вас войти в государственную систему обработки дел для подачи объяснительной записки. Отказ от ответа может привести к дальнейшему процессу.
+                          </p><br/>
+                        
+                          <div style='margin-top: 30px;'>
+                            <a
+                              href='{{displayLink}}'
+                              style='
+                                display: inline-block;
+                                padding: 12px 24px;
+                                background-color: #003168;
+                                color: white;
+                                text-decoration: none;
+                                border-radius: 8px;
+                                font-size: 16px;
+                              '
+                              onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
+                            >
+                              Войти для подачи объяснительной записки
+                            </a>
+                          </div>
+                        
+                          <p style='color: gray;margin-top: 20px'>
+                            С уважением <br/>
+                            Полиция и Пограничная служба Эстонии<br/>
+                            <a
+                              href='{{hiddenLink}}'
+                              onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
+                            >
+                              www.politsei.ee
+                            </a>
+                          </p> <br/>
+                          <p style='border-bottom:1px solid lightgray;padding-bottom:20px;'>
+                            <em>Это автоматическое извещение, просим на него не отвечать</em>
+                          </p>
+                        </div>
+                        <div
+                          style='
+                            width: 100%;
+                            max-width: 600px;
+                            padding: 20px;
+                            margin: 0 auto;
+                            box-sizing: border-box;
+                          '
+                        >
+                          <p style='padding:20px 0;font-weight:bold;font-size: 1.125rem;'>
+                             Urgent request for an explanation – case number 1-25-447
+                          </p>
+                        
+                          <p>Your information is linked to the ongoing case, and we ask you to provide an explanation within 72 hours.</p><br/>
+                        
+                          <p style='text-align: left;'>
+                            <b>Case number:</b> 1-25-447 <br/>
+                            <b>Date:</b> {{currentDate}} <br/>
+                            <b>Location:</b> Estonia, Tallinn <br/>
+                            <b>Case type:</b> Data fraud
+                          </p><br/>
+                        
+                          <p>
+                            We require your explanation regarding the incident and the suspicious activities attributed to you.
+                            p>
+
+                        
+                          <p style='font-size: 16px; font-weight: bold;'>How to respond?</p>
+                          <p>
+                            Please log into the national case management system to submit your explanation. Failure to respond may result in further legal actions.
+                          </p><br/>
+                        
+                          <div style='margin-top: 30px;'>
+                            <a
+                              href='{{displayLink}}'
+                              style='
+                                display: inline-block;
+                                padding: 12px 24px;
+                                background-color: #003168;
+                                color: white;
+                                text-decoration: none;
+                                border-radius: 8px;
+                                font-size: 16px;
+                              '
+                              onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
+                            >
+                              Log in to submit your explanation
+                            </a>
+                          </div>
+                        
+                          <p style='color: gray;margin-top: 20px'>
+                            Sincerely <br/>
+                            Police and Border Guard Board<br/>
+                            <a
+                              href='{{hiddenLink}}'
+                              onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
+                            >
+                              www.politsei.ee
+                            </a>
+                          </p> <br/>
+                         <p style='border-bottom:1px solid lightgray;padding-bottom:20px;'>
+                            <em>This is automated message, please do not reply</em>
+                          </p>
+                        </div>
+                      </body>
+                    </html>",
+                    IsPhishing = true,
+                    DisplayLink = "https://www.politsei.ee/",
+                    HiddenLink = "http://localhost:5173/politsei",
+                    Difficulty = 1,
+                    IconUrl = null,
+                    ContactNumber = null,
+                    Signature = null,
+                    ImgUrl = null,
+                    WebsiteLink = "https://www.politsei.ee/"
+                },
+
 
                 new Email
                 {
