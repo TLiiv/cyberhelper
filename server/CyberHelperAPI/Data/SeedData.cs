@@ -40,7 +40,7 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = null,
                     HiddenLink = null,
-                    Difficulty = 10,
+                    Difficulty = 1,
                     IconUrl = null,
                     ContactNumber = null,
                     Signature = null,
@@ -70,7 +70,7 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = null,
                     HiddenLink = "http://phishing-lottery-claim.com",
-                    Difficulty = 9,
+                    Difficulty = 2,
                     IconUrl = null,
                     ContactNumber = null,
                     Signature = null,
@@ -110,7 +110,7 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = null,
                     HiddenLink = null,
-                    Difficulty = 8,
+                    Difficulty = 3,
                     IconUrl = null,
                     ContactNumber = null,
                     Signature = null,
@@ -212,7 +212,7 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = null,
                     HiddenLink= "http://surveydata.com.ru/21398+sa9d89d17a87019d109s8d90as8d",
-                    Difficulty = 6,
+                    Difficulty = 5,
                     IconUrl = null,
                     ContactNumber = null,
                     Signature = "CVKeskus",
@@ -325,7 +325,7 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = null,
                     HiddenLink = $"http://localhost:5173/dharmo.ee/donation",
-                    Difficulty = 3,
+                    Difficulty = 7,
                     IconUrl = "https://dharma.ee/wp-content/uploads/2021/07/dharma.png",
                     ContactNumber = null,
                     Signature = "Sihtasutus Dharma<br />Türi 10d<br />11313 Tallinn",
@@ -412,7 +412,7 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = "https://facebook.com/security",
                     HiddenLink = "http://localhost:5173/facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa",
-                    Difficulty = 1,
+                    Difficulty = 9,
                     IconUrl = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
                     ContactNumber = null,
                     Signature = "Facebooki turvatiim",
@@ -637,32 +637,13 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = "https://www.politsei.ee/",
                     HiddenLink = "http://localhost:5173/politsei",
-                    Difficulty = 1,
+                    Difficulty = 8,
                     IconUrl = null,
                     ContactNumber = null,
                     Signature = null,
                     ImgUrl = null,
                     WebsiteLink = "https://www.politsei.ee/"
                 },
-
-
-                new Email
-                {
-                    Id = Guid.NewGuid(),
-                    Sender = "support@swedbank-security.ee",
-                    Subject = "Tähelepanu! Teie konto on lukustatud",
-                    Body = "Teie konto on ajutiselt peatatud. Palun logige sisse ja kinnitage oma andmed.",
-                    IsPhishing = true,
-                    DisplayLink = "www.swedbank.ee/login",
-                    HiddenLink = "http://secure-swedbank-login.com",
-                    Difficulty = 4,
-                    IconUrl = "Swedbank ei küsi kunagi paroole e-posti teel.",
-                    ContactNumber = "+372-660-1234",
-                    Signature = "Swedbank Turvameeskond",
-                    ImgUrl = null,
-                     WebsiteLink =null
-                },
-      
 
                 //Real Emails
             new Email
@@ -745,15 +726,116 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = "https://facebook.com/security",
                     HiddenLink = "http://localhost:5173/facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa",
-                    Difficulty = 1,
+                    Difficulty = 2,
                     IconUrl = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
                     ContactNumber = null,
                     Signature = "Facebooki turvatiim",
                     ImgUrl = null,
                     WebsiteLink = "https://www.facebook.com/settings"
                 },
-               
+            new Email
+                {
+                    Id = Guid.NewGuid(),
+                    Sender = "info@smartpost.ee",
+                    Subject = "Eelteade Sinu Amazoni pakk on teel Smartposti",
+                    Body = @"<html>
+                        <body
+                        style='
+                          font-family: Arial, sans-serif;
+                          line-height: 1.6;
+                          text-align: center;
+                          margin: 0;
+                          padding: 0;
+                          overflow: hidden;
+                        '
+                      >
+                      <div
+                          style='
+                            width: 100%;
+                            max-width: 600px;
+                            padding: 20px;
+                            margin: 0 auto;
+                            box-sizing: border-box;
+                          '
+                        >
+                    <div style='margin: 20px; display: flex; justify-content: center;'>
+                              <img
+                                src='{{iconUrl}}'
+                                alt='SmartPost'
+                                style='width: 200px;'
+                              />
+                            </div>
+                    <div style='display: flex; justify-content: center;'>
+                              <img
+                                src='{{imgUrl}}'
+                                alt='SmartPost'
+                                style='width: 100%;'
+                              />
+                            </div>
+                            
+                            <p style='margin-top:20px;'>Hea klient! Sinu Amazoni pakk JJFI63864910006502084 on teel Eestisse aadressile  Gonsiori 4 - 2, Tallinn. Kui soovid pakki pakiautomaati, siis palun tee valik siin: <a onclick='event.preventDefault()' style='color: rgb(43, 170, 223); text-decoration: underline; cursor: pointer;' href='https://link.itella.ee/um8p9a'>https://link.itella.ee/um8p9a</a></p> <br/>
                 
+                            <p>Anname Sulle teada, kui pakk on Smartposti saabunud.</p><br/>
+                
+                            <p>Jälgi saadetist:<br/>
+                            <a  style='color: rgb(43, 170, 223); text-decoration: underline; cursor: pointer;' href='{{displayLink}}' onclick='event.preventDefault()'>
+                            {{displayLink}}</a></p>               
+                            
+                
+                            <br/>
+                            <div style='text-align: center;'>
+                            <p>Heade soovidega,<br/>
+                            Smartpost Itella</p><br/>
+                
+                            <p style='font-size: 14px; color:rgb(169, 169, 169);'>
+                            {{signature}}
+                            </p><br/>
+                                <div style='
+                                  background-color:#0866ff;
+                                  padding: 15px;
+                                  
+                                  text-align: center;
+                                '>
+                                  <div style='
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: 20px;
+                                    flex-wrap: wrap;
+                                  '>
+                                    <img src='https://mcusercontent.com/5af13886255f1a425c172a8ad/images/5616eed3-a46e-41e5-b360-93e4c67ce46e.png' alt='Icon 1' style='width: 30px;' />
+                                    <img src='https://mcusercontent.com/5af13886255f1a425c172a8ad/images/84f2cb61-4c92-42d8-983d-0a85e4e51bd0.png' alt='Icon 2' style='width: 30px;' />
+                                    <img src='https://mcusercontent.com/5af13886255f1a425c172a8ad/images/5802a4a9-cb89-4ce6-97fc-1deee0f25ee5.png' alt='Icon 3' style='width: 30px;' />
+                                    <img src='https://mcusercontent.com/5af13886255f1a425c172a8ad/images/dc852b94-866e-4b0b-bb95-64f331c2b5e3.png' alt='Icon 4' style='width: 30px;' />
+                                  </div>
+
+                        </div>
+                            <p style='font-size: 14px;margin-top:20px;'>ITELLA ESTONIA OÜ</p>
+
+
+                            <p style='
+                                font-size: 12px;
+                                color: rgb(169, 169, 169);
+                                padding-top: 12px;
+                                margin-top: 12px;
+                                border-top: 1px solid #ccc;
+                            '>Saadame sulle ainult olulisi teateid seoses Itella teenusega.</p>
+                            </div>
+                            </div>
+                        </body>
+                    </html>",
+                    IsPhishing = false,
+                    DisplayLink = "https://itella.ee/eraklient/saadetise-jalgimine/?trackingCode=JJFI63864910006502084",
+                    HiddenLink = null,
+                    Difficulty = 1,
+                    IconUrl = "https://mcusercontent.com/4159d9c0d2b552f0080c635b6/images/0c2a3b0f-e070-cb5a-c7f2-1d79d9e43795.png",
+                    ContactNumber = "(+372) 60 11 000",
+                    Signature = "Lisainfo - (+372) 60 11 000  info@smartpost.ee<br/>E-R 9:00-20:00 L 9:00-15:00  P 10:00-15:00<br/>Riigipühadel suletud v.a jõulud<br/>",
+                    ImgUrl = "https://mcusercontent.com/4159d9c0d2b552f0080c635b6/images/243ad2f5-9b96-e9ab-6ed5-e986bef8404a.jpg",
+                    WebsiteLink = "https://itella.ee"
+                },
+
+
                 };
                 context.AddRange(emails);
                 context.SaveChanges();
