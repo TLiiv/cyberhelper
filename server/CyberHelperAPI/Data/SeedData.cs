@@ -662,56 +662,98 @@ namespace server.Data
                     ImgUrl = null,
                      WebsiteLink =null
                 },
-               new Email
-                {
-                    Id = Guid.NewGuid(),
-                    Sender = "info@estonialottery.ee",
-                    Subject = "Õnnitleme! Olete võitnud 50 000€",
-                    Body = @"<html>
-                        <body style='font-family: Arial, sans-serif; line-height: 1.6;'>
-                            <h2>Palju õnne!</h2>
-                            <p>Teie e-posti aadress valiti juhuslikult meie loosimises ning olete võitnud <strong>50 000€</strong>!</p>
-                            <p>Võidu kättesaamiseks klõpsake alloleval lingil ja täitke vorm:</p>
-  
-                            <a href='{{hiddenLink}}' style='display: inline-block; padding: 12px 24px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;'>{{displayLink}}</a>
-  
-                            <p>Kui teil on küsimusi, võtke ühendust numbril {{contactNumber}}.</p>
-  
-                            <p style='font-size: 12px; color: #555;'>{{footer}}</p>
-  
-                            <p>Parimate soovidega,<br />{{signature}}</p>
-                        </body>
-                    </html>",
-                    IsPhishing = true,
-                    DisplayLink = "www.estonialottery.ee",
-                    HiddenLink = "http://estonialottery-claim.com",
-                    Difficulty = 5,
-                    IconUrl = "Tingimused rakenduvad.",
-                    ContactNumber = "+372-555-7890",
-                    Signature = "Eesti Loterii",
-                    ImgUrl = null,
-                     WebsiteLink =null
-                },
       
 
                 //Real Emails
-                new Email
+            new Email
                 {
                     Id = Guid.NewGuid(),
-                    Sender = "hr@techcompany.com",
-                    Subject = "Tööpakkumine: Täiendav arendaja roll",
-                    Body = "Tere! Otsime meie meeskonda uut arendajat...",
-                    IsPhishing = false,
-                    DisplayLink = "www.techcompany.com",
-                    HiddenLink = "www.techcompany.com",
-                    Difficulty = 2,
-                    IconUrl = "Võtke meiega ühendust töövõimaluste osas.",
-                    ContactNumber = "+372-777-8888",
-                    Signature = "TechCompany HR",
+                    Sender = "security@facebook.com",
+                    Subject = "Turvahoiatus: Ebatavaline sisselogimisaktiivsus teie kontol",
+                    Body = @"
+                    <html>
+                      <body
+                        style='
+                          font-family: Arial, sans-serif;
+                          line-height: 1.6;
+                          text-align: center;
+                          margin: 0;
+                          padding: 0;
+                          overflow: hidden;
+                        '
+                      >
+                        <div
+                          style='
+                            width: 100%;
+                            max-width: 600px;
+                            padding: 20px;
+                            margin: 0 auto;
+                            box-sizing: border-box;
+                          '
+                        >
+                          <p>
+                       
+                    
+                          <p style='font-size: 18px; font-weight: bold;'> 
+                            <img 
+                              src='{{iconUrl}}' 
+                              alt='Facebooki logo' 
+                              style='width: 32px; height: auto;display:inline;'
+                            />
+                            Ebatavaline sisselogimisaktiivsus</p><br/>
+                          <p>Keegi logis just sinu Facebooki kontole sisse. Et veenduda, et see ei olnud sina, <b>logi kohe oma konto kaitsmiseks sisse!</b></p><br/>
+                    
+                          <p>
+                            Märkasime sisselogimisüritust uue seadme või asukoha poolt:<br/><br/>
+                            <b>Seade:</b> Windows PC <br/>
+                            <b>Asukoht:</b> Peking, Hiina <br/>
+                            <b>Aeg:</b> {{currentDate_et}}
+                          </p><br/>
+                    
+                          <p>
+                            Palun kaitske oma konto viivitamatult.
+                          </p>
+                            <div style='margin-top: 30px;'>
+                               <a
+                                 href='mailto:https://www.facebook.com/n/?login_alerts%2Fstart%2F&fbid=10162839574593724&s=e&context=Q7DVBAHu4mQtDrldGI6E5e2DENDvayAkPmZcIGSUlpe7es6SsxYZBSgBd_ouTcGM5UfiDXrJ6vdHmdczGq5gFv8pzxXFW-bJ755bP5c5xqbKBOXVfAFPK3PzcDMCi7-E&aref=1742472306163049&medium=email&mid=630c4a940=2.1742472306.AbxLpRy1twsUJaoRIIon_sg=Q6bPBAHKnwHR1kQJ75fyy1WUfa_KsOQkawoffZ7Z8YFbZNIZUQ&rms=v2&irms='
+                                 style='
+                                   display: inline-block;
+                                   padding: 12px 24px;
+                                   background-color: #1877f2;
+                                   color: white;
+                                   text-decoration: none;
+                                   border-radius: 8px;
+                                   font-size: 16px;
+                                 '
+                                 onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
+                               >
+                                 Kaitske oma kontot
+                               </a>
+                              </div>
+                    
+                          <p style='margin-top: 40px; color: gray;margin-bottom 40px;'>
+                            See hoiatus saadeti teie konto kaitsmiseks. Lisainfo turvavõimaluste kohta külastage oma 
+                            <a href='{{websiteLink}}' target='_blank' style='color: #1877f2;'>Turvaseadeid</a>.
+                          </p>
+                    
+                          <p style='color: gray;margin-top: 20px'>
+                            Facebook © 2025
+                          </p>
+                        </div>
+                      </body>
+                    </html>",
+                    IsPhishing = true,
+                    DisplayLink = "https://facebook.com/security",
+                    HiddenLink = "http://localhost:5173/facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa",
+                    Difficulty = 1,
+                    IconUrl = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+                    ContactNumber = null,
+                    Signature = "Facebooki turvatiim",
                     ImgUrl = null,
-                     WebsiteLink =null
-                }
-
+                    WebsiteLink = "https://www.facebook.com/settings"
+                },
+               
+                
                 };
                 context.AddRange(emails);
                 context.SaveChanges();
