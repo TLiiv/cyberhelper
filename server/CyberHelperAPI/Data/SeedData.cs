@@ -773,7 +773,9 @@ namespace server.Data
                               />
                             </div>
                             
-                            <p style='margin-top:20px;'>Hea klient! Sinu Amazoni pakk JJFI63864910006502084 on teel Eestisse aadressile  Gonsiori 4 - 2, Tallinn. Kui soovid pakki pakiautomaati, siis palun tee valik siin: <a onclick='event.preventDefault()' style='color: rgb(43, 170, 223); text-decoration: underline; cursor: pointer;' href='https://link.itella.ee/um8p9a'>https://link.itella.ee/um8p9a</a></p> <br/>
+                            <p style='margin-top:20px;'>Hea klient! Sinu Amazoni pakk JJFI63864910006502084 on teel Eestisse aadressile  Gonsiori 4 - 2, Tallinn. 
+Kui soovid pakki pakiautomaati, siis palun tee valik siin: 
+<a onclick='event.preventDefault()' style='color: rgb(43, 170, 223); text-decoration: underline; cursor: pointer;' href='https://link.itella.ee/um8p9a'>https://link.itella.ee/um8p9a</a></p> <br/>
                 
                             <p>Anname Sulle teada, kui pakk on Smartposti saabunud.</p><br/>
                 
@@ -827,13 +829,119 @@ namespace server.Data
                     IsPhishing = false,
                     DisplayLink = "https://itella.ee/eraklient/saadetise-jalgimine/?trackingCode=JJFI63864910006502084",
                     HiddenLink = null,
-                    Difficulty = 1,
+                    Difficulty = 2,
                     IconUrl = "https://mcusercontent.com/4159d9c0d2b552f0080c635b6/images/0c2a3b0f-e070-cb5a-c7f2-1d79d9e43795.png",
                     ContactNumber = "(+372) 60 11 000",
                     Signature = "Lisainfo - (+372) 60 11 000  info@smartpost.ee<br/>E-R 9:00-20:00 L 9:00-15:00  P 10:00-15:00<br/>Riigipühadel suletud v.a jõulud<br/>",
                     ImgUrl = "https://mcusercontent.com/4159d9c0d2b552f0080c635b6/images/243ad2f5-9b96-e9ab-6ed5-e986bef8404a.jpg",
                     WebsiteLink = "https://itella.ee"
                 },
+            new Email
+                    {
+                        Id = Guid.NewGuid(),
+                        Sender = "pilet@luxexpress.eu",
+                        Subject = "Ostukorv 250124875254",
+                        Body = @"<html>
+                            <body
+                        style='
+                          font-family: Arial, Helvetica, sans-serif;
+                          line-height: 1.4;
+                          text-align: center;
+                          margin: 0;
+                          padding: 0;
+                          overflow: hidden;
+                           
+                        '
+                      >
+                    <div
+                          style='
+                            width: 100%;
+                            max-width: 600px;
+                            padding: 20px;
+                            margin: 0 auto;
+                            box-sizing: border-box;
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size:14px;
+                            color:#484C55;
+                          '
+                        >
+                                <div style='display: flex; justify-content: center;width:100%'>
+                              <img
+                                src='{{imgUrl}}'
+                                alt='LuxExpress'
+                                style=''
+                              />
+                            </div>
+                                <div style='margin-top:20px;'>
+                                <p><b>Tere ja suur tänu, et valisid reisimiseks Lux Expressi!</b> Käesolevas e-kirjas on oluline reisiinfo ja manuses sõidupilet(id).</p>
+                    
+                                <p>Pardaleminekuks vajamineva(d) QR koodi(d) saad avada või printimiseks alla laadida, klikkides vii(de)tele:
+                                <a onclick='event.preventDefault()' style='color: #2a6887; text-decoration: underline; cursor: pointer;' href='https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=250124876449' > Tartu bussijaam - Tallinna bussijaam </a><br/>
+                                  27.04.2025 kell 15:00 <br/> Istekoht: <b>13</b> <br/>
+                                </p>
+
+                        <div/>        
+                        <div>  
+                                <h1 style='font-size: 1.75rem;font-weight: 500;margin-bottom: 1px;margin-top:20px;'>Minnes pardale:</h1>
+                                <ul>
+                                    <li><b>‣ palun esita meie töötajale trükitud või elektrooniline pilet (QR kood)</b></li>
+                                    <li>‣ Kasuta piletil märgitud istekohta</li>
+                                    <li>‣ Reisides üle riigipiiri, esita oma kodakondsusriigi pass või ID-kaart</li>
+                                    <li>‣ Pardale minek algab 15 minutit enne väljumist</li>
+                                    <li>‣ Bussid väljuvad õigeaegselt – palun ole kohal varakult</li>
+                                </ul><br/>
+                    <div/>  
+                    <div>  
+                                <h1 style='font-size: 1.75rem;font-weight: 500;margin-bottom: 1px;'>Enne reisimist:</h1>
+                                <ul>
+                                    <li>‣ palun kontrolli, kas valitud sihtkohta reisimiseks on vajalik viisa olemasolu</li>
+                                    <li>‣ palun pane tähele, et kõik kellaajad piletitel, e-kirjadel või kodulehel on vastavuses riigi kohaliku ajavööndiga</li>
+                                    <li>‣ rahvusvaheliste reiside puhul palun kontrolli oma reisidokumentide kehtivust ning riigis kehtivaid piiranguid </li>
+                                </ul><br/>
+                    <div/>  
+                    <div>  
+                                <h1 style='font-size: 1.75rem;font-weight: 500;margin-bottom: 1px;'>Info reisi kohta, pileti muutmine/tagastamine:</h1>
+                                <ul>
+                                    <li>‣ sihtriigis kehtivate piirangute kohta loe:
+                                <a 
+                                onclick='event.preventDefault()' 
+                                style='color: #2a6887;text-decoration: underline; cursor: pointer;' 
+                                href='https://luxexpress.eu/news/reisiinfo'
+                                > https://luxexpress.eu/news/reisiinfo</a></li>
+                               <li>‣ klienditeeninduse kontaktid:<a onclick='event.preventDefault()' 
+                                style='color: #2a6887; text-decoration: underline; cursor: pointer;' 
+                                href='https://luxexpress.eu/contacts'> https://luxexpress.eu/contacts</a></li>
+                               <li>‣ piletite muutmine ja tagastamine:
+                                <a onclick='event.preventDefault()' 
+                                style='color: #2a6887; text-decoration: underline; cursor: pointer;' 
+                                href='https://luxexpress.eu/manage-booking'> https://luxexpress.eu/manage-booking</a> 
+                                <b>* Piletit on võimalik muuta kuni 3 korda</b> </li>
+                                </ul><br/>
+                    <div/>  
+                    <div>  
+                               <h1 style='font-size: 1.75rem;font-weight: 500;margin-bottom: 1px;margin-top:20px;'>Lux Expressi klienditeenindus vastab kõnedele iga päev:</h1>
+                                <ul  style='list-style-type: disc; padding-left: 20px; margin-left: 20px; margin-top: 10px;'>
+                                    <li>• 24/7 eesti, inglise ja vene keeles: +372 6800 909</li><br/>
+                                    <li>• 24/7 vene ja inglise keeles: +7 (812) 424 70 89</li><br/>
+                                    <li>• 08:00–20:00 08:00–20:00 läti, vene ja inglise keeles: +371 677 81350; pärast 20:00 inglise ja vene keeles</li>
+                                </ul><br/>
+                    
+                                <p style='margin-top:20px'>Meeldivat reisi soovides<br/>Lux Express</p>
+                                <p style='font-size: 12px; color: #555;margin-top:20px;'>*Käesolev kiri on saadetud automaatselt, palume sellele mitte vastata.</p>
+                    <div/>  
+                        </div>
+                            </body>
+                        </html>",
+                        IsPhishing = false,
+                        DisplayLink = null,
+                        HiddenLink = null,
+                        Difficulty = 1,
+                        IconUrl = null,
+                        ContactNumber = "+372 6800 909",
+                        Signature = "Lux Expressi klienditeenindus",
+                        ImgUrl ="https://p.pform.net/b/iYJQsUdAGaaa0U37V9Sjt9A3OTY5UQeuRH7TcFDjbpsshLnscP3VMRl-G4I6bSmZrPCqM7GPVDtvpTlylIlFdSQknio6pZjL8ZYa3c8G5FgVFYkdSTS9VeessiyA18i6DtMx-MPCnIyelYuT_ZnUs6SzyEs57r5aHsI6IhHMU9qe4LhkFWjPbnBhd8kYcC3cUn0MHfW0em2nMle0jPoX3Q,,",
+                        WebsiteLink = "https://luxexpress.eu"
+                    },
 
 
                 };
