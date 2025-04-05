@@ -23,7 +23,19 @@ export const populateEmailBody = (body: string, email: Email): string => {
   pastDate.setHours(pastDate.getHours() - 23);
 
 
-  const formattedPastDate = pastDate.toLocaleDateString("et-EE", {
+  const dateEt = pastDate.toLocaleDateString("et-EE", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  const dateRu = pastDate.toLocaleDateString("ru-RU", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  const dateEn = pastDate.toLocaleDateString("en-GB", {
     weekday: "long",
     day: "numeric",
     month: "long",
@@ -38,7 +50,9 @@ export const populateEmailBody = (body: string, email: Email): string => {
     .replace(/{{iconUrl}}/g, email.iconUrl)
     .replace(/{{signature}}/g, email.signature)
     .replace(/{{imgUrl}}/g, email.imgUrl)
-  .replace(/{{currentDate}}/g, formattedPastDate);
+  .replace(/{{currentDate_et}}/g, dateEt)
+    .replace(/{{currentDate_ru}}/g, dateRu)
+    .replace(/{{currentDate_en}}/g, dateEn);
     
 };
 

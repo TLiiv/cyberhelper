@@ -270,7 +270,7 @@ namespace server.Data
                                   border-radius: 8px;
                                   border: none;
                                 '
-                                onclick='window.open(""{{hiddenLink}}?amount=25"", ""_blank"")'
+                                onclick=""window.open('{{hiddenLink}}?amount=25', '_blank')""
                               >
                                 25 EUR
                               </button>
@@ -285,7 +285,7 @@ namespace server.Data
                                   border-radius: 8px;
                                   border: none;
                                 '
-                                onclick='window.open(""{{hiddenLink}}?amount=50"", ""_blank"")'
+                                onclick=""window.open('{{hiddenLink}}?amount=50', '_blank')""
                               >
                                 50 EUR
                               </button>
@@ -300,7 +300,7 @@ namespace server.Data
                                   border-radius: 8px;
                                   border: none;
                                 '
-                                onclick='window.open(""{{hiddenLink}}?amount=100"", ""_blank"")'
+                                onclick=""window.open('{{hiddenLink}}?amount=100', '_blank')""
                               >
                                 100 EUR
                               </button>
@@ -359,21 +359,22 @@ namespace server.Data
                           '
                         >
                           <p>
+                       
+                    
+                          <p style='font-size: 18px; font-weight: bold;'> 
                             <img 
                               src='{{iconUrl}}' 
                               alt='Facebooki logo' 
-                              style='width: 32px; height: auto;'
+                              style='width: 32px; height: auto;display:inline;'
                             />
-                          </p>
-                    
-                          <p style='font-size: 18px; font-weight: bold;'>Ebatavaline sisselogimisaktiivsus</p><br/>
+                            Ebatavaline sisselogimisaktiivsus</p><br/>
                           <p>Keegi logis just sinu Facebooki kontole sisse. Et veenduda, et see ei olnud sina, <b>logi kohe oma konto kaitsmiseks sisse!</b></p><br/>
                     
                           <p>
                             Märkasime sisselogimisüritust uue seadme või asukoha poolt:<br/><br/>
                             <b>Seade:</b> Windows PC <br/>
                             <b>Asukoht:</b> Peking, Hiina <br/>
-                            <b>Aeg:</b> {{currentDate}}
+                            <b>Aeg:</b> {{currentDate_et}}
                           </p><br/>
                     
                           <p>
@@ -453,7 +454,7 @@ namespace server.Data
                   
                           <p style='text-align: left;'>
                             <b>Menetluse number:</b> 1-25-447 <br/>
-                            <b>Kuupäev:</b> {{currentDate}} <br/>
+                            <b>Kuupäev:</b> {{currentDate_et}} <br/>
                             <b>Asukoht:</b> Eesti, Tallinn <br/>
                             <b>Juhtumi liik:</b> Andmepettus
                           </p><br/>
@@ -487,31 +488,31 @@ namespace server.Data
                 
                           
                 
-                          <p style='color: gray;margin-top: 20px'>
+                          <p style='margin-top: 20px'>
                            Lugupidamisega <br/>
                            Politsei- ja Piirivalveamet<br/>
                             <a
-                              href='{{hiddenLink}}'
+                              href='{{displayLink}}'
                               onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
+                              style='color: #0645AD; text-decoration: underline; cursor: pointer;'
                             >
                              www.politsei.ee
                             </a>
                           </p> <br/>
-                          <p style='border-bottom:2px solid lightgray; padding-bottom:20px;'>
-                              <em>Tegemist on automaatteavitusega, palume sellele mitte vastata</em>
+                          <p style='border-bottom:2px solid lightgray; padding-bottom:20px; font-style: italic;'>
+                                Tegemist on automaatteavitusega, palume sellele mitte vastata.
                             </p>
-                          </p>
                         </div>
                         <div
                           style='
                             width: 100%;
                             max-width: 600px;
-                            padding: 20px;
+                            padding: 0 20px 20px 20px;
                             margin: 0 auto;
                             box-sizing: border-box;
                           '
                         >
-                          <p style='padding:20px 0;font-weight:bold;font-size: 1.125rem;'>
+                          <p style='padding-bottom:20px;font-weight:bold;font-size: 1.125rem;'>
                             Приглашение для предоставления объяснительной записки – номер дела 1-25-447
                           </p>
                         
@@ -519,7 +520,7 @@ namespace server.Data
                         
                           <p style='text-align: left;'>
                             <b>Номер дела:</b> 1-25-447 <br/>
-                            <b>Дата:</b> {{currentDate}} <br/>
+                            <b>Дата:</b> {{currentDate_ru}} <br/>
                             <b>Местоположение:</b> Эстония, Таллинн <br/>
                             <b>Тип дела:</b> Мошенничество с данными
                           </p><br/>
@@ -551,30 +552,31 @@ namespace server.Data
                             </a>
                           </div>
                         
-                          <p style='color: gray;margin-top: 20px'>
+                          <p style='margin-top: 20px'>
                             С уважением <br/>
                             Полиция и Пограничная служба Эстонии<br/>
                             <a
-                              href='{{hiddenLink}}'
+                              href='{{displayLink}}'
                               onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
+                              style='color: #0645AD; text-decoration: underline; cursor: pointer;'
                             >
                               www.politsei.ee
                             </a>
                           </p> <br/>
-                          <p style='border-bottom:1px solid lightgray;padding-bottom:20px;'>
-                            <em>Это автоматическое извещение, просим на него не отвечать</em>
+                          <p style='border-bottom:2px solid lightgray; padding-bottom:20px; font-style: italic;'>
+                            Это автоматическое извещение, просим на него не отвечать.
                           </p>
                         </div>
                         <div
                           style='
                             width: 100%;
                             max-width: 600px;
-                            padding: 20px;
+                            padding: 0 20px 20px 20px;
                             margin: 0 auto;
                             box-sizing: border-box;
                           '
                         >
-                          <p style='padding:20px 0;font-weight:bold;font-size: 1.125rem;'>
+                          <p style='padding-bottom:20px;font-weight:bold;font-size: 1.125rem;'>
                              Urgent request for an explanation – case number 1-25-447
                           </p>
                         
@@ -582,14 +584,14 @@ namespace server.Data
                         
                           <p style='text-align: left;'>
                             <b>Case number:</b> 1-25-447 <br/>
-                            <b>Date:</b> {{currentDate}} <br/>
+                            <b>Date:</b> {{currentDate_en}} <br/>
                             <b>Location:</b> Estonia, Tallinn <br/>
                             <b>Case type:</b> Data fraud
                           </p><br/>
                         
                           <p>
                             We require your explanation regarding the incident and the suspicious activities attributed to you.
-                            p>
+                            </p>
 
                         
                           <p style='font-size: 16px; font-weight: bold;'>How to respond?</p>
@@ -615,18 +617,19 @@ namespace server.Data
                             </a>
                           </div>
                         
-                          <p style='color: gray;margin-top: 20px'>
+                          <p style='margin-top: 20px'>
                             Sincerely <br/>
                             Police and Border Guard Board<br/>
                             <a
-                              href='{{hiddenLink}}'
+                              href='{{displayLink}}'
                               onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
+                              style='color: #0645AD; text-decoration: underline; cursor: pointer;'
                             >
                               www.politsei.ee
                             </a>
                           </p> <br/>
-                         <p style='border-bottom:1px solid lightgray;padding-bottom:20px;'>
-                            <em>This is automated message, please do not reply</em>
+                         <p style='border-bottom:2px solid lightgray; padding-bottom:20px; font-style: italic;'>
+                            This is automated message, please do not reply.
                           </p>
                         </div>
                       </body>
