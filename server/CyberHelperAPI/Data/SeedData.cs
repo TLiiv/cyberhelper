@@ -120,7 +120,7 @@ namespace server.Data
                 new Email
                 {
                     Id = Guid.NewGuid(),
-                    Sender = "Lisette@cvkeskus.ee",
+                    Sender = "Lisette@cv-keskus.ee",
                     Subject = "Osale küsitluses ja võida auhind!",
                     Body = @"
                     <html>
@@ -147,11 +147,8 @@ namespace server.Data
                           >
                             <p><b>Kas oled juba Top Tööandja uuringus osalenud? 👀</b></p>
 
-                            <p>
-                              Viimane võimalus anda teada, kes on sinu arvates Eesti parimad
-                              tööandjad! 🤩
-                            </p>
-                            <br />
+                            <p>Viimane võimalus anda teada, kes on sinu arvates Eesti parimad tööandjad ja auhind võibki sinu olla! 🤩</p><br />
+                            
 
                             <p>Meil on hea meel teatada, et osaledes meie Top Tööandja uuringus. </p><br/>
                         <p>Saad mitte ainult anda oma hinnangu parimatele tööandjatele, vaid ka osaleda
@@ -935,13 +932,113 @@ Kui soovid pakki pakiautomaati, siis palun tee valik siin:
                         IsPhishing = false,
                         DisplayLink = null,
                         HiddenLink = null,
-                        Difficulty = 1,
+                        Difficulty = 10,
                         IconUrl = null,
                         ContactNumber = "+372 6800 909",
                         Signature = "Lux Expressi klienditeenindus",
                         ImgUrl ="https://p.pform.net/b/iYJQsUdAGaaa0U37V9Sjt9A3OTY5UQeuRH7TcFDjbpsshLnscP3VMRl-G4I6bSmZrPCqM7GPVDtvpTlylIlFdSQknio6pZjL8ZYa3c8G5FgVFYkdSTS9VeessiyA18i6DtMx-MPCnIyelYuT_ZnUs6SzyEs57r5aHsI6IhHMU9qe4LhkFWjPbnBhd8kYcC3cUn0MHfW0em2nMle0jPoX3Q,,",
                         WebsiteLink = "https://luxexpress.eu"
                     },
+             new Email
+                {
+                    Id = Guid.NewGuid(),
+                    Sender = "Lisette@cvkeskus.ee",
+                    Subject = "Osale küsitluses ja võida auhind!",
+                    Body = @"
+                    <body style='margin: 0; padding: 0; font-family: Arial,helvetica,sans-serif;'>
+                          <div style='max-width: 600px; margin: 0 auto; padding: 20px; text-align: center;font-family: Arial,helvetica,sans-serif;'>
+                            <h1 style='font-size: 32px;'>Uus aasta algab heade uudistega! 💙</h1>
+
+                            <p style='margin-top:20px;'>
+                              Kas teadsid, et CV.ee tööportaalis on kõige laiem valik tööpakkumisi Eestis?<br />
+                              <b>Lausa üle 2000 tööpakkumise</b> 👀 Ei usu? Tule vaata järele ja leia uueks aastaks järgmine põnev väljakutse.
+                            </p>
+
+                            <a
+                              href='{{dsiplayLink}}'
+                              style='
+                                display: inline-block;
+                                margin: 20px 0;
+                                padding: 12px 24px;
+                                background-color: #1538d4;
+                                color: white;
+                                text-decoration: none;
+                                border-radius: 8px;
+                                width: 220px;
+                                text-align: center;
+                              '
+                              onclick='event.preventDefault();'
+                            >
+                              Vaata tööpakkumisi
+                            </a>
+
+                            <p style='margin-top:10px;'><b>Oled see sina, kes võidab vähem kui kahe päeva pärast 750€?</b></p>
+                            <p>Kas oled juba Top Tööandja uuringus osalenud? 👀</p>
+                            <p>Viimane võimalus anda teada, kes on sinu arvates Eesti parimad tööandjad ja auhind võibki sinu olla! 🤩</p>
+
+                            <a
+                              href='https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzDxqMM07iPy3rVGRxZOpu5/ZY5KF6ISH7K2'
+                              style='
+                                display: inline-block;
+                                margin: 20px 0;
+                                padding: 12px 24px;
+                                background-color: #1538d4;
+                                color: white;
+                                text-decoration: none;
+                                border-radius: 8px;
+                                width: 220px;
+                                text-align: center;
+                              '
+                              onclick='event.preventDefault();'
+                            >
+                              Osale uuringus
+                            </a>
+
+                            <p style='color:#A9A9A9;margin=20px 0;' ><b>Meiega leiad!</b></p>
+
+                            <p style='color:#888888;font-size:14px;margin-top:20px;'>
+                              See e-mail saadeti aadressile user@cybermail.ee. See kiri jõudis Sinuni, sest oled Alma Career Estonia OÜ registreeritud kasutaja.
+                            </p>
+
+                            <p style='color:#666666; font-size:14px;margin-top:20px;'>
+                              <a href='https://r.email.cv.ee/mk/un/sh/7nVUagxo807TOoC4W7AJWKwG3eyOQ8P/RJTMigwGRmpl' style='text-decoration: underline;text-decoration-color: #0092ff;'>
+                                Infokirja listist lahkumiseks vajuta siia / Unsubscribe
+                              </a>
+                            </p>
+                            <div style='color: #888888;font-size:14px;background-color:#f7f7f7;'>
+                                <div style='padding:20px;'>
+                            <p style='text-align:left;'>
+                              {{signature}}
+                              <a href='https://posti.mail.ee/compose?to=aW5mb0Bjdi5lZQ==' style='text-decoration: underline;'>info@cv.ee</a>
+                            </p><br/>
+                            <p style='margin:20px 0' >© Alma Career Estonia OÜ</p><br/>
+                            <p style='color:#3c4858;'><b> Kasulikud lingid</b></p><br/>
+                            <div style='display: flex; justify-content: space-between; margin-top: 10px; gap: 10px; flex-wrap: wrap;'>
+                                  <a style='color: #0092ff; text-decoration: underline; cursor: pointer;' href='https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzPHnVNpz7ogI1Q7S8Y7HZB/Vkrve4RZhw5C' onclick='event.preventDefault()'>
+                                    Tööelublogi
+                                  </a>
+                                  <a style='color: #0092ff; text-decoration: underline; cursor: pointer;' href='https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzPHnVNpz7ogI1Q7S8Y7HZB/Vkrve4RZhw5C' onclick='event.preventDefault()'>
+                                    Värsked tööpakkumised
+                                  </a>
+                                  <a style='color: #0092ff; text-decoration: underline; cursor: pointer;' href='https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzPHnVNpz7ogI1Q7S8Y7HZB/Vkrve4RZhw5C' onclick='event.preventDefault()'>
+                                    Tööpakkumiste teavitus
+                                  </a>
+                                </div>
+                               </div>
+                            </div>
+                          </div>
+                        </body>
+                    </html>",
+                    IsPhishing = true,
+                    DisplayLink = "https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzC4qpqh99BW1VBSHb4c5xZ/efbFEVi3ZAlq",
+                    HiddenLink= null,
+                    Difficulty = 1,
+                    IconUrl = null,
+                    ContactNumber = null,
+                    Signature = "Alma Career Estonia OÜ<br/>Pärnu mnt 158/1<br/>11317 Tallinn<br/>",
+                    WebsiteLink =null,
+                    ImgUrl = null,
+                },
 
 
                 };
