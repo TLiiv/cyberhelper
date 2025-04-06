@@ -69,7 +69,8 @@ const EmailInbox: React.FC = () => {
             p={4}
             align="stretch"
             bg="gray.100"
-            height="75%"
+            maxHeight="calc(100vh - 100px)"
+            height="80%"
             overflowY="auto"
           >
             {loading ? (

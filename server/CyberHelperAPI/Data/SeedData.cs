@@ -355,22 +355,32 @@ namespace server.Data
                             box-sizing: border-box;
                           '
                         >
-                          <p>
+                           <div style='
+                              border-bottom: 1px solid #d3d3d3; 
+                              padding: 10px 0px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: space-between;
+                              
+                            '>
+                              <img 
+                                src='{{iconUrl}}' 
+                                alt='Facebooki logo' 
+                                style='width: 32px; height: auto; display: inline-block;'
+                              />
+                             
+                            </div>
                        
                     
-                          <p style='font-size: 18px; font-weight: bold;'> 
-                            <img 
-                              src='{{iconUrl}}' 
-                              alt='Facebooki logo' 
-                              style='width: 32px; height: auto;display:inline;'
-                            />
+                          <p style='font-size: 24px; font-weight: bold;margin-top:20px;'> 
+                            
                             Ebatavaline sisselogimisaktiivsus</p><br/>
                           <p>Keegi logis just sinu Facebooki kontole sisse. Et veenduda, et see ei olnud sina, <b>logi kohe oma konto kaitsmiseks sisse!</b></p><br/>
                     
                           <p>
                             Märkasime sisselogimisüritust uue seadme või asukoha poolt:<br/><br/>
                             <b>Seade:</b> Windows PC <br/>
-                            <b>Asukoht:</b> Peking, Hiina <br/>
+                            <b>Asukoht:</b> Beijing, China <br/>
                             <b>Aeg:</b> {{currentDate_et}}
                           </p><br/>
                     
@@ -382,12 +392,15 @@ namespace server.Data
                                  href='mailto:https://www.facebook.com/n/?login_alerts%2Fstart%2F&fbid=10162839574593724&s=e&context=Q7DVBAHu4mQtDrldGI6E5e2DENDvayAkPmZcIGSUlpe7es6SsxYZBSgBd_ouTcGM5UfiDXrJ6vdHmdczGq5gFv8pzxXFW-bJ755bP5c5xqbKBOXVfAFPK3PzcDMCi7-E&aref=1742472306163049&medium=email&mid=630c4a940=2.1742472306.AbxLpRy1twsUJaoRIIon_sg=Q6bPBAHKnwHR1kQJ75fyy1WUfa_KsOQkawoffZ7Z8YFbZNIZUQ&rms=v2&irms='
                                  style='
                                    display: inline-block;
-                                   padding: 12px 24px;
-                                   background-color: #1877f2;
+                                   padding: 6px 0px;
+                                   background-color: rgb(27, 116, 228);
                                    color: white;
                                    text-decoration: none;
-                                   border-radius: 8px;
-                                   font-size: 16px;
+                                   border-radius: 6px;
+                                   font-size: 17px;
+                                    font-weight:bold;
+                                   width:100%;
+                                   text-align:center;
                                  '
                                  onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
                                >
@@ -400,16 +413,29 @@ namespace server.Data
                             <a href='{{websiteLink}}' target='_blank' style='color: #1877f2;'>Turvaseadeid</a>.
                           </p>
                     
-                          <p style='color: gray;margin-top: 20px'>
-                            Facebook © 2025
-                          </p>
+                           <div style='
+                                    margin-top:20px;
+                                  border-top: 1px solid #d3d3d3; 
+                                  padding: 10px 0px;
+                                  color: rgb(170, 170, 170);
+                                  font-size: 11px;
+                                  text-align: center;
+                                  align-items:center;
+                                '>
+                                  <p>
+                                    saatis<br/>
+                                    <img src='https://facebook.com/images/email/meta_logo.png' alt='meta' style='width:72px; display: inline-block;' /><br/>
+                                    © Facebook. Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Ireland <br/>                            
+                                    Oma konto kaitsmiseks ära saada seda meili edasi. <a onclick='event.preventDefault();' href='https://www.facebook.com/help/213481848684090/' style='color: rgb(27, 116, 228); cursor: pointer;'>Lisateave</a><br/>
+                                  </p>
+                                </div>
                         </div>
                       </body>
                     </html>",
                     IsPhishing = true,
                     DisplayLink = "https://facebook.com/security",
                     HiddenLink = "http://localhost:5173/facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa",
-                    Difficulty = 9,
+                    Difficulty = 3,
                     IconUrl = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
                     ContactNumber = null,
                     Signature = "Facebooki turvatiim",
@@ -646,93 +672,6 @@ namespace server.Data
             new Email
                 {
                     Id = Guid.NewGuid(),
-                    Sender = "security@facebook.com",
-                    Subject = "Turvahoiatus: Ebatavaline sisselogimisaktiivsus teie kontol",
-                    Body = @"
-                    <html>
-                      <body
-                        style='
-                          font-family: Arial, sans-serif;
-                          line-height: 1.6;
-                          text-align: center;
-                          margin: 0;
-                          padding: 0;
-                          overflow: hidden;
-                        '
-                      >
-                        <div
-                          style='
-                            width: 100%;
-                            max-width: 600px;
-                            padding: 20px;
-                            margin: 0 auto;
-                            box-sizing: border-box;
-                          '
-                        >
-                          <p>
-                       
-                    
-                          <p style='font-size: 18px; font-weight: bold;'> 
-                            <img 
-                              src='{{iconUrl}}' 
-                              alt='Facebooki logo' 
-                              style='width: 32px; height: auto;display:inline;'
-                            />
-                            Ebatavaline sisselogimisaktiivsus</p><br/>
-                          <p>Keegi logis just sinu Facebooki kontole sisse. Et veenduda, et see ei olnud sina, <b>logi kohe oma konto kaitsmiseks sisse!</b></p><br/>
-                    
-                          <p>
-                            Märkasime sisselogimisüritust uue seadme või asukoha poolt:<br/><br/>
-                            <b>Seade:</b> Windows PC <br/>
-                            <b>Asukoht:</b> Peking, Hiina <br/>
-                            <b>Aeg:</b> {{currentDate_et}}
-                          </p><br/>
-                    
-                          <p>
-                            Palun kaitske oma konto viivitamatult.
-                          </p>
-                            <div style='margin-top: 30px;'>
-                               <a
-                                 href='mailto:https://www.facebook.com/n/?login_alerts%2Fstart%2F&fbid=10162839574593724&s=e&context=Q7DVBAHu4mQtDrldGI6E5e2DENDvayAkPmZcIGSUlpe7es6SsxYZBSgBd_ouTcGM5UfiDXrJ6vdHmdczGq5gFv8pzxXFW-bJ755bP5c5xqbKBOXVfAFPK3PzcDMCi7-E&aref=1742472306163049&medium=email&mid=630c4a940=2.1742472306.AbxLpRy1twsUJaoRIIon_sg=Q6bPBAHKnwHR1kQJ75fyy1WUfa_KsOQkawoffZ7Z8YFbZNIZUQ&rms=v2&irms='
-                                 style='
-                                   display: inline-block;
-                                   padding: 12px 24px;
-                                   background-color: #1877f2;
-                                   color: white;
-                                   text-decoration: none;
-                                   border-radius: 8px;
-                                   font-size: 16px;
-                                 '
-                                 onclick=""window.open('{{hiddenLink}}', '_blank'); return false;""
-                               >
-                                 Kaitske oma kontot
-                               </a>
-                              </div>
-                    
-                          <p style='margin-top: 40px; color: gray;margin-bottom 40px;'>
-                            See hoiatus saadeti teie konto kaitsmiseks. Lisainfo turvavõimaluste kohta külastage oma 
-                            <a href='{{websiteLink}}' target='_blank' style='color: #1877f2;'>Turvaseadeid</a>.
-                          </p>
-                    
-                          <p style='color: gray;margin-top: 20px'>
-                            Facebook © 2025
-                          </p>
-                        </div>
-                      </body>
-                    </html>",
-                    IsPhishing = true,
-                    DisplayLink = "https://facebook.com/security",
-                    HiddenLink = "http://localhost:5173/facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa",
-                    Difficulty = 2,
-                    IconUrl = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
-                    ContactNumber = null,
-                    Signature = "Facebooki turvatiim",
-                    ImgUrl = null,
-                    WebsiteLink = "https://www.facebook.com/settings"
-                },
-            new Email
-                {
-                    Id = Guid.NewGuid(),
                     Sender = "info@smartpost.ee",
                     Subject = "Eelteade Sinu Amazoni pakk on teel Smartposti",
                     Body = @"<html>
@@ -771,8 +710,8 @@ namespace server.Data
                             </div>
                             
                             <p style='margin-top:20px;'>Hea klient! Sinu Amazoni pakk JJFI63864910006502084 on teel Eestisse aadressile  Gonsiori 4 - 2, Tallinn. 
-Kui soovid pakki pakiautomaati, siis palun tee valik siin: 
-<a onclick='event.preventDefault()' style='color: rgb(43, 170, 223); text-decoration: underline; cursor: pointer;' href='https://link.itella.ee/um8p9a'>https://link.itella.ee/um8p9a</a></p> <br/>
+                            Kui soovid pakki pakiautomaati, siis palun tee valik siin: 
+                            <a onclick='event.preventDefault()' style='color: rgb(43, 170, 223); text-decoration: underline; cursor: pointer;' href='https://link.itella.ee/um8p9a'>https://link.itella.ee/um8p9a</a></p> <br/>
                 
                             <p>Anname Sulle teada, kui pakk on Smartposti saabunud.</p><br/>
                 
@@ -997,7 +936,7 @@ Kui soovid pakki pakiautomaati, siis palun tee valik siin:
                             <p style='color:#A9A9A9;margin=20px 0;' ><b>Meiega leiad!</b></p>
 
                             <p style='color:#888888;font-size:14px;margin-top:20px;'>
-                              See e-mail saadeti aadressile user@cybermail.ee. See kiri jõudis Sinuni, sest oled Alma Career Estonia OÜ registreeritud kasutaja.
+                              See e-mail saadeti aadressile user@cybermail.com. See kiri jõudis Sinuni, sest oled Alma Career Estonia OÜ registreeritud kasutaja.
                             </p>
 
                             <p style='color:#666666; font-size:14px;margin-top:20px;'>
@@ -1067,9 +1006,8 @@ Kui soovid pakki pakiautomaati, siis palun tee valik siin:
                               box-sizing: border-box;
                             '
                           >
-                            <p><img src='{{iconUrl}}'/><b>Meie fondi eesmärgiks on toetada laste ja noorte kasvamist.</b></p>
+                            <h1 style='font-size:24px;'><img src='{{iconUrl}}'/><b>Meie fondi eesmärgiks on toetada laste ja noorte kasvamist.</b></h1>
                             
-                            <br />
                           
                                 <p style='margin-top:20px;'><b>Selleks oleme:</b></p><br/>
                                     
@@ -1130,12 +1068,128 @@ Kui soovid pakki pakiautomaati, siis palun tee valik siin:
                     IsPhishing = false,
                     DisplayLink = null,
                     HiddenLink = null,
-                    Difficulty = 1,
+                    Difficulty = 4,
                     IconUrl = "https://dharma.ee/wp-content/uploads/2021/07/dharma.png",
                     ContactNumber = null,
                     Signature = "Sihtasutus Dharma<br />Türi 10d<br />11313 Tallinn",
                     ImgUrl = null,
                     WebsiteLink ="https://dharma.ee/lood/"
+                },
+                  new Email
+                {
+                    Id = Guid.NewGuid(),
+                    Sender = "security@facebookmail.com",
+                    Subject = "Kas sa logisid just sisse Tallinn lähedal uuest seadmest?",
+                    Body = @"
+                    <html>
+                       <body
+                           style='
+                             font-family: Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif, serif;
+                             line-height: 1.6;
+                             text-align: center;
+                             margin: 0;
+                             padding: 0;
+                             overflow: hidden;
+                           '
+                         >
+                           <div
+                             style='
+                               width: 100%;
+                               max-width: 600px;
+                               padding: 20px;
+                               margin: 0 auto;
+                               box-sizing: border-box;
+                               font-size:15px;
+                             '
+                           >
+
+                             <div style='
+                               border-bottom: 1px solid #d3d3d3; 
+                               padding: 10px 0px;
+                               display: flex;
+                               align-items: center;
+                               justify-content: space-between;
+                             '>
+                               <img 
+                                 src='{{iconUrl}}' 
+                                 alt='Facebooki logo' 
+                                 style='width: 32px; height: auto; display: inline-block;'
+                               />
+                               <p style='margin: 0;'>User</p>
+                             </div>
+
+                             <p style='font-size: 24px; font-weight: bold;margin-top:20px;'> 
+                               Turvahoiatus: sisselogimine Tallinn lähedal uuest seadmest
+                             </p><br/>
+
+                             <p>Tere, User!</p>
+                             <p style='margin-top:20px;'>Keegi logis just Tallinn, Estonia lähedal seadmes Firefox seadmes Windows sinu Facebooki kontole sisse. Kui see polnud sina, saame aidata sul paar lihtsat toimingut teha, et oma konto taas turvaliseks muuta.</p><br/>
+                             <p><b>Kas see olid sina?</b></p><br/>
+
+                            <div style='margin-top: 10px; border: 1px solid #d3d3d3; border-radius: 6px;'>
+                              <div style='padding: 10px;'>
+                                <img src='{{imgUrl}}' style='width: 100%; height: auto; border-radius: 6px;' />
+                                <p style='margin-top:10px;'><b>Seade:</b> Windows PC<br/>
+                                <b>Asukoht:</b> Tallinn, Estonia <br/>
+                                <b>Aeg:</b> {{currentDate_et}} kell 14:22
+                                </p>
+                              </div>
+                            </div>
+
+                             <div style='margin-top: 30px;'>
+                               <a
+                                 href='{{websiteLink}}'
+                                 style='
+                                   display: inline-block;
+                                   padding: 6px 0px;
+                                   background-color: rgb(27, 116, 228);
+                                   color: white;
+                                   text-decoration: none;
+                                   border-radius: 6px;
+                                   font-size: 17px;
+                                    font-weight:bold;
+                                   width:100%;
+                                   text-align:center;
+                                 '
+                                 onclick=""window.open('{{websiteLink}}', '_blank'); return false;""
+                               >
+                                 See ei olnud mina
+                               </a>
+                             </div>
+                                    
+                                <p style='margin-top:10px;'>Kui see olid sina, eira seda meili.</p>
+                                 <p style='margin-top:10px;'>Kas sa pole kindel, et see meil on päriselt meilt? Kinnituse leidmiseks külasta abikeskust: 
+                                <a href='{{displayLink}}' style='color: rgb(27, 116, 228); text-decoration: underline; cursor: pointer;' onclick=""window.open('{{websiteLink}}', '_blank'); return false;"">www.facebook.com/help/check-email</a>
+                                </p>
+                                <div style='
+                                    margin-top:20px;
+                                  border-top: 1px solid #d3d3d3; 
+                                  padding: 10px 0px;
+                                  color: rgb(170, 170, 170);
+                                  font-size: 11px;
+                                  text-align: center;
+                                  align-items:center;
+                                '>
+                                  <p>
+                                    saatis<br/>
+                                    <img src='https://facebook.com/images/email/meta_logo.png' alt='meta' style='width:72px; display: inline-block;' /><br/>
+                                    © Facebook. Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Ireland <br/>
+                                    Sõnum saadeti aadressile <a href='mailtto:user@cybermail.com' onclick='event.preventDefault();' style='color: rgb(27, 116, 228); cursor: pointer;'>user@cybermail.com</a>. <br/>
+                                    Oma konto kaitsmiseks ära saada seda meili edasi. <a onclick='event.preventDefault();' href='https://www.facebook.com/help/213481848684090/' style='color: rgb(27, 116, 228); cursor: pointer;'>Lisateave</a><br/>
+                                  </p>
+                                </div>
+                           </div>
+                         </body>
+                    </html>",
+                    IsPhishing = true,
+                    DisplayLink = "https://www.facebook.com/help/check-email?ref=email_login_alerts_new_device",
+                    HiddenLink = null,
+                    Difficulty = 1,
+                    IconUrl = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+                    ContactNumber = null,
+                    Signature = null,
+                    ImgUrl = "https://external.xx.fbcdn.net/static_map.php?v=2059&theme=dark&ccb=4-4&size=500x200&center=59.4187%2C24.7517&zoom=10&language=et_EE&scale=2&_nc_client_caller=static_map.php&_nc_client_id=account_center_email",
+                    WebsiteLink = "https://www.facebook.com/n/?login_alerts%2Fstart%2F&fbid=10162897261603724&s=e&context=Q7DVBAGdgzlE5YMsB_xQ9DiHEvzglqtF8xXLM-1p52JUA6Xb9-EyzgxmCm_SvEtwSJ5ygOyLQtoZARz4lwOi-JqgRlHnX4c3jOP4Y9N--_czXnZwmjtdMfmtCIgtTv7ZUhYy-Vcz2AgeV7CTm51F2nMpid_JHlOEBx9vq6ewvu7zj8Rsm6Finoad4biPQsMIeXe8rJUF053HqpKquuhEaEXpxQyDPfFkzDWgbOASwjFHpsRM2LccIkFooE0MjRRFBds-Kr1JQQQfCwNqvhb0TVWNqfM3aVoGSpuwaeSuML4&aref=1743765628190779&medium=email&mid=631f1c940fd69G271cdfcbG631f212d7003bG2bf&bcode=2.1743765628.AbzHGm_jILSemUW0wPQ&n_m=user%40cybermail.com&n_sg=Q6bPBAHKRNEmVyF0DhS4oUgNDVSMyBLOtCC_bYFPj2T_EPHCIg&rms=v2&irms=1"
                 },
 
 
