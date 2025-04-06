@@ -217,7 +217,7 @@ namespace server.Data
                     ImgUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png",
                 },
                 new Email
-{
+                {
                     Id = Guid.NewGuid(),
                     Sender = "noreply@dharma.ee",
                     Subject = "Aita uusi emasid – Kingi 25, 50 või 100 EUR!",
@@ -1029,15 +1029,113 @@ Kui soovid pakki pakiautomaati, siis palun tee valik siin:
                           </div>
                         </body>
                     </html>",
-                    IsPhishing = true,
+                    IsPhishing = false,
                     DisplayLink = "https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzC4qpqh99BW1VBSHb4c5xZ/efbFEVi3ZAlq",
                     HiddenLink= null,
-                    Difficulty = 1,
+                    Difficulty = 2,
                     IconUrl = null,
                     ContactNumber = null,
                     Signature = "Alma Career Estonia OÜ<br/>Pärnu mnt 158/1<br/>11317 Tallinn<br/>",
                     WebsiteLink =null,
                     ImgUrl = null,
+                },
+                 new Email
+                {
+                    Id = Guid.NewGuid(),
+                    Sender = "dharma@dharma.ee",
+                    Subject = "Aita toetada laste ja noorte kasvamist",
+                    Body = @"
+                    <html>
+                       <body
+                          style='
+                            font-family: Arial, sans-serif;
+                            line-height: 1.6;
+                            text-align: center;
+                            margin: 0;
+                            padding: 0;
+                            overflow: hidden;
+                          '
+                        >
+                
+                          <div
+                            style='
+                              width: 100%;
+                              max-width: 600px;
+                              padding: 20px;
+                              margin: 0 auto;
+                              max-height: 65vh;
+                              box-sizing: border-box;
+                            '
+                          >
+                            <p><img src='{{iconUrl}}'/><b>Meie fondi eesmärgiks on toetada laste ja noorte kasvamist.</b></p>
+                            
+                            <br />
+                          
+                                <p style='margin-top:20px;'><b>Selleks oleme:</b></p><br/>
+                                    
+                                 <p style='text-align: left;'>
+                                 
+                                    Oleme loonud stipendiumifondid, et utsitada asenduskodudes kasvavaid noori koolis rohkem pingutama ja anda ka suurperedest pärit noortele võimalus õppida ülikoolis.<br/><br/>
+                                 
+                                 
+                                    Oleme loonud allfondid, et parandada erivajadustega laste eneseteostuse võimalusi ja suurendada ühiskonnas vaimse tervise alast teadlikkust.<br/><br/>
+                                 
+                                
+                                    Pakume vanematele, kes on laste eest hoolitsemisega kimpus, teadmisi, oskusi ja tuge.<br/><br/>
+                                
+                                    Aitame peresid majanduslikult, sest vaesed lapsed kasvavad vaeses peres. Kui kõht täis ja soe olla, saab hakata ülejäänud muredele lahendusi otsima.<br/><br/>
+                                  
+                                </p>
+                          
+                            
+                           <p><b>Kui soovid ka panustada noorte elu heaolusse, tee väike annetus!</b><br /> <b>Ole osa muutusest. Aita meil muuta noorte elusid!</b></p>
+                            <br />         
+                
+                            <p><b>Oma panuse andmiseks:</b></p> <br/>
+                            <p>IBAN: EE082200221018171111<br />
+                                Swift/BIC: HABAEE2X<br />
+                                Selleks, et saada annetustelt tagasi tulumaks, lisa selgitusse oma isikukood<br /><br />
+
+                                Helistades 900 0005 annetad <b>25 EUR</b></p> <br/>
+                
+                            <div style='display: flex; justify-content: center; gap: 10px;'>
+                              <button
+                                style='
+                                  background-color: #4CAF50;
+                                  color: white;
+                                  padding: 10px 24px;
+                                  font-size: 16px;
+                                  cursor: pointer;
+                                  border-radius: 8px;
+                                  border: none;
+                                '
+                                onclick=""window.open('{{websiteLink}}', '_blank')""
+                              >
+                               Tutvu ka meie veebilehega
+                              </button>
+                        </div>
+                
+                            <br />
+                            <p style='margin-top: 20px;'>
+                              Dharma Heategevusfond, loodud 2001. aastal, on pühendunud heategevusele, et pakkuda igale lapsele just tema vajadustele vastavat abi.
+                            </p>
+                            <br />
+                
+                           <p>Parimate soovidega, <br /><b>Dharma juhatus</b></p><br />
+                            <p style='color:gray;'>{{signature}}</p>                                
+                            <br />
+                            </div>
+                        </body>
+                    </html>",
+                    IsPhishing = false,
+                    DisplayLink = null,
+                    HiddenLink = null,
+                    Difficulty = 1,
+                    IconUrl = "https://dharma.ee/wp-content/uploads/2021/07/dharma.png",
+                    ContactNumber = null,
+                    Signature = "Sihtasutus Dharma<br />Türi 10d<br />11313 Tallinn",
+                    ImgUrl = null,
+                    WebsiteLink ="https://dharma.ee/lood/"
                 },
 
 
