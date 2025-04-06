@@ -332,7 +332,7 @@ namespace server.Data
              new Email
                 {
                     Id = Guid.NewGuid(),
-                    Sender = "security@facebook.com",
+                    Sender = "notification@facebookssecurity.com",
                     Subject = "Turvahoiatus: Ebatavaline sisselogimisaktiivsus teie kontol",
                     Body = @"
                     <html>
@@ -1184,13 +1184,85 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = "https://www.facebook.com/help/check-email?ref=email_login_alerts_new_device",
                     HiddenLink = null,
-                    Difficulty = 1,
+                    Difficulty = 4,
                     IconUrl = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
                     ContactNumber = null,
                     Signature = null,
                     ImgUrl = "https://external.xx.fbcdn.net/static_map.php?v=2059&theme=dark&ccb=4-4&size=500x200&center=59.4187%2C24.7517&zoom=10&language=et_EE&scale=2&_nc_client_caller=static_map.php&_nc_client_id=account_center_email",
                     WebsiteLink = "https://www.facebook.com/n/?login_alerts%2Fstart%2F&fbid=10162897261603724&s=e&context=Q7DVBAGdgzlE5YMsB_xQ9DiHEvzglqtF8xXLM-1p52JUA6Xb9-EyzgxmCm_SvEtwSJ5ygOyLQtoZARz4lwOi-JqgRlHnX4c3jOP4Y9N--_czXnZwmjtdMfmtCIgtTv7ZUhYy-Vcz2AgeV7CTm51F2nMpid_JHlOEBx9vq6ewvu7zj8Rsm6Finoad4biPQsMIeXe8rJUF053HqpKquuhEaEXpxQyDPfFkzDWgbOASwjFHpsRM2LccIkFooE0MjRRFBds-Kr1JQQQfCwNqvhb0TVWNqfM3aVoGSpuwaeSuML4&aref=1743765628190779&medium=email&mid=631f1c940fd69G271cdfcbG631f212d7003bG2bf&bcode=2.1743765628.AbzHGm_jILSemUW0wPQ&n_m=user%40cybermail.com&n_sg=Q6bPBAHKRNEmVyF0DhS4oUgNDVSMyBLOtCC_bYFPj2T_EPHCIg&rms=v2&irms=1"
                 },
+                  new Email
+                {
+                    Id = Guid.NewGuid(),
+                    Sender = "noreply@cvkeskus.ee",
+                    Subject = "Kutse intervjuule: Telia otsib uut tiimijuhti!",
+                    Body = @"
+                    <html>
+                        <body style='font-family: Arial, sans-serif; line-height: 1.6; text-align: left; margin: 0; padding: 0;'>
+                            <div style='width: 100%; max-width: 600px; padding: 20px; margin: 0 auto; box-sizing: border-box;'>
+                                   
+                                <div>
+                                    <div><img style='width:162px;'src='{{imgUrl}}'/></div>
+                                    <div><img style='width:126px;' src='{{iconUrl}}'/></div>
+                                </div>
+                                <h1 style='font-size:22px;color: #2869B9;margin-top:20px'>Tööandja CV KESKUS OÜ saatis Sulle tööpakkumise!</h1>
+                                <p style='margin-top:30px'>Tere,</p><br/>
+                
+                                <p>Kirjutan Sulle CV Keskusest seoses ühe tööpakkumisega, mis Sinu jaoks ehk huvitav võiks tunduda. Telia Eesti AS-i otsib uut osakonnajuhti ja Sinu CV torkas neile silma.</p>
+                
+                                <p><b>Telia otsib hetkel uut osakonnajuhti, kelle ülesandeks saab olema tiimi juhtimine.</b></p>
+                                
+                
+                                <p><b>Sinu peamiseks tööks saab olema</b></p><br/>
+                                
+                                    <p>· 5-10 liikmelise tiimi juhtimine<br/>
+                                    · Osalemine juhtkonna strateegilistes aruteludes<br/>
+                                    · Töötulemuste analüüs ja aruandlus</p><br/>
+                               
+                                <p>Telia Eestiga liitudes, liitud innovaatilise ja digitaalselt edumeelse ettevõttega, mis kujundab homset ühenduvust ja väärtustatakse iga töötaja panust. Sind ootab stabiilne töö sõbralikus ja kokkuhoidvas meeskonnas. Lisaks täiendame Sulle pakutavat motivatsioonipaketti vastavalt Sinu soovidele.</p>
+                
+                                <p><b>Tööaeg:</b> esmaspäevast reedeni 8h</br> <b>Asukoht:</b> Telia peakontor, Mustamäe tee 3, Tallinn<br/><b>Töötasu:</b> alates 3300 € bruto</p><br/>
+                
+                                <p>Tekkis huvi?<br/>Enne intervjuule kutse saamist palun täitke allolev ankeet. Pärast ankeedi täitmist kontakteerub teiega Telia personalijuht edasiste juhistega. Intervjuu toimub Telia kontoris juba järgmisel nädalal.</p>
+                
+                                <div style='margin-top: 20px; display: flex; justify-content: center;'>
+                                    <a href='{{hiddenLink}}' style='
+                                        display: inline-block;
+                                        padding: 12px 24px;
+                                        background-color: #F37021;
+                                        color: white;
+                                        text-decoration: none;
+                                        border-radius: 8px;
+                                        width: 200px;
+                                        text-align: center;
+                                         onclick='event.preventDefault();'>
+                                        Täida ankeet
+                                    </a>
+                                </div>
+                                
+                                <p> Oleme osa rahvusvahelisest Telia Company grupist.
+
+                                    Telia Company on üks Euroopa suuremaid telekommunikatsiooniettevõtteid, mis tegutseb klientide jaoks aina enam ühtse ettevõttena. See võimaldab kliendil kasu saada grupi ettevõtete kliendiks olemisest ka välismaal, teiste grupi ettevõtete juures.
+                                    
+                                    Telia Company omab terviklikku strateegiat kogu grupi ulatuses, kuid erinevates riikides tegutsevad grupi ettevõtted vastavalt antud turu ja klientide vajadustele. </p>
+                                <p style='margin-top: 40px;'>Kui Sa ei ole huvitatud, ignoreeri seda kirja.</p>
+                
+                                
+                                <p>Said käesoleva kirja, sest tööandja leidis CV andmebaasist Sinu CV. Kui Sa ei soovi, et Sinu CV oleks andmebaasist leitav, siis palun muuda oma CV staatus passiivseks.</p>
+                            </div>
+                        </body>
+                    </html>",
+                    IsPhishing = true,
+                    DisplayLink = null,
+                    HiddenLink = "http://telia-application.ee/cv-data-form",
+                    Difficulty = 1,
+                    IconUrl = "https://p.pform.net/b/iZEW8wIRC_zO0BD6Eoiq_DmNz2Ba_f4LK8Rr8ugPD7fHPkaPTG-JBWqnnGl-z_NL4wcB2JfQz2-6fuCeXqfCPQ,,",
+                    ContactNumber = null,
+                    Signature = "Parimate soovidega<br/>CV Keskuse tiim<br/>CV KESKUS OÜ<br/>info@cvkeskus.ee",
+                    WebsiteLink = null,
+                    ImgUrl = "https://p.pform.net/b/iZEW8wIRC_zO0BD6Eoiq_DmNz2Ba_f4LK-xh5u5HLfdHP4X2fVZmycPZZxFt7HHUzqBESaDiGwRKdUs5eVL8HQ,,",
+                }
+
 
 
                 };
