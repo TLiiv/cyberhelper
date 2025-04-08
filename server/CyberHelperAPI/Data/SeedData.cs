@@ -1289,26 +1289,27 @@ namespace server.Data
                 
                                 <p>Kirjutan Sulle CV Keskusest seoses ühe tööpakkumisega, mis Sinu jaoks ehk huvitav võiks tunduda. Kuna tegemist on masspostitusega, vabandan ette, kui Sa ei ole hetkel avatud uutele tööpakkumistele.</p><br/>
 
-                                <p>Otsid huvitavat tööd, kus saad rakendada oma oskus tähelepanelikult kuulata ja mõista inimeste vajadusi? Soovid tegeleda personalijuhtimise valdkonna, organistatsioonikultuuri ja tööandja brändi arendamisega? Siis Telia Eesti AS ootab Sind,</p>
+                                <p>Sind käivitavad müük, inimesed, väljakutsed ja innovatsioon? Sa mõistad müügi mängureegleid ja oskad inspireerida inimesi tegema kvaliteetset müüki? Sul on sobiv kogemus ja hea energia? Kui jah, siis on see pakkumine just Sulle! Siis Telia Eesti AS ootab Sind,</p>
                                 <div style='display:flex;justify-content:center; padding:20px;'>
-                                <h1 style='font-size: 36px;'>Personalijuht</h1>
+                                <h1 style='font-size: 36px;'Esinduse juht</h1>
                                 </div>
               
                 
                                 <p><b>Sinu peamiseks tööks saab olema</b></p>
                                 
-                                    <p>· Töötada välja ja viia ellu personalistrateegia, mis toetab ettevõtte plaanide elluviimist ja inimeste õnnestumist.<br/>
-                                    · Luua positiivne tööõhkkond, tagada kiire värbamis-ja valikuprotsess ning arendada tööandja brändi.<br/>
-                                    · Koordineerida töötajate arendustegevusi.</p><br/>
+                                    <p>· Vastutad Viru esinduse tulemusliku juhtimise eest ja tagad, et meie klient oleks väga hästi hoitud.<br/>
+                                    · Teed tulemuslikku koostööd vajalike osapooltega ning oled selles iseseisev ja proaktiivne;.<br/>
+                                    · Panustad värskete ideedega esinduste juhtide meeskonda.</p><br/>
+                                    · Toetad tiimiliikmete individuaalset arengut, koostööd ja ühise edu saavutamist.</p><br/>
                                
                                 <p>Liitu meie kaasava tiimiga ja tee koostööd enam kui 15 000 andeka kolleegiga üle kogu maailma. Usume, et meie inimesed on meie kõige kallim vara, ja seetõttu tagame, et igaüks tunneb end oodatuna ja hinnatuna. Meiega liitudes saad ulatusliku hüvede paketi, kaugtöö võimalusi ja palju muud. Samuti on Sul võimalus teenida iga-aastast preemiat, mis põhineb Sinu ja Telia tulemuslikkusel. Kui soovid tõeliselt maailma mõjutada, siis kuulud meie tiimi!</p><br/>
                 
-                                <p><b>Tööaeg:</b> Meie töökorraldus on paindlik, võimaldab töötada osakoormusega (sh ainult õhtuti või nädalavahetustel) </br> <b>Asukoht:</b> Meie mugavas kontoris Tallinnas või ka kodukontoris<br/><b>Töötasu:</b> alates 2000 € bruto</p><br/>
+                                <p><b>Tööaeg:</b> Meie töökorraldus on paindlik ja toetab töö- ja eraelu tasakaalu; </br> <b>Asukoht:</b> Viru Keskuses Telia esinduses<br/><b>Töötasu:</b> alates 2000 € bruto</p><br/>
                 
                                 <p>Tekkis huvi?<br/>Lisainformatsioon kristi@cvkeskus.ee. CVKeskus.ee värbamiskonsultant Kristi Juurikas.</p>
                 
                                 <div style='margin-top: 20px; display: flex; justify-content: center;'>
-                                    <a href='{{hiddenLink}}' style='
+                                    <a href='{{displayLink}}' style='
                                         display: inline-block;
                                         padding: 10px 16px;
                                         background-color: white;
@@ -1319,7 +1320,7 @@ namespace server.Data
                                         width: 150px;
                                         text-align: center;
                                          onclick='event.preventDefault();'>
-                                        Täida ankeet
+                                        Avan ››
                                     </a>
                                 </div>
                                 
@@ -1340,8 +1341,8 @@ namespace server.Data
                             </body>
                     </html>",
                     IsPhishing = true,
-                    DisplayLink = null,
-                    HiddenLink = "http://telia-application.ee/cv-data-form",
+                    DisplayLink = "https://www.cvkeskus.ee/esinduse-juht-uude-viru-keskuse-telia-esindusse-tallinnas-telia-eesti-as-918000",
+                    HiddenLink = null,
                     Difficulty = 1,
                     IconUrl = "https://p.pform.net/b/iZEW8wIRC_zO0BD6Eoiq_DmNz2Ba_f4LK8Rr8ugPD7fHPkaPTG-JBWqnnGl-z_NL4wcB2JfQz2-6fuCeXqfCPQ,,",
                     ContactNumber = null,
