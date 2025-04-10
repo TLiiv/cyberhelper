@@ -12,8 +12,8 @@ const NavBar: React.FC = () => {
   // Menu Items Array
   const menuItems = [
     { label: "Esileht", to: "/" },
-    { label: "Test", to: "/Test" },
-    { label: "Õpetus", to: "/Tutorial" },
+    { label: "Test", to: "/test" },
+    { label: "Õpetus", to: "/tutorial" },
   ];
   const activeTab =
     menuItems.find((item) => item.to === location.pathname)?.label || "Esileht";
@@ -68,7 +68,7 @@ const NavBar: React.FC = () => {
                 fitted
                 maxW="xl"
                 borderBottom="none"
-                defaultValue={activeTab}
+                value={activeTab}
               >
                 <Tabs.List>
                   {menuItems.map(({ label, to }) => (
