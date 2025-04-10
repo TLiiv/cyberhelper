@@ -209,7 +209,7 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = null,
                     HiddenLink= "http://surveydata.com.ru/21398+sa9d89d17a87019d109s8d90as8d",
-                    Difficulty = 5,
+                    Difficulty = 4,
                     IconUrl = null,
                     ContactNumber = null,
                     Signature = "CVKeskus",
@@ -252,17 +252,9 @@ namespace server.Data
                                 <p>Tekkis huvi?<br/>Enne intervjuule kutse saamist palun täitke allolev ankeet. Pärast ankeedi täitmist kontakteerub teiega Telia personalijuht edasiste juhistega. Intervjuu toimub Telia kontoris juba järgmisel nädalal.</p>
                 
                                 <div style='margin-top: 20px; display: flex; justify-content: center;'>
-                                    <a href='{{hiddenLink}}' style='
-                                        display: inline-block;
-                                        padding: 10px 16px;
-                                        background-color: white;
-                                        color:#F18800;
-                                        border: 2px solid #F18800;
-                                        text-decoration: none;
-                                        border-radius: 8px;
-                                        width: 150px;
-                                        text-align: center;
-                                         onclick='event.preventDefault();'>
+                                   <a href=""{{displayLink}}""
+                                style='display: inline-block; padding: 10px 16px; background-color: white; color:#F18800; border: 2px solid #F18800; text-decoration: none; border-radius: 8px; width: 150px; text-align: center;' 
+                                onclick=""window.open('{{displayLink}}', '_blank'); return false;"">
                                         Täida ankeet
                                     </a>
                                 </div>
@@ -284,9 +276,9 @@ namespace server.Data
                             </body>
                     </html>",
                     IsPhishing = true,
-                    DisplayLink = null,
+                    DisplayLink = "www.cvkeskusteliaform.co.ru.ee",
                     HiddenLink = "http://telia-application.ee/cv-data-form",
-                    Difficulty = 2,
+                    Difficulty = 5,
                     IconUrl = "https://p.pform.net/b/iZEW8wIRC_zO0BD6Eoiq_DmNz2Ba_f4LK8Rr8ugPD7fHPkaPTG-JBWqnnGl-z_NL4wcB2JfQz2-6fuCeXqfCPQ,,",
                     ContactNumber = null,
                     Signature = "Parimate soovidega<br/>CV Keskuse tiim<br/>CV KESKUS OÜ<br/>",
@@ -512,7 +504,7 @@ namespace server.Data
                     IsPhishing = true,
                     DisplayLink = "https://facebook.com/security",
                     HiddenLink = "http://localhost:5173/facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa",
-                    Difficulty = 3,
+                    Difficulty = 6,
                     IconUrl = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
                     ContactNumber = null,
                     Signature = "Facebooki turvatiim",
@@ -842,7 +834,7 @@ namespace server.Data
                     IsPhishing = false,
                     DisplayLink = "https://itella.ee/eraklient/saadetise-jalgimine/?trackingCode=JJFI63864910006502084",
                     HiddenLink = null,
-                    Difficulty = 2,
+                    Difficulty = 3,
                     IconUrl = "https://mcusercontent.com/4159d9c0d2b552f0080c635b6/images/0c2a3b0f-e070-cb5a-c7f2-1d79d9e43795.png",
                     ContactNumber = "(+372) 60 11 000",
                     Signature = "Lisainfo - (+372) 60 11 000  info@smartpost.ee<br/>E-R 9:00-20:00 L 9:00-15:00  P 10:00-15:00<br/>Riigipühadel suletud v.a jõulud<br/>",
@@ -948,7 +940,7 @@ namespace server.Data
                         IsPhishing = false,
                         DisplayLink = null,
                         HiddenLink = null,
-                        Difficulty = 10,
+                        Difficulty = 2,
                         IconUrl = null,
                         ContactNumber = "+372 6800 909",
                         Signature = "Lux Expressi klienditeenindus",
@@ -971,7 +963,7 @@ namespace server.Data
                             </p>
 
                             <a
-                              href='{{dsiplayLink}}'
+                              href='{{displayLink}}'
                               style='
                                 display: inline-block;
                                 margin: 20px 0;
@@ -993,7 +985,7 @@ namespace server.Data
                             <p>Viimane võimalus anda teada, kes on sinu arvates Eesti parimad tööandjad ja auhind võibki sinu olla! 🤩</p>
 
                             <a
-                              href='https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzDxqMM07iPy3rVGRxZOpu5/ZY5KF6ISH7K2'
+                              href='{{websiteLink}}'
                               style='
                                 display: inline-block;
                                 margin: 20px 0;
@@ -1005,7 +997,7 @@ namespace server.Data
                                 width: 220px;
                                 text-align: center;
                               '
-                              onclick='event.preventDefault();'
+                              onclick=""event.preventDefault();""
                             >
                               Osale uuringus
                             </a>
@@ -1030,13 +1022,13 @@ namespace server.Data
                             <p style='margin:20px 0' >© Alma Career Estonia OÜ</p><br/>
                             <p style='color:#3c4858;'><b> Kasulikud lingid</b></p><br/>
                             <div style='display: flex; justify-content: space-between; margin-top: 10px; gap: 10px; flex-wrap: wrap;'>
-                                  <a style='color: #0092ff; text-decoration: underline; cursor: pointer;' href='https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzPHnVNpz7ogI1Q7S8Y7HZB/Vkrve4RZhw5C' onclick='event.preventDefault()'>
+                                  <a style='color: #0092ff; text-decoration: underline; cursor: pointer;' href='https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzPHnVNpz7ogI1Q7S8Y7HZB/Vksve3RZhw5C' onclick='event.preventDefault()'>
                                     Tööelublogi
                                   </a>
-                                  <a style='color: #0092ff; text-decoration: underline; cursor: pointer;' href='https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzPHnVNpz7ogI1Q7S8Y7HZB/Vkrve4RZhw5C' onclick='event.preventDefault()'>
+                                  <a style='color: #0092ff; text-decoration: underline; cursor: pointer;' href='https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzPHnVNpz7ogI1Q7S8Y7HZB/Vksve3RZhw5C' onclick='event.preventDefault()'>
                                     Värsked tööpakkumised
                                   </a>
-                                  <a style='color: #0092ff; text-decoration: underline; cursor: pointer;' href='https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzPHnVNpz7ogI1Q7S8Y7HZB/Vkrve4RZhw5C' onclick='event.preventDefault()'>
+                                  <a style='color: #0092ff; text-decoration: underline; cursor: pointer;' href='https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzPHnVNpz7ogI1Q7S8Y7HZB/Vksve3RZhw5C' onclick='event.preventDefault()'>
                                     Tööpakkumiste teavitus
                                   </a>
                                 </div>
@@ -1048,11 +1040,11 @@ namespace server.Data
                     IsPhishing = false,
                     DisplayLink = "https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzC4qpqh99BW1VBSHb4c5xZ/efbFEVi3ZAlq",
                     HiddenLink= null,
-                    Difficulty = 2,
+                    Difficulty = 4,
                     IconUrl = null,
                     ContactNumber = null,
                     Signature = "Alma Career Estonia OÜ<br/>Pärnu mnt 158/1<br/>11317 Tallinn<br/>",
-                    WebsiteLink =null,
+                    WebsiteLink ="https://r.email.cv.ee/mk/cl/f/sh/1t6AnZZCzDxqMM07iPy3rVGRxZOpu5/ZY5KE5ISH7K2",
                     ImgUrl = null,
                 },
                  new Email
@@ -1145,7 +1137,7 @@ namespace server.Data
                     IsPhishing = false,
                     DisplayLink = null,
                     HiddenLink = null,
-                    Difficulty = 4,
+                    Difficulty = 7,
                     IconUrl = "https://dharma.ee/wp-content/uploads/2021/07/dharma.png",
                     ContactNumber = null,
                     Signature = "Sihtasutus Dharma<br />Türi 10d<br />11313 Tallinn",
@@ -1258,10 +1250,10 @@ namespace server.Data
                            </div>
                          </body>
                     </html>",
-                    IsPhishing = true,
+                    IsPhishing = false,
                     DisplayLink = "https://www.facebook.com/help/check-email?ref=email_login_alerts_new_device",
                     HiddenLink = null,
-                    Difficulty = 4,
+                    Difficulty = 6,
                     IconUrl = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
                     ContactNumber = null,
                     Signature = null,
@@ -1309,19 +1301,11 @@ namespace server.Data
                                 <p>Tekkis huvi?<br/>Lisainformatsioon kristi@cvkeskus.ee. CVKeskus.ee värbamiskonsultant Kristi Juurikas.</p>
                 
                                 <div style='margin-top: 20px; display: flex; justify-content: center;'>
-                                    <a href='{{displayLink}}' style='
-                                        display: inline-block;
-                                        padding: 10px 16px;
-                                        background-color: white;
-                                        color:#F18800;
-                                        border: 2px solid #F18800;
-                                        text-decoration: none;
-                                        border-radius: 8px;
-                                        width: 150px;
-                                        text-align: center;
-                                         onclick='event.preventDefault();'>
-                                        Avan ››
-                                    </a>
+                                      <a href=""{{displayLink}}""
+                                         style='display: inline-block; padding: 10px 16px; background-color: white; color:#F18800; border: 2px solid #F18800; text-decoration: none; border-radius: 8px; width: 150px; text-align: center;'
+                                         onclick=""window.open('{{displayLink}}', '_blank'); return false;"">
+                                     Avan ››
+                                 </a>
                                 </div>
                                 
                                 <p style='font-style: italic; margin-top:20px;'> Telia Eesti on osa rahvusvahelisest Telia Company grupist.
@@ -1340,10 +1324,10 @@ namespace server.Data
                            </div>
                             </body>
                     </html>",
-                    IsPhishing = true,
+                    IsPhishing = false,
                     DisplayLink = "https://www.cvkeskus.ee/esinduse-juht-uude-viru-keskuse-telia-esindusse-tallinnas-telia-eesti-as-918000",
                     HiddenLink = null,
-                    Difficulty = 1,
+                    Difficulty = 5,
                     IconUrl = "https://p.pform.net/b/iZEW8wIRC_zO0BD6Eoiq_DmNz2Ba_f4LK8Rr8ugPD7fHPkaPTG-JBWqnnGl-z_NL4wcB2JfQz2-6fuCeXqfCPQ,,",
                     ContactNumber = null,
                     Signature = "Parimate soovidega<br/>Kristi Juurikas<br/>CV KESKUS OÜ<br/>kristi@cvkeskus.ee<br/>",
