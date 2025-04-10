@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import React, { useState, FormEvent, useEffect } from "react";
 import {
   Button,
   Input,
@@ -9,7 +9,7 @@ import {
   Portal,
   createListCollection,
 } from "@chakra-ui/react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 interface ScamDonationPageProps {}
 

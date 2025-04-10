@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import FakeIdCardPopup from "@/components/ScamEmail/FakeIdCardPopup";
 
-const ScamPolitseiIdLogin = () => {
+const ScamPolitseiIdLogin: React.FC = () => {
   const [selectedMethod, setSelectedMethod] = useState("id-kaart");
 
   return (
