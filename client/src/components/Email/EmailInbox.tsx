@@ -10,12 +10,14 @@ const EmailInbox: React.FC<{
   updateTotalEmails: (newTotal: number) => void;
   currentCorrectGuesses: number;
   currentIncorrectGuesses: number;
+  updateAnsweredCount: (index: number) => void;
 }> = ({
   updateCorrectGuesses,
   updateIncorrectGuesses,
   updateTotalEmails,
   currentCorrectGuesses,
   currentIncorrectGuesses,
+  updateAnsweredCount,
 }) => {
   const [emails, setEmails] = useState<Email[]>([]);
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
@@ -56,7 +58,8 @@ const EmailInbox: React.FC<{
 
   const visibilityHandler = () => {
     if (visibleCount < sortedEmails.length) {
-      setVisibleCount((prev) => prev + 1);
+      const newCount = visibleCount + 1;
+      setVisibleCount(newCount);
     }
   };
 
@@ -64,7 +67,12 @@ const EmailInbox: React.FC<{
     if (!selectedEmail) return;
     const correct = selectedEmail.isPhishing === isPhishingGuess;
 
-    setGuessedEmails((prev) => new Set(prev).add(selectedEmail.id));
+    setGuessedEmails((prev) => {
+      const newSet = new Set(prev);
+      newSet.add(selectedEmail.id);
+      updateAnsweredCount(newSet.size);
+      return newSet;
+    });
 
     if (correct) {
       updateCorrectGuesses(currentCorrectGuesses + 1);

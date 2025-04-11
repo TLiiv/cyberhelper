@@ -17,6 +17,7 @@ const EmailDashboard: React.FC = () => {
   const [totalEmails, setTotalEmails] = useState(0);
   const [correctGuesses, setCorrectGuesses] = useState(0);
   const [incorrectGuesses, setIncorrectGuesses] = useState(0);
+  const [answeredCount, setAnsweredCount] = useState(0);
 
   const updateCorrectGuesses = (newCorrectGuesses: number) => {
     setCorrectGuesses(newCorrectGuesses);
@@ -28,6 +29,10 @@ const EmailDashboard: React.FC = () => {
 
   const updateTotalEmails = (newTotal: number) => {
     setTotalEmails(newTotal);
+  };
+
+  const updateAnsweredCount = (newCount: number) => {
+    setAnsweredCount(newCount);
   };
 
   return (
@@ -125,14 +130,24 @@ const EmailDashboard: React.FC = () => {
             <Box
               p={3}
               width="30%"
-              textAlign="center"
-              background="teal.500"
-              borderRadius="full"
               height="50px"
               margin="auto"
+              display="flex"
+              alignItems="center"
+              justifyContent="space-around"
             >
-              <Text fontSize="lg" fontWeight="bold" color="gray.100">
-                Õigeid vastuseid {correctGuesses} / {totalEmails} -st emailist
+              <Text fontSize="md" fontWeight="bold" color="gray.800">
+                Vastatud: {answeredCount} / {totalEmails}
+              </Text>
+              <Text
+                fontSize="md"
+                fontWeight="bold"
+                color="gray.100"
+                background="teal.500"
+                borderRadius="2xl"
+                p={3}
+              >
+                Õigeid vastuseid: {correctGuesses}
               </Text>
             </Box>
           </Flex>
@@ -142,6 +157,7 @@ const EmailDashboard: React.FC = () => {
             updateTotalEmails={updateTotalEmails}
             currentCorrectGuesses={correctGuesses}
             currentIncorrectGuesses={incorrectGuesses}
+            updateAnsweredCount={updateAnsweredCount}
           />
         </Flex>
       </Flex>
