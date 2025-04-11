@@ -72,7 +72,7 @@ const EmailInbox: React.FC<{
     setGuessedEmails((prev) => {
       const newSet = new Set(prev);
       newSet.add(selectedEmail.id);
-      updateAnsweredCount(newSet.size);
+      //updateAnsweredCount(newSet.size);
       return newSet;
     });
 
@@ -86,6 +86,10 @@ const EmailInbox: React.FC<{
 
     visibilityHandler();
   };
+
+  useEffect(() => {
+    updateAnsweredCount(guessedEmails.size);
+  }, [guessedEmails, updateAnsweredCount]);
 
   const visibleEmails = sortedEmails.slice(0, visibleCount).reverse();
   const isCurrentEmailGuessed = selectedEmail
