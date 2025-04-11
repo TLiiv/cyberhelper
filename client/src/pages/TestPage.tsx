@@ -66,7 +66,7 @@ const TestPage: React.FC = () => {
                       </Text>
                       <Text mt={2}>
                         Testi oma teadlikkust ja uuri välja, kas sa suudad
-                        andmepüügi eristada õigest emailist. Edu!
+                        andmepüügi eristada õigest e-kirjast. Edu!
                       </Text>
                       <Text mt={2}>
                         Enne alustamist sisesta oma nimi ja vajuta „Alusta

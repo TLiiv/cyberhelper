@@ -71,7 +71,7 @@ const EmailDashboard: React.FC<EmailDashboardProps> = ({ username }) => {
             </Heading>
             <Heading pb={4} size="2xl" color="white" textAlign="center">
               {" "}
-              Hello{" "}
+              Tere,{" "}
               <Text as="span" color="teal.600">
                 {username}
               </Text>
