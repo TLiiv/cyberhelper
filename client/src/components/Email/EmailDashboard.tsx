@@ -12,8 +12,11 @@ import { LuClipboardPen, LuMail, LuMailCheck, LuTrash2 } from "react-icons/lu";
 import EmailInbox from "./EmailInbox";
 import { useState } from "react";
 
-const EmailDashboard: React.FC = () => {
-  const user = "User";
+type EmailDashboardProps = {
+  username: string;
+};
+
+const EmailDashboard: React.FC<EmailDashboardProps> = ({ username }) => {
   const [totalEmails, setTotalEmails] = useState(0);
   const [correctGuesses, setCorrectGuesses] = useState(0);
   const [incorrectGuesses, setIncorrectGuesses] = useState(0);
@@ -70,7 +73,7 @@ const EmailDashboard: React.FC = () => {
               {" "}
               Hello{" "}
               <Text as="span" color="teal.600">
-                {user}
+                {username}
               </Text>
             </Heading>
             <Button colorPalette="teal" variant="solid" size="xl" rounded="2xl">
@@ -158,6 +161,7 @@ const EmailDashboard: React.FC = () => {
             currentCorrectGuesses={correctGuesses}
             currentIncorrectGuesses={incorrectGuesses}
             updateAnsweredCount={updateAnsweredCount}
+            username={username}
           />
         </Flex>
       </Flex>

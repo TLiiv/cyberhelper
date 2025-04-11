@@ -1005,7 +1005,7 @@ namespace server.Data
                             <p style='color:#A9A9A9;margin=20px 0;' ><b>Meiega leiad!</b></p>
 
                             <p style='color:#888888;font-size:14px;margin-top:20px;'>
-                              See e-mail saadeti aadressile user@cybermail.com. See kiri jõudis Sinuni, sest oled Alma Career Estonia OÜ registreeritud kasutaja.
+                              See e-mail saadeti aadressile {{username}}@cybermail.com. See kiri jõudis Sinuni, sest oled Alma Career Estonia OÜ registreeritud kasutaja.
                             </p>
 
                             <p style='color:#666666; font-size:14px;margin-top:20px;'>
@@ -1184,14 +1184,14 @@ namespace server.Data
                                  alt='Facebooki logo' 
                                  style='width: 32px; height: auto; display: inline-block;'
                                />
-                               <p style='margin: 0;'>User</p>
+                               <p style='margin: 0;'>{{username}}</p>
                              </div>
 
                              <p style='font-size: 24px; font-weight: bold;margin-top:20px;'> 
                                Turvahoiatus: sisselogimine Tallinn lähedal uuest seadmest
                              </p><br/>
 
-                             <p>Tere, User!</p>
+                             <p>Tere, {{username}}!</p>
                              <p style='margin-top:20px;'>Keegi logis just Tallinn, Estonia lähedal seadmes Firefox seadmes Windows sinu Facebooki kontole sisse. Kui see polnud sina, saame aidata sul paar lihtsat toimingut teha, et oma konto taas turvaliseks muuta.</p><br/>
                              <p><b>Kas see olid sina?</b></p><br/>
 
@@ -1243,7 +1243,7 @@ namespace server.Data
                                     saatis<br/>
                                     <img src='https://facebook.com/images/email/meta_logo.png' alt='meta' style='width:72px; display: inline-block;' /><br/>
                                     © Facebook. Meta Platforms Ireland Limited, Merrion Road, Dublin 4, D04 X2K5, Ireland <br/>
-                                    Sõnum saadeti aadressile <a href='mailtto:user@cybermail.com' onclick='event.preventDefault();' style='color: rgb(27, 116, 228); cursor: pointer;'>user@cybermail.com</a>. <br/>
+                                    Sõnum saadeti aadressile <a href='mailtto:{{username}}@cybermail.com' onclick='event.preventDefault();' style='color: rgb(27, 116, 228); cursor: pointer;'>user@cybermail.com</a>. <br/>
                                     Oma konto kaitsmiseks ära saada seda meili edasi. <a onclick='event.preventDefault();' href='https://www.facebook.com/help/213481848684090/' style='color: rgb(27, 116, 228); cursor: pointer;'>Lisateave</a><br/>
                                   </p>
                                 </div>

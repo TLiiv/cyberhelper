@@ -17,7 +17,7 @@ export interface Email {
   websiteLink: string;
 }
 
-export const populateEmailBody = (body: string, email: Email): string => {
+export const populateEmailBody = (body: string, email: Email, username: string): string => {
   
   const pastDate = new Date();
   pastDate.setHours(pastDate.getHours() - 23);
@@ -52,7 +52,8 @@ export const populateEmailBody = (body: string, email: Email): string => {
     .replace(/{{imgUrl}}/g, email.imgUrl)
   .replace(/{{currentDate_et}}/g, dateEt)
     .replace(/{{currentDate_ru}}/g, dateRu)
-    .replace(/{{currentDate_en}}/g, dateEn);
+    .replace(/{{currentDate_en}}/g, dateEn)
+    .replace(/{{username}}/g, username);
     
 };
 

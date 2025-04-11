@@ -6,8 +6,13 @@ const EmailPreview: React.FC<{
   onGuess: (isPhishingGuess: boolean) => void;
   isGuessed: boolean;
   guessFeedback: string;
-}> = ({ selectedEmail, onGuess, isGuessed, guessFeedback }) => {
-  const emailBody = populateEmailBody(selectedEmail.body, selectedEmail);
+  username: string;
+}> = ({ selectedEmail, onGuess, isGuessed, guessFeedback, username }) => {
+  const emailBody = populateEmailBody(
+    selectedEmail.body,
+    selectedEmail,
+    username
+  );
   const sanitizedEmailBody = sanitizeHtml(emailBody);
   //console.log(emailBody);
 
@@ -20,7 +25,7 @@ const EmailPreview: React.FC<{
         From: {selectedEmail.sender}
       </Text>
       <Text fontSize="sm" color="gray.500">
-        To: user@cybermail.ee
+        To: {username}@cybermail.ee
       </Text>
       <Box mt={6} p={4} bg="gray.100" borderRadius="lg">
         <div dangerouslySetInnerHTML={{ __html: sanitizedEmailBody }} />

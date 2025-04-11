@@ -11,6 +11,7 @@ const EmailInbox: React.FC<{
   currentCorrectGuesses: number;
   currentIncorrectGuesses: number;
   updateAnsweredCount: (index: number) => void;
+  username: string;
 }> = ({
   updateCorrectGuesses,
   updateIncorrectGuesses,
@@ -18,6 +19,7 @@ const EmailInbox: React.FC<{
   currentCorrectGuesses,
   currentIncorrectGuesses,
   updateAnsweredCount,
+  username,
 }) => {
   const [emails, setEmails] = useState<Email[]>([]);
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
@@ -152,6 +154,7 @@ const EmailInbox: React.FC<{
                 onGuess={handleGuess}
                 isGuessed={isCurrentEmailGuessed}
                 guessFeedback={guessFeedback}
+                username={username}
               />
             ) : (
               <Text>Vali menüüst vaatamiseks email!</Text>
