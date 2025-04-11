@@ -72,7 +72,6 @@ const EmailInbox: React.FC<{
     setGuessedEmails((prev) => {
       const newSet = new Set(prev);
       newSet.add(selectedEmail.id);
-      //updateAnsweredCount(newSet.size);
       return newSet;
     });
 

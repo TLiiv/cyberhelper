@@ -48,12 +48,27 @@ const TestPage: React.FC = () => {
                       fontWeight="bold"
                       color="gray.800"
                     >
-                      Tere tulemast testile!
+                      Tere tulemast andmepüügi emaili tuvastamise testi!
                     </DialogTitle>
                   </DialogHeader>
                   <DialogBody color="gray.800">
-                    <VStack align="stretch">
-                      <Text>
+                    <VStack align="stretch" fontWeight="bold" p={4}>
+                      <Text mt={2}>
+                        Selles testis saad proovida, kui hästi suudad eristada
+                        õigeid e-kirju valedest. Testis on kokku 8 taset.
+                      </Text>
+                      <Text mt={2}>
+                        Sina pead ära arvama, kas tegemist on andmepüügi või
+                        õige e-kirjaga. Alates viiendast tasemest muutuvad osad
+                        lingid aktiivseks, kuna meili sisu põhjal ei ole nii
+                        lihtne aru saada, kas tegemist on andmepüügiga või
+                        mitte.
+                      </Text>
+                      <Text mt={2}>
+                        Testi oma teadlikkust ja uuri välja, kas sa suudad
+                        andmepüügi eristada õigest emailist. Edu!
+                      </Text>
+                      <Text mt={2}>
                         Enne alustamist sisesta oma nimi ja vajuta „Alusta
                         testi”.
                       </Text>
@@ -63,7 +78,8 @@ const TestPage: React.FC = () => {
                         onChange={(e) => setUsername(e.target.value)}
                       />
                       <Button
-                        colorScheme="teal"
+                        background="teal.500"
+                        color="gray.100"
                         onClick={handleStartTest}
                         disabled={!username.trim()}
                       >
