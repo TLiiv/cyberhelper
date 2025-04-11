@@ -6,12 +6,29 @@ import {
   Heading,
   Input,
   IconButton,
+  Box,
 } from "@chakra-ui/react";
 import { LuClipboardPen, LuMail, LuMailCheck, LuTrash2 } from "react-icons/lu";
 import EmailInbox from "./EmailInbox";
+import { useState } from "react";
 
 const EmailDashboard: React.FC = () => {
   const user = "User";
+  const [totalEmails, setTotalEmails] = useState(0);
+  const [correctGuesses, setCorrectGuesses] = useState(0);
+  const [incorrectGuesses, setIncorrectGuesses] = useState(0);
+
+  const updateCorrectGuesses = (newCorrectGuesses: number) => {
+    setCorrectGuesses(newCorrectGuesses);
+  };
+
+  const updateIncorrectGuesses = (newCorrectGuesses: number) => {
+    setIncorrectGuesses(newCorrectGuesses);
+  };
+
+  const updateTotalEmails = (newTotal: number) => {
+    setTotalEmails(newTotal);
+  };
 
   return (
     <Flex height="85vh" width="100%" bg="gray.300" borderRadius="4xl">
@@ -105,8 +122,27 @@ const EmailDashboard: React.FC = () => {
               borderRadius="xl"
               disabled
             />
+            <Box
+              p={3}
+              width="30%"
+              textAlign="center"
+              background="teal.500"
+              borderRadius="full"
+              height="50px"
+              margin="auto"
+            >
+              <Text fontSize="lg" fontWeight="bold" color="gray.100">
+                Õigeid vastuseid {correctGuesses} / {totalEmails} -st emailist
+              </Text>
+            </Box>
           </Flex>
-          <EmailInbox />
+          <EmailInbox
+            updateCorrectGuesses={updateCorrectGuesses}
+            updateIncorrectGuesses={updateIncorrectGuesses}
+            updateTotalEmails={updateTotalEmails}
+            currentCorrectGuesses={correctGuesses}
+            currentIncorrectGuesses={incorrectGuesses}
+          />
         </Flex>
       </Flex>
     </Flex>

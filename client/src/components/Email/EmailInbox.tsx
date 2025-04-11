@@ -4,7 +4,19 @@ import axios from "axios";
 import EmailPreview from "./EmailPreview";
 import { Email } from "./Email.helpers";
 
-const EmailInbox: React.FC = () => {
+const EmailInbox: React.FC<{
+  updateCorrectGuesses: (newCorrectGuesses: number) => void;
+  updateIncorrectGuesses: (newIncorrectGuesses: number) => void;
+  updateTotalEmails: (newTotal: number) => void;
+  currentCorrectGuesses: number;
+  currentIncorrectGuesses: number;
+}> = ({
+  updateCorrectGuesses,
+  updateIncorrectGuesses,
+  updateTotalEmails,
+  currentCorrectGuesses,
+  currentIncorrectGuesses,
+}) => {
   const [emails, setEmails] = useState<Email[]>([]);
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
   const [loading, setLoading] = useState(false);
@@ -19,6 +31,7 @@ const EmailInbox: React.FC = () => {
       .get<Email[]>("https://localhost:7225/api/Emails/random")
       .then((response) => {
         setEmails(response.data);
+        updateTotalEmails(response.data.length);
       })
       .catch((error) => {
         console.error("Error fetching emails:", error);
@@ -50,8 +63,17 @@ const EmailInbox: React.FC = () => {
   const handleGuess = (isPhishingGuess: boolean) => {
     if (!selectedEmail) return;
     const correct = selectedEmail.isPhishing === isPhishingGuess;
+
     setGuessedEmails((prev) => new Set(prev).add(selectedEmail.id));
-    setGuessFeedback(correct ? "✔️ Õige vastus!" : "❌ Vale vastus!");
+
+    if (correct) {
+      updateCorrectGuesses(currentCorrectGuesses + 1);
+      setGuessFeedback("✔️ Õige vastus!");
+    } else {
+      updateIncorrectGuesses(currentIncorrectGuesses + 1);
+      setGuessFeedback("❌ Vale vastus!");
+    }
+
     visibilityHandler();
   };
 

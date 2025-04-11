@@ -9,7 +9,7 @@ const EmailPreview: React.FC<{
 }> = ({ selectedEmail, onGuess, isGuessed, guessFeedback }) => {
   const emailBody = populateEmailBody(selectedEmail.body, selectedEmail);
   const sanitizedEmailBody = sanitizeHtml(emailBody);
-  console.log(emailBody);
+  //console.log(emailBody);
 
   return (
     <>

@@ -220,7 +220,7 @@ namespace server.Data
                 {
                     Id = Guid.NewGuid(),
                     Sender = "noreply@cvkeskus.ee",
-                    Subject = "Kutse intervjuule: Telia otsib uut tiimijuhti!",
+                    Subject = "Kutse intervjuule: Telia otsib uut osakonnajuhti!",
                     Body = @"
                     <html>
                         <body style='font-family: Arial, sans-serif; line-height: 1.6; text-align: left; margin: 0; padding: 0;'>

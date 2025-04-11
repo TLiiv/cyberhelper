@@ -63,7 +63,12 @@ const ScamJobOfferForm: React.FC = () => {
         <Field.HelperText>(Tööandjale lepingu tegemiseks)</Field.HelperText>
       </Field.Root>
 
-      <Button colorScheme="purple" type="submit">
+      <Button
+        color="white"
+        background="#b12df4"
+        type="submit"
+        borderRadius="30px"
+      >
         Esita
       </Button>
     </VStack>
