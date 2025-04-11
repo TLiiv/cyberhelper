@@ -124,7 +124,7 @@ const HomePage: React.FC = () => {
                   {facts.map((fact, index) => (
                     <List.Item key={index}>
                       <List.Indicator asChild color="teal.500">
-                        <Box as="span">
+                        <Box as="span" pt="0.3em">
                           <LuCircle />
                         </Box>
                       </List.Indicator>
@@ -139,7 +139,6 @@ const HomePage: React.FC = () => {
                   variant="underline"
                 >
                   <Text pl={6}>
-                    {" "}
                     — <cite>Allikad</cite>
                   </Text>
                 </Link>

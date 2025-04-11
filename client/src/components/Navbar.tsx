@@ -18,8 +18,6 @@ const NavBar: React.FC = () => {
   const activeTab =
     menuItems.find((item) => item.to === location.pathname)?.label || "Esileht";
 
-  // SVG Icons
-
   const MenuIcon = () => (
     <svg width="24" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
       <path fill="white" d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
