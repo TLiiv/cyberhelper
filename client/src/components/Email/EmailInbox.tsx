@@ -109,9 +109,8 @@ const EmailInbox: React.FC<{
                   borderWidth="0px"
                   height="100px"
                   minHeight="100px"
-                  maxHeight="100px"
-                  width="320px"
-                  minWidth="320px"
+                  width="330px"
+                  minWidth="330px"
                   overflow="hidden"
                   onClick={() => {
                     setSelectedEmail(email);
@@ -120,7 +119,7 @@ const EmailInbox: React.FC<{
                   }}
                 >
                   <Card.Title fontWeight={email.isRead ? "medium" : "bold"}>
-                    {email.sender} {email.difficulty}
+                    {email.sender}
                   </Card.Title>
                   <Card.Description>{email.subject}</Card.Description>
                 </Card.Root>
