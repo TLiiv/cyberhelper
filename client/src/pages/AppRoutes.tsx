@@ -14,10 +14,10 @@ import ScamJobOfferForm from "./ScamJobOfferForm";
 const AppRoutes: React.FC = () => {
   const location = useLocation();
   const scamPages = [
-    "/dharmo.ee/donation",
-    "/facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa",
-    "/politsei",
-    "/jobapplication",
+    "/www.dharmo.ee/donation",
+    "/www.facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa",
+    "/www.tara.politsei.ria.ee/login_challenge=0b3db40c06dc4eaca25b4ad304b48745",
+    "/www.teliajobapplication.eu",
   ];
 
   const isScamPage = scamPages.includes(location.pathname);
@@ -30,13 +30,22 @@ const AppRoutes: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/test" element={<TestPage />} />
           <Route path="/tutorial" element={<TutorialPage />} />
-          <Route path="/dharmo.ee/donation" element={<ScamDonationPage />} />
           <Route
-            path="/facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa"
+            path="/www.dharmo.ee/donation"
+            element={<ScamDonationPage />}
+          />
+          <Route
+            path="/www.facebooke.com/security-alert/recover-account/context=Q7DVBAHu4mjUMkGURJPWF8C6M-6Q-pQtDrlfa"
             element={<ScamFacebookLoginPage />}
           />
-          <Route path="/politsei" element={<ScamPolitseiIdLogin />} />
-          <Route path="/jobapplication" element={<ScamJobOfferForm />} />
+          <Route
+            path="/www.tara.politsei.ria.ee/login_challenge=0b3db40c06dc4eaca25b4ad304b48745"
+            element={<ScamPolitseiIdLogin />}
+          />
+          <Route
+            path="/www.teliajobapplication.eu"
+            element={<ScamJobOfferForm />}
+          />
         </Routes>
         {!isScamPage && <Footer />}
       </Theme>
