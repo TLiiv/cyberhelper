@@ -59,7 +59,7 @@ namespace server.Data
                                 <h1 style='background-color: #FF9800; color: white; padding: 20px; font-size: 24px; font-weight: bold; margin: 0;'>Õnnitleme! Olete võitnud!</h1>
                                 <p style='padding: 10px; font-size: 22px; font-weight: bold;'>Hea võitja,</p> <br />
                                 <p>Meil on hea meel teatada, et teid on valitud meie hiljutises loosimises suure auhinna võitjaks!<br/><br/>Olete võitnud põneva auhinna, mille väärtus on tuhandetes euros.</p>
-                                <p>Auhinna kätte saamiseks klõpsake alloleval lingil ja täitke vajalikud sammud:</p><br />
+                                <p>Teil on 48 tundi auhinna kätte saamiseks. Selleks klõpsake alloleval lingil ja täitke vajalikud sammud:</p><br />
                                 <a href='{{hiddenLink}}' style='display: inline-block; padding: 12px 24px; background-color: #FF9800; color: white; text-decoration: none; border-radius: 5px; text-align: center;' onclick='event.preventDefault();'>Saage oma auhind nüüd</a><br /><br />
                                 <p style='font-weight: semibold; font-size: 12px; color: gray; padding-top: 10px;'>Oluline: Olge ettevaatlik petuskeemide suhtes. Ärge jagage tundlikku isiklikku teavet ega makske mingeid tasusid oma auhinna saamiseks. Kui te ei osalenud loosimises, siis palun unustage see e-kiri.</p><br />
                                 <p>Tänan teid osalemise eest ja õnnitlen veel kord!</p><br />

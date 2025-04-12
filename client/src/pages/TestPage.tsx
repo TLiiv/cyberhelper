@@ -91,6 +91,8 @@ const TestPage: React.FC = () => {
                   color="white"
                   onClick={handleStartTest}
                   disabled={!username.trim()}
+                  fontWeight="semibold"
+                  fontSize="lg"
                 >
                   Alusta testi
                 </Button>
