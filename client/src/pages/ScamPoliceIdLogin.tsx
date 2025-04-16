@@ -14,8 +14,8 @@ import {
 import FakeIdCardPopup from "@/components/ScamEmail/FakeIdCardPopup";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-const ScamPolitseiIdLogin: React.FC = () => {
-  const [selectedMethod, setSelectedMethod] = useState("id-kaart");
+const ScamPoliceIdLogin: React.FC = () => {
+  const [selectedMethod, setSelectedMethod] = useState("id-card");
 
   return (
     <HelmetProvider>
@@ -92,9 +92,9 @@ const ScamPolitseiIdLogin: React.FC = () => {
                 rounded="lg"
                 size="lg"
                 p={6}
-                bg={selectedMethod === "id-kaart" ? "#005f87" : "white"}
-                color={selectedMethod === "id-kaart" ? "white" : "#003168"}
-                onClick={() => setSelectedMethod("id-kaart")}
+                bg={selectedMethod === "id-card" ? "#005f87" : "white"}
+                color={selectedMethod === "id-card" ? "white" : "#003168"}
+                onClick={() => setSelectedMethod("id-card")}
                 _hover={{
                   bg: "#005f87",
                   color: "white",
@@ -109,9 +109,9 @@ const ScamPolitseiIdLogin: React.FC = () => {
                 rounded="lg"
                 size="lg"
                 p={6}
-                bg={selectedMethod === "mobiil-id" ? "#005f87" : "white"}
-                color={selectedMethod === "mobiil-id" ? "white" : "#003168"}
-                onClick={() => setSelectedMethod("mobiil-id")}
+                bg={selectedMethod === "mobile-id" ? "#005f87" : "white"}
+                color={selectedMethod === "mobile-id" ? "white" : "#003168"}
+                onClick={() => setSelectedMethod("mobile-id")}
                 _hover={{
                   bg: "#005f87",
                   color: "white",
@@ -147,7 +147,7 @@ const ScamPolitseiIdLogin: React.FC = () => {
             width="100%"
           >
             <Flex width="85%" mb={4}>
-              {selectedMethod === "id-kaart" && (
+              {selectedMethod === "id-card" && (
                 <VStack align="start">
                   <Heading
                     color="#003168"
@@ -167,7 +167,7 @@ const ScamPolitseiIdLogin: React.FC = () => {
                 </VStack>
               )}
 
-              {selectedMethod === "mobiil-id" && (
+              {selectedMethod === "mobile-id" && (
                 <VStack align="start">
                   <Heading
                     color="#003168"
@@ -355,4 +355,4 @@ const ScamPolitseiIdLogin: React.FC = () => {
   );
 };
 
-export default ScamPolitseiIdLogin;
+export default ScamPoliceIdLogin;

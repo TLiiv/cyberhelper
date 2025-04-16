@@ -8,7 +8,7 @@ import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Theme } from "@chakra-ui/react";
 import ScamFacebookLoginPage from "./ScamFacebookLoginPage";
-import ScamPolitseiIdLogin from "./ScamPolitseiIdLogin";
+import ScamPoliceIdLogin from "./ScamPoliceIdLogin";
 import ScamJobOfferForm from "./ScamJobOfferForm";
 
 const AppRoutes: React.FC = () => {
@@ -40,7 +40,7 @@ const AppRoutes: React.FC = () => {
           />
           <Route
             path="/www.tara.politsei.ria.ee/login_challenge=0b3db40c06dc4eaca25b4ad304b48745"
-            element={<ScamPolitseiIdLogin />}
+            element={<ScamPoliceIdLogin />}
           />
           <Route
             path="/www.teliajobapplication.eu"
