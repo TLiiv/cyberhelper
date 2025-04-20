@@ -39,21 +39,26 @@ const EmailDashboard: React.FC<EmailDashboardProps> = ({ username }) => {
   };
 
   return (
-    <Flex height="85vh" width="100%" bg="gray.300" borderRadius="4xl">
+    <Flex minHeight="100vh" width="100%" bg="gray.300" borderRadius="4xl" flexDirection="column">
       {/* Sidebar */}
-      <Flex width="100vw" height="100%" position="relative" borderRadius="4xl">
+      <Flex width="100%" flex="1" position="relative" borderRadius="4xl">
         {/* Sidebar Navigation */}
         <VStack
           borderRadius="4xl"
           width="250px"
           align="stretch"
-          height="100%"
+          minHeight="100%"
           position="absolute"
           left="0"
           bg="gray.300"
           zIndex="1"
         >
-          <Flex flexDirection="column" gap={2} pl={10} pt={6}>
+          <Flex width="80%"
+      marginLeft="auto"
+      flexDirection="column"
+      borderRadius="4xl"
+      flex="1"
+      overflowY="auto">
             <Heading
               pt={2}
               pb={4}
