@@ -24,14 +24,16 @@ namespace server.Services
                 .ToDictionary(g => g.Key, g => g.ToList());
 
             var result = new List<Email>();
+            var random = new Random();
 
-            for (int i = 1; i <= 8; i++)
+            for (int level = 1; level <= 8; level++)
             {
-                if (groupedByDifficulty.TryGetValue(i, out var group))
+                if (groupedByDifficulty.ContainsKey(level))
                 {
-                    var random = new Random();
-                    var selected = group[random.Next(group.Count)];
-                    result.Add(selected);
+                    var group = groupedByDifficulty[level];
+                    var randomIndex = random.Next(group.Count);
+                    var selectedEmail = group[randomIndex];
+                    result.Add(selectedEmail);
                 }
             }
 

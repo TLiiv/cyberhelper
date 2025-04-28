@@ -58,6 +58,7 @@ const EmailInbox: React.FC<{
     [emails]
   );
 
+  
   const visibilityHandler = () => {
     if (visibleCount < sortedEmails.length) {
       const newCount = visibleCount + 1;
@@ -91,6 +92,7 @@ const EmailInbox: React.FC<{
   }, [guessedEmails, updateAnsweredCount]);
 
   const visibleEmails = sortedEmails.slice(0, visibleCount).reverse();
+  
   const isCurrentEmailGuessed = selectedEmail
     ? guessedEmails.has(selectedEmail.id)
     : false;

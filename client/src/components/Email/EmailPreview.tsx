@@ -14,7 +14,6 @@ const EmailPreview: React.FC<{
     username
   );
   const sanitizedEmailBody = sanitizeHtml(emailBody);
-  //console.log(emailBody);
 
   return (
     <>
@@ -46,7 +45,7 @@ const EmailPreview: React.FC<{
               onClick={() => onGuess(false)}
               disabled={isGuessed}
             >
-              Legitiimne
+              Tõeline
             </Button>
           </Flex>
 
