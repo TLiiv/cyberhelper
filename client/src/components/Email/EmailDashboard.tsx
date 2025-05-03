@@ -39,7 +39,15 @@ const EmailDashboard: React.FC<EmailDashboardProps> = ({ username }) => {
   };
 
   return (
-    <Flex minHeight="100vh" width="100%" bg="gray.300" borderRadius="4xl" flexDirection="column">
+    <Flex
+      minHeight={{ sm: "100vh", md: "100vh", lg: "85vh" }}
+      //minHeight="100vh"
+      width="100%"
+      bg="gray.300"
+      borderRadius="4xl"
+      flexDirection="column"
+      overflow="hidden"
+    >
       {/* Sidebar */}
       <Flex width="100%" flex="1" position="relative" borderRadius="4xl">
         {/* Sidebar Navigation */}
@@ -53,12 +61,14 @@ const EmailDashboard: React.FC<EmailDashboardProps> = ({ username }) => {
           bg="gray.300"
           zIndex="1"
         >
-          <Flex width="80%"
-      marginLeft="auto"
-      flexDirection="column"
-      borderRadius="4xl"
-      flex="1"
-      overflowY="auto">
+          <Flex
+            width="80%"
+            marginLeft="auto"
+            flexDirection="column"
+            borderRadius="4xl"
+            flex="1"
+            overflowY="auto"
+          >
             <Heading
               pt={2}
               pb={4}

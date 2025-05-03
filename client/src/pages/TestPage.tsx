@@ -29,7 +29,12 @@ const TestPage: React.FC = () => {
   };
 
   return (
-    <Box maxW="1680px" mx="auto" px={4} position="relative"  minH="100vh"
+    <Box
+      maxW="1680px"
+      mx="auto"
+      px={4}
+      position="relative"
+      minHeight={{ base: "100vh", md: "85vh", lg: "85vh" }}
     >
       <Theme appearance="light" borderRadius="4xl">
         {!testStarted ? (
